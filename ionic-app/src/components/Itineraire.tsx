@@ -1,0 +1,20 @@
+import { IonInput, IonItem, IonButton, IonListHeader, IonList } from "@ionic/react";
+import React , {useState} from 'react';
+
+const Itineraire = () => {
+    const [adresse, setAdresse] = useState<string>();
+
+    return (
+        <IonList>
+            <IonListHeader color="primary">
+                Itinéraire :
+            </IonListHeader>
+            <IonItem>
+                <IonInput value={adresse} type="text" placeholder="Adresse" onIonChange={e => setAdresse(e.detail.value!)}></IonInput>
+                <IonButton>Y aller</IonButton>
+            </IonItem>
+        </IonList>
+    )
+}
+
+export default Itineraire;
