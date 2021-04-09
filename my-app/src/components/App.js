@@ -106,11 +106,10 @@ function App() {
 
           <Section title="Agenda :" >
             <TextField className={classes.TextField} id="nom-agenda" variant="outlined" label="Nom du rendez-vous" color="secondary" type="text" size="small" />
-            <TextField className={classes.TextField} id="date-agenda" variant="outlined" color="secondary" size="small" type="date" />
-            <Typography className={classes.TextCorpSection}> De </Typography>
-            <TextField className={classes.TextField} id="heure-debut" variant="outlined" color="secondary" size="small" type="time" />
-            <Typography className={classes.TextCorpSection}> à </Typography>
-            <TextField className={classes.TextField} id="heure-fin" variant="outlined" color="secondary" size="small" type="time" />
+            <Typography className={classes.TextCorpSection}> Début </Typography>
+            <TextField className={classes.TextField} id="heure-debut" variant="outlined" color="secondary" size="small" type="datetime-local" />
+            <Typography className={classes.TextCorpSection}> fin </Typography>
+            <TextField className={classes.TextField} id="heure-fin" variant="outlined" color="secondary" size="small" type="datetime-local" />
             <Button className={classes.button}>Ajouter</Button>
           </Section>
 
