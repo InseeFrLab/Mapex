@@ -11,7 +11,7 @@ const Itineraire = () => {
             </IonListHeader>
             <IonItem>
                 <IonInput value={adresse} type="text" placeholder="Adresse" onIonChange={e => setAdresse(e.detail.value!)}></IonInput>
-                <IonButton>Y aller</IonButton>
+                <IonButton href={`https://maps.google.com/?q=${adresse}`}>Y aller</IonButton>
             </IonItem>
         </IonList>
     )
