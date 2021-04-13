@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ionic-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ionic-app
+  template:
+    metadata:
+      labels:
+        app: ionic-app
+    spec:
+      containers:
+        - name: ionic-app
+          image: ddecrulle/ionic-app

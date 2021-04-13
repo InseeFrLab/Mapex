@@ -26,7 +26,7 @@ const Notif = () => {
             Notification.requestPermission().then((permission) => {
               // Si l'utilisateur accepte, créons une notification
               if (permission === 'granted') {
-                // makeNotification(title,text);
+                makeNotification(title,text);
                 // makeLocalNotification(title,text);
               }
             })

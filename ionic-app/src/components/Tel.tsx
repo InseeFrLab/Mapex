@@ -10,8 +10,9 @@ const Telephoner = () => {
 
     const Call = () => {
         setShowLabelIncorrect(true);
-        CallNumber.callNumber(tel, true);
-
+        CallNumber.callNumber(tel, true).then(res => console.log('Launched dialer!', res))
+        .catch(err => console.log('Error launching dialer', err));
+        return `window.open(tel:${tel})`;
     };
 
     const handleClick = () => {
@@ -34,7 +35,7 @@ const Telephoner = () => {
             </IonItem>
             <IonItem>
                 <IonButton onClick={handleClick}>Appeler</IonButton>
-                <IonLabel hidden={showLabelIncorect} > Téléphone non valide</IonLabel>
+                <IonLabel hidden={showLabelIncorect}> Téléphone non valide</IonLabel>
             </IonItem>
                 
         </IonList>
