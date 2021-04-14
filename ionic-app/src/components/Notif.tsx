@@ -1,6 +1,7 @@
 import { IonInput, IonLabel, IonItem, IonButton, IonList, IonListHeader } from "@ionic/react";
 import { useState } from 'react';
 import { LocalNotifications } from '@ionic-native/local-notifications';
+import { getByTitle } from "@testing-library/dom";
 
 const Notif = () => {
     const [number, setNumber] = useState<number>(1);
@@ -8,6 +9,13 @@ const Notif = () => {
     const makeNotification = (title: string, text: string) => {
         var notification = new Notification(title)
     }
+
+    function displayNotification(title: string, text: string) {
+        navigator.serviceWorker.ready.then((registration) => {
+            registration.showNotification(title);
+        });
+    }
+
 
 
     const setNotification = () => {
@@ -19,15 +27,15 @@ const Notif = () => {
         }
         else if (Notification.permission === 'granted') {
             // Si tout va bien, créons une notification
-            makeNotification(title, text);
-            //makeLocalNotification(title,text);
+            // makeNotification(title, text);
+            displayNotification(title, text)
         }
         else if (Notification.permission !== 'denied') {
             Notification.requestPermission().then((permission) => {
                 // Si l'utilisateur accepte, créons une notification
                 if (permission === 'granted') {
-                    makeNotification(title, text);
-                    // makeLocalNotification(title,text);
+                    // makeNotification(title, text);
+                    displayNotification(title, text)
                 }
             })
         }
