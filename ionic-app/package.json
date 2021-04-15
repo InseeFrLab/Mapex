@@ -24,6 +24,7 @@
     "call-number": "^1.0.1",
     "cordova-plugin-local-notification": "^0.9.0-beta.2",
     "date-fns": "^2.19.0",
+    "google-calendar-url": "0.0.5",
     "ionicons": "^5.4.0",
     "leaflet": "^1.7.1",
     "react": "^17.0.1",
