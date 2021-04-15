@@ -7,14 +7,17 @@ import iconShadow from 'leaflet/dist/images/marker-shadow.png';
 
 let DefaultIcon = L.icon({
     iconUrl: icon,
-    shadowUrl: iconShadow
+    shadowUrl: iconShadow,
+    iconSize: [28, 40],
+    iconAnchor: [17, 46]
+
 });
 
 L.Marker.prototype.options.icon = DefaultIcon;
 
 const MapLeaflet = ({position,setMap,located} : {position:LatLngTuple,setMap:any,located:Boolean} ) => {
     return (
-        <MapContainer  whenCreated={setMap} style={{ width: '100%', height: '100%' ,minHeight: '300px',minWidth:'300px' }} center={position} zoom={13} >
+        <MapContainer  whenCreated={setMap} style={{ width: '100%', height: '100%' ,minHeight: '300px',minWidth:'300px' }} center={position} zoom={13}>
             <TileLayer
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

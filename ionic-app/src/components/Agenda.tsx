@@ -1,6 +1,5 @@
 import { IonInput, IonLabel, IonItem, IonButton, IonDatetime, IonList, IonListHeader } from "@ionic/react";
 import React, { useEffect, useRef, useState } from 'react';
-import { Calendar } from '@ionic-native/calendar';
 import { googleCalendarEventUrl } from 'google-calendar-url';
 
 
@@ -33,12 +32,13 @@ const Agenda = () => {
         }
     },[nomEvenement, startDate, endDate]);
 
+    // Implementation avec Plugin Natif
+    // const setEvent = () => {
+    //     const eventLocation: string = "Location";
+    //     const notes: string = "notes"
+    //     Calendar.createEvent(nomEvenement, eventLocation, notes, startDate, endDate);
+    // }
 
-    const setEvent = () => {
-        const eventLocation: string = "Location";
-        const notes: string = "notes"
-        Calendar.createEvent(nomEvenement, eventLocation, notes, startDate, endDate);
-    }
     const makeUrl = () => {
 
         const formattedStart = startDate.toISOString().replace(/-/g, '').replace(/:/g, '').replace('.000', '').substr(0, 15);
