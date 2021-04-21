@@ -8,6 +8,7 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "google-calendar-url": "^0.0.5",
     "google-maps-react": "^2.0.6",
     "leaflet": "^1.7.1",
     "react": "^17.0.2",

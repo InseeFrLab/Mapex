@@ -15,7 +15,7 @@ const MinuteInput = ({classes})=> {
   const innerClasses = useStyles();
   return(
     <div className={ innerClasses.row}>
-              <Typography className={classes.TextCorpSection}> Dans </Typography>
+              <Typography className={classes.TextCorpSection}> Dans  </Typography>
               <TextField className={classes.TextField} id="notif-minutes" variant="outlined" InputProps={{ inputProps: { min: 1 } }} color="secondary" type="number" size="small" defaultValue={1} />
               <Typography className={classes.TextCorpSection}> minute(s) </Typography>
     </div>

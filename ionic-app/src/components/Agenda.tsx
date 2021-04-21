@@ -77,7 +77,7 @@ const Agenda = () => {
                 <IonLabel>
                     Heure de début
                 </IonLabel>
-                <IonDatetime display-format="DD MMM YYYY HH:mm" picker-format="DD MMM YYYY HH:mm" value={startDate.toString()} onIonChange={e => { setStartDate(new Date(e.detail.value!)); console.log(startDate) }} />
+                <IonDatetime display-format="DD MMM YYYY HH:mm" picker-format="DD MMM YYYY HH:mm" value={startDate.toString()} onIonChange={e => setStartDate(new Date(e.detail.value!))} />
             </IonItem>
             <IonItem>
                 <IonLabel>

@@ -5415,6 +5415,11 @@ globby@^6.1.0:
     pify "^2.0.0"
     pinkie-promise "^2.0.0"
 
+google-calendar-url@^0.0.5:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/google-calendar-url/-/google-calendar-url-0.0.5.tgz#05ecd76a4d7073976c4d72fe7da3f344cbc662ce"
+  integrity sha512-wrKZTMDBbz2AOf1+aGN+xeKWc9FjTF/ZkOmeC7dkv/vixG48FLermpBRU1nYGK/3Z24G2QqGjcn22Fyc1Yn9Ng==
+
 google-maps-react@^2.0.6:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/google-maps-react/-/google-maps-react-2.0.6.tgz#0473356207ab6b47227b393b89e4b83f6eab06da"

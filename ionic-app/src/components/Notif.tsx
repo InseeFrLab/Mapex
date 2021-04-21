@@ -6,10 +6,6 @@ import { getByTitle } from "@testing-library/dom";
 const Notif = () => {
     const [number, setNumber] = useState<number>(1);
 
-    const makeNotification = (title: string, text: string) => {
-        var notification = new Notification(title)
-    }
-
     function displayNotification(title: string, text: string) {
         navigator.serviceWorker.ready.then((registration) => {
             registration.showNotification(title);

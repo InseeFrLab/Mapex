@@ -2,7 +2,7 @@ import { Divider, makeStyles } from '@material-ui/core';
 import SectionTitle from './SectionTitle';
 
 
-const useStyles = makeStyles((theme) => ({
+const useStylesSection = makeStyles((theme) => ({
     section: {
         margin: theme.spacing(0.5, 1, 0.5, 0.5),
         display: 'flex',
@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 const Section = ({ title, children, divider = true }) => {
-    const classes = useStyles();
+    const classes = useStylesSection();
     return (
         <>
             <Divider variant="middle" />

@@ -1,20 +1,16 @@
-import React, { useState } from 'react';
-
-import { makeStyles } from '@material-ui/core/styles';
+import React from 'react';
 
 import Paper from '@material-ui/core/Paper';
-import HomeIcon from '@material-ui/icons/Home';
-import Button from '@material-ui/core/Button';
-import Divider from '@material-ui/core/Divider';
-
-import { TextField, Typography } from '@material-ui/core';
-
+import { makeStyles } from '@material-ui/core/styles';
 
 import Notif from './Notif'
 import Banner from './Banner';
-import MapLeaflet from './MapLeaflet';
-import Section from './Section';
 
+import Telephoner from './Tel';
+import Geoloc from './Geoloc'
+import Itineraire from './Itineraire';
+import Agenda from './Agenda';
+import InstallPWA from './InstallPWA';
 
 const useStyles = makeStyles((theme) => ({
 
@@ -32,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   TextField: {
-    marginRight: theme.spacing(1)
+    margin: theme.spacing(1, 1),
   },
   layout: {
     width: 'auto',
@@ -68,7 +64,6 @@ const useStyles = makeStyles((theme) => ({
 
 function App() {
   const classes = useStyles();
-  const [position, setPosition] = useState([51.505, -0.09]);
 
   return (
     <div >
@@ -78,41 +73,13 @@ function App() {
 
         <Paper className={classes.paper}>
           <div className={classes.section1}>
-            <Button variant="outlined" color="primary" startIcon={<HomeIcon />}>
-              Ajouter l'application à l'écran d'accueil
-            </Button>
+            <InstallPWA />
           </div>
-
-          <Section title="Recevoir une notification :" >
-            <Notif classes={classes} />
-          </Section>
-
-
-          <Section title="Téléphoner :" >
-            <Typography className={classes.TextCorpSection}> Au </Typography>
-            <TextField variant="outlined" label="06 ou 07 XX XX XX XX" size="small" type="tel" />
-            <Button className={classes.button}>Appeler</Button>
-          </Section>
-
-          <Section title="Se géolocaliser :" >
-            <MapLeaflet position={position} />
-            <Button className={classes.button}>Trouvez moi</Button>
-          </Section>
-
-          <Section title="Itinéraire :" >
-            <TextField className={classes.TextField} id="itineraire" label="Adresse" variant="outlined" color="secondary" type="string" size="small" />
-            <Button className={classes.button}>Y aller</Button>
-          </Section>
-
-          <Section title="Agenda :" >
-            <TextField className={classes.TextField} id="nom-agenda" variant="outlined" label="Nom du rendez-vous" color="secondary" type="text" size="small" />
-            <Typography className={classes.TextCorpSection}> Début </Typography>
-            <TextField className={classes.TextField} id="heure-debut" variant="outlined" color="secondary" size="small" type="datetime-local" />
-            <Typography className={classes.TextCorpSection}> fin </Typography>
-            <TextField className={classes.TextField} id="heure-fin" variant="outlined" color="secondary" size="small" type="datetime-local" />
-            <Button className={classes.button}>Ajouter</Button>
-          </Section>
-
+          <Notif classes={classes} />
+          <Telephoner classes={classes} />
+          <Geoloc classes={classes} />
+          <Itineraire classes={classes} />
+          <Agenda classes={classes} />
 
         </Paper>
 
