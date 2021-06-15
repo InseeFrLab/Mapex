@@ -3,16 +3,16 @@ import PropTypes from 'prop-types';
 import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BarItem from './bar-item';
 
-const BottomBar = ({ content, value, className, handleChange, showLabels }) => {
+const BottomBar = ({ content, value, className, handleChange, showLabel }) => {
 	return (
 		<BottomNavigation
 			value={value}
 			onChange={handleChange}
 			className={className}
-			showLabels={showLabels}
+			showLabel={showLabel}
 		>
 			{content.map(({ id, label, icon }) => (
-				<BarItem key={id} label={label} icon={icon} />
+				<BarItem key={id} label={label} icon={icon} showLabel={showLabel} />
 			))}
 		</BottomNavigation>
 	);
@@ -38,7 +38,7 @@ BottomBar.propTypes = {
 	/**
 	 * BottomBar items has to be shown or not
 	 */
-	showLabels: PropTypes.bool,
+	showLabel: PropTypes.bool,
 };
 
 BottomBar.defaultProps = {
@@ -46,7 +46,7 @@ BottomBar.defaultProps = {
 	value: '',
 	className: '',
 	handleChange: () => {},
-	showLabels: false,
+	showLabel: false,
 };
 
 export default BottomBar;

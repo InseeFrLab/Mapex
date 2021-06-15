@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 
-const BarItem = ({ label, icon }) => (
-	<BottomNavigationAction label={label} icon={icon} />
+const BarItem = ({ label, icon, showLabel }) => (
+	<BottomNavigationAction label={label} icon={icon} showLabel={showLabel} />
 );
 
 BarItem.propTypes = {
