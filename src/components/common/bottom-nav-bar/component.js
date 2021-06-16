@@ -46,7 +46,7 @@ BottomBar.defaultProps = {
 	value: '',
 	className: '',
 	handleChange: () => {},
-	showLabel: false,
+	showLabel: true,
 };
 
 export default BottomBar;
