@@ -1,23 +1,25 @@
 import React from 'react';
-import ButtonUI from './component';
+import { Button } from './component';
 
 export default {
-	title: 'Components/Button',
-	component: ButtonUI,
+	title: 'Example/Button',
+	component: Button,
+	argTypes: {
+		backgroundColor: { control: 'color' },
+	},
 };
 
-const Template = (args) => <ButtonUI {...args} />;
+const Template = (args) => <Button {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-	color: 'primary',
+	primary: true,
 	label: 'Button',
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
 	label: 'Button',
-	color: 'secondary',
 };
 
 export const Large = Template.bind({});

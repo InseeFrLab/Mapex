@@ -1,54 +1,71 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './button.css';
+import Button from '@material-ui/core/Button';
 
-/**
- * Primary UI component for user interaction
- */
-export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
-	const mode = primary
-		? 'storybook-button--primary'
-		: 'storybook-button--secondary';
+const ButtonUI = ({
+	label,
+	className,
+	color,
+	disabled,
+	size,
+	variant,
+	handleChange,
+	...props
+}) => {
 	return (
-		<button
-			type="button"
-			className={['storybook-button', `storybook-button--${size}`, mode].join(
-				' '
-			)}
-			style={backgroundColor && { backgroundColor }}
+		<Button
+			className={className}
+			color={color}
+			onClick={handleChange}
+			disabled={disabled}
+			size={size}
+			variant={variant}
 			{...props}
 		>
 			{label}
-		</button>
+		</Button>
 	);
 };
 
-Button.propTypes = {
+ButtonUI.propTypes = {
 	/**
-	 * Is this the principal call to action on the page?
+	 * Label of the button
 	 */
-	primary: PropTypes.bool,
+	label: PropTypes.string,
 	/**
-	 * What background color to use
+	 * Classname of the ButtonIcon
 	 */
-	backgroundColor: PropTypes.string,
+	className: PropTypes.string,
 	/**
-	 * How large should the button be?
+	 * The color to use
 	 */
-	size: PropTypes.oneOf(['small', 'medium', 'large']),
+	color: PropTypes.oneOf(['default', 'inherit', 'primary', 'secondary']),
 	/**
-	 * Button contents
+	 * Handler for BottomBar items
 	 */
-	label: PropTypes.string.isRequired,
+	handleChange: PropTypes.func,
 	/**
-	 * Optional click handler
+	 * ButtonIcon has to be disabled or not
 	 */
-	onClick: PropTypes.func,
+	disabled: PropTypes.bool,
+	/**
+	 * Size of the button
+	 */
+	size: PropTypes.oneOf(['large', 'medium', 'small']),
+	/**
+	 * The variant to use
+	 */
+	variant: PropTypes.oneOf(['contained', 'outlined', 'text']),
 };
 
-Button.defaultProps = {
-	backgroundColor: null,
-	primary: false,
+ButtonUI.defaultProps = {
+	label: '',
+	className: '',
+	color: 'default',
+	handleChange: () => {},
+	disable: false,
 	size: 'medium',
-	onClick: undefined,
+	variant: 'contained',
 };
+
+export default ButtonUI;
