@@ -27,7 +27,7 @@ ButtonIcon.propTypes = {
 	/**
 	 * Icon of the button
 	 */
-	Icon: PropTypes.element,
+	icon: PropTypes.element,
 	/**
 	 * Classname of the ButtonIcon
 	 */

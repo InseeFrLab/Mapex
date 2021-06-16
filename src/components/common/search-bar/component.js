@@ -6,6 +6,8 @@ import TuneIcon from '@material-ui/icons/Tune';
 import SearchIcon from '@material-ui/icons/Search';
 import PropTypes from 'prop-types';
 import ButtonIcon from '../icon-button';
+import D from '../../../dictionary/app/home'
+
 
 const useStyles = makeStyles((theme) => ({
 	paper: {
@@ -35,8 +37,8 @@ const SearchBar = () => {
 			/>
 			<InputBase
 				className={classes.input}
-				placeholder="Nom, prénom, enquête"
-				inputProps={{ 'aria-label': 'search google maps' }}
+				placeholder={D.searchBar}
+				inputProps={{ 'aria-label': D.searchBarAreaLabel }}
 			/>
 			<ButtonIcon className={classes.iconButton} icon={<TuneIcon />} />
 		</Paper>
