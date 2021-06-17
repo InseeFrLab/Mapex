@@ -7,7 +7,7 @@ Mapex for "Mon Assistant Personnalisé cross plateforme" (My Personalized Assist
 Mapex is built with [React](https://reactjs.org/). It was initialized with a custom template of Create React App : [PWA Template](https://www.npmjs.com/package/cra-template-pwa) and is designed thanks to [Material UI](https://material-ui.com/).
 
 
-[Storybook](https://ddecrulle.github.io/Mapex/) is available online.
+[Storybook](https://inseefrlab.github.io/Mapex/) is available online.
 # Getting started 
 
 Clone this project and navigate to the `mapex` directory
