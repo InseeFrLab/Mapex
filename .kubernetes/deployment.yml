@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mapex
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mapex
+  template:
+    metadata:
+      labels:
+        app: mapex
+    spec:
+      containers:
+        - name: mapex
+          image: ddecrulle/mapex:latest
+
+          env:
+           - name: PEARL_API_URL
+             value: 'https://pearljam-bo-demo.dev.insee.io'
