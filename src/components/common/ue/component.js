@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import FavoriteBorderOutlinedIcon from '@material-ui/icons/FavoriteBorderOutlined';
-import ButtonIcon from '../icon-button/component';
+import ButtonIcon from '../icon-button';
 import PersonIcon from '@material-ui/icons/Person';
 import PlaceIcon from '@material-ui/icons/Place';
 import PhoneIcon from '@material-ui/icons/Phone';
