@@ -12,19 +12,31 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
-const BottomBar = ({ content, value, className, handleChange, showLabel }) => {
+const BottomBar = ({
+	content,
+	currentValue,
+	className,
+	handleChange,
+	showLabel,
+}) => {
 	const classes = useStyles();
-
 	return (
 		<Paper className={classes.root}>
 			<BottomNavigation
-				value={value}
+				value={currentValue}
 				onChange={handleChange}
 				className={className}
 				showLabel={showLabel}
 			>
-				{content.map(({ id, label, icon }) => (
-					<BarItem key={id} label={label} icon={icon} showLabel={showLabel} />
+				{content.map(({ id, label, icon, value }) => (
+					<BarItem
+						key={id}
+						value={value}
+						label={label}
+						icon={icon}
+						showLabel={showLabel}
+						onChange={handleChange}
+					/>
 				))}
 			</BottomNavigation>
 		</Paper>
