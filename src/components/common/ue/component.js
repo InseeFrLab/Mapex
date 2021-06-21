@@ -20,6 +20,20 @@ const useStyles = makeStyles((theme) => ({
 		width: '100%',
 		backgroundColor: theme.palette.background.paper,
 	},
+	icon: {
+		minWidth: 0,
+		marginRight: 3,
+	},
+	row: {
+		justifyContent: 'space-between',
+	},
+	phone: {
+		paddingRight: 0,
+	},
+	rightAlignText: {
+		textAlign: 'end',
+		width: 'auto',
+	},
 }));
 
 const UE = ({
@@ -46,24 +60,30 @@ const UE = ({
 				</ListItemSecondaryAction>
 			</ListItem>
 
-			<ListItem>
-				<ListItemIcon>
+			<ListItem className={classes.row}>
+				<ListItemIcon className={classes.icon}>
 					<PersonIcon />
 				</ListItemIcon>
 				<ListItemText>{`${firstName} ${lastName}`}</ListItemText>
-				<ListItem button href={`tel:${phone}`}>
-					<ListItemIcon>
+				<ListItem
+					button
+					href={`tel:${phone}`}
+					className={`${classes.rightAlignText} ${classes.phone}`}
+				>
+					<ListItemIcon className={classes.icon}>
 						<PhoneIcon />
 					</ListItemIcon>
-					<ListItemText>{phone}</ListItemText>
+					<ListItemText className={classes.phone}>{phone}</ListItemText>
 				</ListItem>
 			</ListItem>
-			<ListItem button>
-				<ListItemIcon>
+			<ListItem button className={classes.row}>
+				<ListItemIcon className={classes.icon}>
 					<PlaceIcon />
 				</ListItemIcon>
 				<ListItemText>{street}</ListItemText>
-				<ListItemText>{zipCity}</ListItemText>
+				<ListItemText className={classes.rightAlignText}>
+					{zipCity}
+				</ListItemText>
 			</ListItem>
 		</List>
 	);

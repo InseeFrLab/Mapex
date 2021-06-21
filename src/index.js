@@ -4,9 +4,11 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import Root from 'components/root';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
+import CssBaseline from '@material-ui/core/CssBaseline';
 
 ReactDOM.render(
 	<React.StrictMode>
+		<CssBaseline />
 		<Router>
 			<Root />
 		</Router>

@@ -2,13 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 
-const BarItem = ({ label, icon, showLabel, onChange, value }) => (
+const BarItem = ({ label, icon, showLabel, onChange, value, ...props }) => (
 	<BottomNavigationAction
+		selected={false}
 		label={label}
 		value={value}
 		icon={icon}
 		showLabel={showLabel}
 		onChange={onChange}
+		{...props}
 	/>
 );
 

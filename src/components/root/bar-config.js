@@ -5,7 +5,7 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 import D from 'dictionary/storybook';
 
 export const navConfig = [
-	{ id: 'home', value: '/home', label: D.home, icon: <HomeIcon /> },
+	{ id: 'home', value: '/', label: D.home, icon: <HomeIcon /> },
 	{
 		id: 'favorite',
 		value: '/favorite',
