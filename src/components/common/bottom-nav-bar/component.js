@@ -1,20 +1,47 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Paper from '@material-ui/core/Paper';
 import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BarItem from './bar-item';
+import { makeStyles } from '@material-ui/core/styles';
 
-const BottomBar = ({ content, value, className, handleChange, showLabel }) => {
+const useStyles = makeStyles((theme) => ({
+	root: {
+		backgroundColor: theme.palette.background.paper,
+		width: '100%',
+		position: 'fixed',
+    bottom: 0,
+	},
+}));
+
+const BottomBar = ({
+	content,
+	currentValue,
+	className,
+	handleChange,
+	showLabel,
+}) => {
+	const classes = useStyles();
 	return (
-		<BottomNavigation
-			value={value}
-			onChange={handleChange}
-			className={className}
-			showLabel={showLabel}
-		>
-			{content.map(({ id, label, icon }) => (
-				<BarItem key={id} label={label} icon={icon} showLabel={showLabel} />
-			))}
-		</BottomNavigation>
+		<Paper className={classes.root}>
+			<BottomNavigation
+				value={currentValue}
+				onChange={handleChange}
+				className={className}
+				showLabel={showLabel}
+			>
+				{content.map(({ id, label, icon, value }) => (
+					<BarItem
+						key={id}
+						value={value}
+						label={label}
+						icon={icon}
+						showLabel={showLabel}
+						onChange={handleChange}
+					/>
+				))}
+			</BottomNavigation>
+		</Paper>
 	);
 };
 
