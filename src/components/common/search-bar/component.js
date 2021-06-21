@@ -6,16 +6,15 @@ import TuneIcon from '@material-ui/icons/Tune';
 import SearchIcon from '@material-ui/icons/Search';
 import PropTypes from 'prop-types';
 import ButtonIcon from '../icon-button';
-import D from '../../../dictionary/app/home'
-
+import D from '../../../dictionary/app/home';
 
 const useStyles = makeStyles((theme) => ({
 	paper: {
-		padding: '2px 4px',
 		display: 'flex',
 		alignItems: 'center',
 		width: 300,
 		borderRadius: 25,
+		margin: '0.5em auto',
 	},
 	input: {
 		marginLeft: theme.spacing(1),

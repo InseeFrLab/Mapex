@@ -2,14 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
 import UE from '../ue';
 import Divider from '@material-ui/core/Divider';
+
+// https://codesandbox.io/s/5wqo7z2np4 for loading data
 
 const useStyles = makeStyles((theme) => ({
 	root: {
 		width: '100%',
 		backgroundColor: theme.palette.background.paper,
+		maxHeight: '100%',
+		overflow: 'auto',
 	},
 	inline: {
 		display: 'inline',
