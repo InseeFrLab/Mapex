@@ -1,6 +1,6 @@
-const other = {
+const home = {
   searchBar: 'Nom, prénom, enquête',
   searchBarAreaLabel: 'recherche UE'
 };
 
-export default other;
+export default home;

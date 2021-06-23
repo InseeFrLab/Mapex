@@ -4,9 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import ListUE from 'components/common/list-ue';
 
 const useStyles = makeStyles((theme) => ({
-	SearchBar: {
-		margin: '0.5em auto',
-	},
+	root: {},
 }));
 
 const Home = () => {
