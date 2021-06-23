@@ -50,7 +50,7 @@ const UE = ({
 	return (
 		<List className={classes.root}>
 			<ListItem>
-				<ListSubheader>{idCampaign}</ListSubheader>
+				<ListSubheader disableSticky={true}>{idCampaign}</ListSubheader>
 				<ListItemSecondaryAction>
 					<ButtonIcon
 						icon={
