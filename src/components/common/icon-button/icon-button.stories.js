@@ -13,13 +13,13 @@ const Template = (args) => <ButtonIcon {...args} />;
 
 export const ButtonIconHome = Template.bind({});
 ButtonIconHome.args = {
-  icon: <HomeIcon />
+  icon: <HomeIcon />,
 };
 export const ButtonIconSearch = Template.bind({});
 ButtonIconSearch.args = {
-  icon: <SearchIcon />
+  icon: <SearchIcon />,
 };
 export const ButtonIconPhone = Template.bind({});
 ButtonIconPhone.args = {
-  icon: <PhoneIcon />
+  icon: <PhoneIcon />,
 };

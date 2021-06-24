@@ -1,12 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from 'components/app';
+import { BrowserRouter as Router } from 'react-router-dom';
+import Root from 'components/root';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
+import CssBaseline from '@material-ui/core/CssBaseline';
 
 ReactDOM.render(
 	<React.StrictMode>
-		<App />
+		<CssBaseline />
+		<Router>
+			<Root />
+		</Router>
 	</React.StrictMode>,
 	document.getElementById('root')
 );
