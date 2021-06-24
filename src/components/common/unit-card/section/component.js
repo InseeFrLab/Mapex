@@ -24,12 +24,10 @@ const Section = ({ title, children, ...props }) => {
 		<Paper className={classes.paper}>
 			<List
 				subheader={
-					<ListSubheader className={classes.title} >
-						{title}
-					</ListSubheader>
+					<ListSubheader className={classes.title}>{title}</ListSubheader>
 				}
 			>
-				<ListItem>{children}</ListItem>
+				{children}
 			</List>
 		</Paper>
 	);
