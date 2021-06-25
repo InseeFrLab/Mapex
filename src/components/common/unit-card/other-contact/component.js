@@ -9,30 +9,32 @@ import PersonIcon from '@material-ui/icons/Person';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ButtonIcon from '../../icon-button';
 import Typography from '@material-ui/core/Typography';
-import PlaceIcon from '@material-ui/icons/Place';
+import PhoneIcon from '@material-ui/icons/Phone';
 import MailIcon from '@material-ui/icons/Mail';
 
 const OtherContact = ({ otherPersons }) => {
 	return (
 		<Section title={D.otherContactTitle}>
-			{otherPersons.map(({ firstName, lastName, email , phoneNumbers}) => (
-				<ListItem>
-					<ListItemIcon>
-						<PersonIcon />
-					</ListItemIcon>
-					<ListItemText>{`${firstName} ${lastName}`}</ListItemText>
-					<ListItemText>{email}</ListItemText>
-					<ButtonIcon icon={<MailIcon />} />
-        </ListItem>
-        {phoneNumbers.map(({ source, number }) => (
+			{otherPersons.map(({ firstName, lastName, email, phoneNumbers }) => (
+				<>
 					<ListItem>
-            <ListItemText secondary={source} />
-            <>
-              <Typography color="textSecondary">{number}</Typography>
-              <ButtonIcon icon={<PhoneIcon />} />
-            </>
+						<ListItemIcon>
+							<PersonIcon />
+						</ListItemIcon>
+						<ListItemText>{`${firstName} ${lastName}`}</ListItemText>
+						<ListItemText>{email}</ListItemText>
+						<ButtonIcon icon={<MailIcon />} />
+					</ListItem>
+					{phoneNumbers.map(({ source, number }) => (
+						<ListItem>
+							<ListItemText secondary={source} />
+							<>
+								<Typography color="textSecondary">{number}</Typography>
+								<ButtonIcon icon={<PhoneIcon />} />
+							</>
 						</ListItem>
-        ))}
+					))}
+				</>
 			))}
 		</Section>
 	);

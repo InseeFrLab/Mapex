@@ -30,12 +30,13 @@
 	},
 	"scripts": {
 		"start": "react-scripts start",
-		"build": "react-scripts build",
+		"build": "npm run generate-entrypoint && react-scripts build",
 		"test": "react-scripts test",
 		"eject": "react-scripts eject",
 		"storybook": "start-storybook -p 6006 -s public",
 		"build-storybook": "build-storybook -o docs-build",
-		"prettier": "prettier --write src/**/*.js"
+		"prettier": "prettier --write src/**/*.js",
+		"generate-entrypoint": "node scripts/generate-entrypoint.js"
 	},
 	"eslintConfig": {
 		"extends": [

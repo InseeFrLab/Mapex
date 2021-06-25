@@ -17,5 +17,5 @@ spec:
           image: ddecrulle/mapex:latest
 
           env:
-           - name: PEARL_API_URL
-             value: 'https://pearljam-bo-demo.dev.insee.io'
+            - name: PEARL_API_URL
+              value: 'url'

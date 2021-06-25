@@ -7,9 +7,9 @@ metadata:
 spec:
   tls:
     - hosts:
-        - mapex-demo.dev.insee.io
+        - url
   rules:
-    - host: mapex-demo.dev.insee.io
+    - host: url
       http:
         paths:
           - path: /
