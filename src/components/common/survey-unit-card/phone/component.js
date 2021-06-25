@@ -10,12 +10,21 @@ import FavoriteBorderOutlinedIcon from '@material-ui/icons/FavoriteBorderOutline
 import ButtonIcon from '../../icon-button';
 import Typography from '@material-ui/core/Typography';
 import PhoneIcon from '@material-ui/icons/Phone';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles((theme) => ({
+	ListItem: {
+		paddingTop: 0,
+		paddingBottom: 0,
+	},
+}));
 
 const Phone = ({ phoneNumbers }) => {
+	const classes = useStyles();
 	return (
 		<Section title={D.phoneTitle}>
 			{phoneNumbers.map(({ source, favorite, number }) => (
-				<ListItem>
+				<ListItem className={classes.ListItem}>
 					<ListItemText secondary={source} />
 					<>
 						<Typography color="textSecondary">{number}</Typography>

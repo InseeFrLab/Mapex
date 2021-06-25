@@ -11,5 +11,6 @@ const Template = (args) => <Section {...args} />;
 export const Default = Template.bind({});
 
 Default.args = {
+	title: 'Titre',
 	children: null,
 };

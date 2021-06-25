@@ -8,11 +8,20 @@ import D from '../../../../dictionary/app/unit-card';
 import ButtonIcon from '../../icon-button';
 import Typography from '@material-ui/core/Typography';
 import PlaceIcon from '@material-ui/icons/Place';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles((theme) => ({
+	ListItem: {
+		paddingTop: 0,
+		paddingBottom: 0,
+	},
+}));
 
 const Place = ({ address }) => {
+	const classes = useStyles();
 	return (
 		<Section title={D.placeTitle}>
-			<ListItem>
+			<ListItem className={classes.ListItem}>
 				<ListItemText secondary={`${address.l4} ${address.l6}`} />
 				<ButtonIcon icon={<PlaceIcon />} />
 			</ListItem>

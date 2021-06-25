@@ -4,11 +4,20 @@ import ListItemText from '@material-ui/core/ListItemText';
 import ListItem from '@material-ui/core/ListItem';
 import Section from '../section';
 import D from '../../../../dictionary/app/unit-card';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles((theme) => ({
+	ListItem: {
+		paddingTop: 0,
+		paddingBottom: 0,
+	},
+}));
 
 const Note = ({ note }) => {
+	const classes = useStyles();
 	return (
 		<Section title={D.noteTitle}>
-			<ListItem>
+			<ListItem className={classes.ListItem}>
 				<ListItemText secondary={note} />
 			</ListItem>
 		</Section>

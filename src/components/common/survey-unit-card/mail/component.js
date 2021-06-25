@@ -7,11 +7,20 @@ import D from '../../../../dictionary/app/unit-card';
 
 import ButtonIcon from '../../icon-button';
 import MailIcon from '@material-ui/icons/Mail';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles((theme) => ({
+	ListItem: {
+		paddingTop: 0,
+		paddingBottom: 0,
+	},
+}));
 
 const Mail = ({ mail }) => {
+	const classes = useStyles();
 	return (
 		<Section title={D.mailTitle}>
-			<ListItem>
+			<ListItem className={classes.ListItem}>
 				<ListItemText secondary={mail} />
 				<ButtonIcon icon={<MailIcon />} />
 			</ListItem>
@@ -27,7 +36,7 @@ Mail.propTypes = {
 };
 
 Mail.defaultProps = {
-	mail: 'test@test.com'
+	mail: 'test@test.com',
 };
 
 export default Mail;
