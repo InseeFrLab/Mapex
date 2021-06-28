@@ -1,7 +1,7 @@
 const unitCard = {
-	phoneTitle: 'Téléphoner',
+	phoneTitle: 'Téléphone',
 	placeTitle: 'Adresse',
-	mailTitle: 'Adresse Mail',
+	mailTitle: 'Mail',
 	noteTitle: 'Note',
 	otherContactTitle: 'Autres Contacts',
 	listAction: {
