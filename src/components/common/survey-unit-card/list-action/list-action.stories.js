@@ -2,7 +2,7 @@ import React from 'react';
 import ListAction from './component';
 
 export default {
-	title: 'Components/ListAction',
+	title: 'Components/Section/ListAction',
 	component: ListAction,
 };
 

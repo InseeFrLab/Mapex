@@ -2,7 +2,7 @@ import React from 'react';
 import Place from './component';
 
 export default {
-	title: 'Components/SectionPlace',
+	title: 'Components/Section/Place',
 	component: Place,
 };
 
