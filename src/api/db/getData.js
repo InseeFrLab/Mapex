@@ -1,25 +1,22 @@
 import { getSurveyUnits, getUnit } from '../call';
-import React, { useState } from 'react';
 
-const getData = () => {
-	const [surveyUnits, setSurveyUnits] = useState({});
-	const [loadingInutile, setLoadingInutile] = useState(true); // A remplacer par une function tjs égale à true ?
-	const [loading, setLoading] = useState(true);
-	const [error, setError] = useState('');
-	const [surveyUnitsDetails, setSurveyUnitsDetails] = useState({});
-
-	getSurveyUnits({
-		setResult: setSurveyUnits,
-		setLoadingInutile,
-		setError,
-	}).then((r) => {
-		surveyUnits.map(({ id }) =>
-			getUnit(id, {
-				setResult: (ue) => setSurveyUnitsDetails({ ...surveyUnits, ue }),
-				setLoading,
-				setError,
-			})
-		);
-	});
-	return surveyUnitsDetails;
+export const getData = ({ setData, setLoading, setError }) => {
+	setLoading(true);
+	getSurveyUnits()
+		.then(async (surveyUnits) => {
+			const result = await Promise.all(
+				surveyUnits.map((basicUnit) =>
+					getUnit(basicUnit.id).then((r) => ({ ...r, ...basicUnit }))
+				)
+			);
+			return result;
+		})
+		.then((units) => {
+			setData(units);
+			setLoading(false);
+		})
+		.catch((e) => {
+			setError(`Errror : ${e}`);
+			setLoading(false);
+		});
 };
