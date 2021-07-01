@@ -6,7 +6,6 @@ import Section from '../section';
 import D from '../../../../dictionary/app/unit-card';
 
 import ButtonIcon from '../../icon-button';
-import Typography from '@material-ui/core/Typography';
 import PlaceIcon from '@material-ui/icons/Place';
 import { makeStyles } from '@material-ui/core/styles';
 

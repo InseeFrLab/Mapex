@@ -2,7 +2,7 @@ import React from 'react';
 import Phone from './component';
 
 export default {
-	title: 'Components/SectionPhone',
+	title: 'Components/Section/Phone',
 	component: Phone,
 };
 

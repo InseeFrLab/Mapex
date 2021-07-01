@@ -4,9 +4,8 @@ import ListItemText from '@material-ui/core/ListItemText';
 import ListItem from '@material-ui/core/ListItem';
 import Section from '../section';
 import D from '../../../../dictionary/app/unit-card';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import FavoriteBorderOutlinedIcon from '@material-ui/icons/FavoriteBorderOutlined';
-
+import StarIcon from '@material-ui/icons/Star';
+import StarBorderIcon from '@material-ui/icons/StarBorder';
 import ButtonIcon from '../../icon-button';
 import Typography from '@material-ui/core/Typography';
 import PhoneIcon from '@material-ui/icons/Phone';
@@ -31,7 +30,7 @@ const Phone = ({ phoneNumbers }) => {
 						<ButtonIcon icon={<PhoneIcon />} />
 						<ButtonIcon
 							icon={
-								favorite ? <FavoriteIcon /> : <FavoriteBorderOutlinedIcon />
+								favorite ? <StarIcon /> : <StarBorderIcon />
 							}
 						/>
 					</>

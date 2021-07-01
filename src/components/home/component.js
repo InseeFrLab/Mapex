@@ -4,7 +4,10 @@ import { makeStyles } from '@material-ui/core/styles';
 import ListUE from 'components/common/list-ue';
 
 const useStyles = makeStyles((theme) => ({
-	root: {},
+	root: {
+		position: 'relative',
+		marginBottom: '56px'
+	},
 }));
 
 const Home = () => {

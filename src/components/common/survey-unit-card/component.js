@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+
 import { makeStyles } from '@material-ui/core/styles';
 import Phone from './phone';
 import Place from './place';
@@ -25,7 +25,9 @@ import { Typography } from '@material-ui/core';
 import Divider from '@material-ui/core/Divider';
 
 const useStyles = makeStyles((theme) => ({
-	root: {},
+	root: {
+		marginBottom: '60px',
+	},
 	appBar: {},
 	title: {
 		flexGrow: 1,

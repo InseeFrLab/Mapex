@@ -2,7 +2,7 @@ import React from 'react';
 import Mail from './component';
 
 export default {
-	title: 'Components/SectionMail',
+	title: 'Components/Section/Mail',
 	component: Mail,
 };
 

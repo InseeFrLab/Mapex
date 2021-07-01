@@ -1,19 +1,15 @@
 import { SURVEY_UNITS, UNITS } from "./paths";
-const get = (url, { setResult, setLoading, setError }) =>
+
+const get = (url) =>
 	fetch(url)
 		.then((r) => {
 			if (r.ok) return r.json();
 			throw new Error('API failed');
 		})
-		.then((r) => {
-			setResult(r);
-			setLoading(false);
-		})
-		.catch((e) => {
-			setError(`${e}`);
-			setLoading(false);
+		.catch(()=> {
+			throw new Error(`Fetch error for ${url}`);
 		});
 
-export const getSurveyUnits = (setters) => get(`${SURVEY_UNITS}`,setters);
+export const getSurveyUnits = ()=>get(SURVEY_UNITS);
 
-export const getUnit = (id,setters) => get(`${UNITS}/${id}`, setters);
+export const getUnit = id => get(`${UNITS}/${id}`);

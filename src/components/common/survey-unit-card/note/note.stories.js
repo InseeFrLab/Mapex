@@ -2,7 +2,7 @@ import React from 'react';
 import Note from './component';
 
 export default {
-	title: 'Components/SectionNote',
+	title: 'Components/Section/Note',
 	component: Note,
 };
 
