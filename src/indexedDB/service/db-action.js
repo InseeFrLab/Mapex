@@ -7,10 +7,11 @@ export const setDataIntoDB = (tableName, data) => {
 
 const addOrUpdate = async (table, item) => {
 	if (item.id) {
+		console.log(item)
 		if ((await table.get(item.id)) === undefined) {
 			return table.add(item);
 		}
-		return table.update(item);  // todo error on update 
+		return table.update(item.id,item);
 	}
 	return 0;
 };
