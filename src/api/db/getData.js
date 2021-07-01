@@ -1,3 +1,4 @@
+import { setDataIntoDB } from 'indexedDB/service/db-action';
 import { getSurveyUnits, getUnit } from '../call';
 
 export const getData = ({ setData, setLoading, setError }) => {
@@ -12,7 +13,7 @@ export const getData = ({ setData, setLoading, setError }) => {
 			return result;
 		})
 		.then((units) => {
-			setData(units);
+			setDataIntoDB("surveyUnit",units)
 			setLoading(false);
 		})
 		.catch((e) => {

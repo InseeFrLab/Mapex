@@ -1,14 +1,19 @@
 import db from '../db';
 
-const addOrUpdate = async (name,item) => {
+export const setDataIntoDB = (tableName, data) => {
+	data.map((unit) => {
+		const table = db.table(tableName);
+		addOrUpdate(table, unit);
+	});
+};
+
+const addOrUpdate = async (table, item) => {
 	if (item.id) {
-		if ((await db.name.get(item.id)) === undefined) {
-			return db.name.add(item);
+		if ((await table.get(item.id)) === undefined) {
+			console.log(item);
+			return table.add(item);
 		}
-		return db.name.update(item);
+		return table.update(item);
 	}
 	return 0;
 };
-
-
-

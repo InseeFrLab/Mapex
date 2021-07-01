@@ -1,8 +1,10 @@
 import Dexie from 'dexie';
 import schema from './schema.json';
 
-const db = new Dexie('Mapex');
+export const initDb = () => {
+	const db = new Dexie('Mapex');
+	db.version(1).stores(schema);
+	return db;
+};
 
-db.version(1).stores(schema);
-
-export default db;
+export default initDb;
