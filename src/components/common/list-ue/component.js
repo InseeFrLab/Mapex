@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import UE from '../ue';
 import Divider from '@material-ui/core/Divider';
+import { getFavoriteNumber, getPrivilegedPerson } from 'utils/surveyUnit';
 
 // https://codesandbox.io/s/5wqo7z2np4 for loading data
 
@@ -21,32 +22,28 @@ const useStyles = makeStyles((theme) => ({
 
 const ListUE = ({ contentUE }) => {
 	const classes = useStyles();
+
 	return (
 		<List className={classes.root}>
-			{contentUE.map(
-				({
-					firstName,
-					lastName,
-					phone,
-					street,
-					zipCity,
-					idCampaign,
-					isFavorite,
-				}) => (
+			{contentUE.map(({ address, campaign, isFavorite, href, persons }) => {
+				const privilegPerson = getPrivilegedPerson(persons);
+				const phone = getFavoriteNumber(privilegPerson.phoneNumbers);
+				return (
 					<>
 						<UE
-							firstName={firstName}
-							lastName={lastName}
+							firstName={privilegPerson.firstName}
+							lastName={privilegPerson.lastName}
 							phone={phone}
-							street={street}
-							zipCity={zipCity}
-							idCampaign={idCampaign}
+							street={address.l4}
+							zipCity={address.l6}
+							idCampaign={campaign}
 							isFavorite={isFavorite}
+							href={href}
 						/>
 						<Divider variant="middle" />
 					</>
-				)
-			)}
+				);
+			})}
 		</List>
 	);
 };
