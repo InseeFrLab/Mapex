@@ -1,10 +1,10 @@
 import { setDataIntoDB } from 'indexedDB/service/db-action';
-import { getSurveyUnits, getUnit } from '../call';
+import { getSurveyUnitsAPI, getUnit } from '../call';
 import D from '../../dictionary/db';
 
 export const getDataFromAPI = ({ setLoading, setError }) => {
 	setLoading(true);
-	getSurveyUnits()
+	getSurveyUnitsAPI()
 		.then(async (surveyUnits) => {
 			const result = await Promise.all(
 				surveyUnits.map((basicUnit) =>

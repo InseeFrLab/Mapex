@@ -10,6 +10,6 @@ const get = (url) =>
 			throw new Error(`Fetch error for ${url}`);
 		});
 
-export const getSurveyUnits = ()=>get(SURVEY_UNITS);
+export const getSurveyUnitsAPI = ()=>get(SURVEY_UNITS);
 
 export const getUnit = id => get(`${UNITS}/${id}`);

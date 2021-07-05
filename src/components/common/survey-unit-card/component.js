@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { makeStyles } from '@material-ui/core/styles';
 import Phone from './phone';
@@ -23,6 +23,8 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import FavoriteBorderOutlinedIcon from '@material-ui/icons/FavoriteBorderOutlined';
 import { Typography } from '@material-ui/core';
 import Divider from '@material-ui/core/Divider';
+import { getById } from '../../../indexedDB/service/db-action';
+import D from '../../../dictionary/db';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -37,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 	icons: {
 		textAlign: 'center',
-		paddingTop: '0.3em'
+		paddingTop: '0.3em',
 	},
 }));
 
@@ -45,7 +47,11 @@ const SurveyUnitCard = () => {
 	const classes = useStyles();
 	const isFavorite = true;
 	const { id } = useParams();
+	const [surveyUnit, setSurveyUnit] = useState([]);
 
+	useEffect(() => {
+		getById(D.surveyUnitDB, id).then((unit) => setSurveyUnit(unit));
+	}, [id]);
 
 	return (
 		<div className={classes.root}>
@@ -66,11 +72,11 @@ const SurveyUnitCard = () => {
 				</Toolbar>
 			</AppBar>
 			<div className={classes.icons}>
-				<ButtonIcon icon={<PhoneIcon />} color='inherit'/>
-				<ButtonIcon icon={<MessageIcon />} color='inherit'/>
-				<ButtonIcon icon={<MailIcon />} color='inherit'/>
-				<ButtonIcon icon={<EventIcon />} color='inherit'/>
-				<ButtonIcon icon={<PlaceIcon />} color='inherit'/>
+				<ButtonIcon icon={<PhoneIcon />} color="inherit" />
+				<ButtonIcon icon={<MessageIcon />} color="inherit" />
+				<ButtonIcon icon={<MailIcon />} color="inherit" />
+				<ButtonIcon icon={<EventIcon />} color="inherit" />
+				<ButtonIcon icon={<PlaceIcon />} color="inherit" />
 				<Divider />
 			</div>
 
@@ -84,10 +90,8 @@ const SurveyUnitCard = () => {
 	);
 };
 
-SurveyUnitCard.propTypes = {
-};
+SurveyUnitCard.propTypes = {};
 
-SurveyUnitCard.defaultProps = {
-};
+SurveyUnitCard.defaultProps = {};
 
 export default SurveyUnitCard;
