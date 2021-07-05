@@ -4,7 +4,10 @@ import { makeStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import UE from '../ue';
 import Divider from '@material-ui/core/Divider';
-import { getFavoriteNumber, getPrivilegedPerson } from 'utils/surveyUnit';
+import {
+	getFavoriteNumber,
+	getPrivilegedPerson,
+} from '../../../utils/surveyUnit';
 
 // https://codesandbox.io/s/5wqo7z2np4 for loading data
 
@@ -31,8 +34,8 @@ const ListUE = ({ contentUE }) => {
 				return (
 					<>
 						<UE
-							firstName={privilegPerson.firstName}
-							lastName={privilegPerson.lastName}
+							firstName={privilegPerson && privilegPerson.firstName}
+							lastName={privilegPerson && privilegPerson.lastName}
 							phone={phone}
 							street={address.l4}
 							zipCity={address.l6}
