@@ -44,11 +44,12 @@ const UE = ({
 	zipCity,
 	idCampaign,
 	isFavorite,
+	href,
 }) => {
 	const classes = useStyles();
 
 	return (
-		<List className={classes.root}>
+		<List className={classes.root} href={href}>
 			<ListItem>
 				<ListSubheader disableSticky={true}>{idCampaign}</ListSubheader>
 				<ListItemSecondaryAction>
@@ -118,6 +119,10 @@ UE.propTypes = {
 	 * Booleen to indicate if units has been added to a favorite list
 	 */
 	isFavorite: PropTypes.bool,
+	/**
+	 * ref to the unit-cart
+	 */
+	href: PropTypes.string,
 };
 
 UE.defaultProps = {
@@ -128,5 +133,6 @@ UE.defaultProps = {
 	zipCity: '59 000 Lille',
 	idCampaign: 'log-2020-x00',
 	isFavorite: false,
+	href: '/11',
 };
 export default UE;

@@ -1,7 +1,8 @@
 import { setDataIntoDB } from 'indexedDB/service/db-action';
 import { getSurveyUnits, getUnit } from '../call';
+import D from '../../dictionary/db';
 
-export const getData = ({ setData, setLoading, setError }) => {
+export const getDataFromAPI = ({ setLoading, setError }) => {
 	setLoading(true);
 	getSurveyUnits()
 		.then(async (surveyUnits) => {
@@ -13,7 +14,7 @@ export const getData = ({ setData, setLoading, setError }) => {
 			return result;
 		})
 		.then((units) => {
-			setDataIntoDB("surveyUnit",units)
+			setDataIntoDB(D.surveyUnitDB, units);
 			setLoading(false);
 		})
 		.catch((e) => {
