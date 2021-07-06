@@ -22,7 +22,7 @@ const Place = ({ address }) => {
 		<Section title={D.placeTitle}>
 			<ListItem className={classes.ListItem}>
 				<ListItemText secondary={`${address.l4} ${address.l6}`} />
-				<ButtonIcon icon={<PlaceIcon />} />
+				<ButtonIcon icon={<PlaceIcon />} href={`https://www.google.com/maps/dir/?api=1&destination=${address.l4}+${address.l6}`}/>
 			</ListItem>
 		</Section>
 	);

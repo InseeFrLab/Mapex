@@ -27,7 +27,7 @@ const Phone = ({ phoneNumbers }) => {
 					<ListItemText secondary={source} />
 					<>
 						<Typography color="textSecondary">{number}</Typography>
-						<ButtonIcon icon={<PhoneIcon />} />
+						<ButtonIcon icon={<PhoneIcon />} href={`tel:${number}`}/>
 						<ButtonIcon
 							icon={
 								favorite ? <StarIcon /> : <StarBorderIcon />

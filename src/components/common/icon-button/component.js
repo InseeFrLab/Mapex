@@ -8,6 +8,7 @@ const ButtonIcon = ({
 	color,
 	disabled,
 	handleChange,
+	target,
 	...props
 }) => {
 	return (
@@ -16,6 +17,7 @@ const ButtonIcon = ({
 			color={color}
 			onClick={handleChange}
 			disabled={disabled}
+			target={target}
 			{...props}
 		>
 			{icon}
@@ -44,12 +46,17 @@ ButtonIcon.propTypes = {
 	 * ButtonIcon has to be disabled or not
 	 */
 	disabled: PropTypes.bool,
+	/**
+	 * ta
+	 */
+	target: PropTypes.string
 };
 
 ButtonIcon.defaultProps = {
 	icon: null,
 	className: '',
 	color: 'default',
+	target: '_blank',
 	handleChange: () => {},
 };
 

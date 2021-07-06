@@ -45,11 +45,12 @@ const UE = ({
 	idCampaign,
 	isFavorite,
 	href,
+	MyLink
 }) => {
 	const classes = useStyles();
 
 	return (
-		<List className={classes.root} href={href}>
+		<List className={classes.root} href={href} component={MyLink}>
 			<ListItem>
 				<ListSubheader disableSticky={true}>{idCampaign}</ListSubheader>
 				<ListItemSecondaryAction>
@@ -68,7 +69,9 @@ const UE = ({
 				<ListItemText>{`${firstName} ${lastName}`}</ListItemText>
 				<ListItem
 					button
+					component="a"
 					href={`tel:${phone}`}
+					target="_blank"
 					className={`${classes.rightAlignText} ${classes.phone}`}
 				>
 					<ListItemIcon className={classes.icon}>
@@ -77,7 +80,13 @@ const UE = ({
 					<ListItemText className={classes.phone}>{phone}</ListItemText>
 				</ListItem>
 			</ListItem>
-			<ListItem button className={classes.row}>
+			<ListItem
+				button
+				component="a"
+				target="_blank"
+				href={`https://www.google.com/maps/dir/?api=1&destination=${street}+${zipCity}`}
+				className={classes.row}
+			>
 				<ListItemIcon className={classes.icon}>
 					<PlaceIcon />
 				</ListItemIcon>
@@ -120,19 +129,19 @@ UE.propTypes = {
 	 */
 	isFavorite: PropTypes.bool,
 	/**
-	 * ref to the unit-cart
+	 * Link to the unit-cart
 	 */
-	href: PropTypes.string,
+	MyLink: PropTypes.element,
 };
 
 UE.defaultProps = {
-	firstName: 'Camille',
-	lastName: 'Backer',
-	phone: '06 00 00 00 00',
-	street: "1 Rue de l'église",
-	zipCity: '59 000 Lille',
-	idCampaign: 'log-2020-x00',
+	firstName: '',
+	lastName: '',
+	phone: '',
+	street: '',
+	zipCity: '',
+	idCampaign: '',
 	isFavorite: false,
-	href: '/11',
+	MyLink : null,
 };
 export default UE;
