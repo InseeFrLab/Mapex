@@ -22,7 +22,7 @@ const Mail = ({ mail }) => {
 		<Section title={D.mailTitle}>
 			<ListItem className={classes.ListItem}>
 				<ListItemText secondary={mail} />
-				<ButtonIcon icon={<MailIcon />} />
+				<ButtonIcon icon={<MailIcon />} href={`mailto:${mail}`}/>
 			</ListItem>
 		</Section>
 	);

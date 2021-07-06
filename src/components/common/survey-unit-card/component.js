@@ -25,6 +25,10 @@ import { Typography } from '@material-ui/core';
 import Divider from '@material-ui/core/Divider';
 import { getById } from '../../../indexedDB/service/db-action';
 import D from '../../../dictionary/db';
+import {
+	getPrivilegedPerson,
+	getFavoriteNumber,
+} from 'utils/survey-unit/surveyUnit';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -45,13 +49,24 @@ const useStyles = makeStyles((theme) => ({
 
 const SurveyUnitCard = () => {
 	const classes = useStyles();
-	const isFavorite = true;
+	const isFavorite = false; // TODO Favorite stored into DB ? 
 	const { id } = useParams();
 	const [surveyUnit, setSurveyUnit] = useState([]);
+	const [loading, setLoading] = useState(true);
+	const [privilegPerson, setPrivilegPerson] = useState({});
+	const [favoritePhone, setFavoritePhone] = useState('');
 
 	useEffect(() => {
-		getById(D.surveyUnitDB, id).then((unit) => setSurveyUnit(unit));
+		getById(D.surveyUnitDB, id).then((unit) => {
+			setSurveyUnit(unit);
+			setPrivilegPerson(getPrivilegedPerson(unit.persons));
+			setLoading(false);
+		});
 	}, [id]);
+
+	useEffect(() => {
+		setFavoritePhone(getFavoriteNumber(privilegPerson.phoneNumbers));
+	}, [privilegPerson]);
 
 	return (
 		<div className={classes.root}>
@@ -62,7 +77,9 @@ const SurveyUnitCard = () => {
 						className={classes.buttonTopRight}
 						icon={<NavigateBeforeIcon />}
 					/>
-					<Typography className={classes.title}>Nom Prénom</Typography>
+					<Typography className={classes.title}>{`${
+						privilegPerson && privilegPerson.firstName
+					} ${privilegPerson && privilegPerson.lastName}`}</Typography>
 					<ButtonIcon
 						color="inherit"
 						icon={
@@ -72,19 +89,35 @@ const SurveyUnitCard = () => {
 				</Toolbar>
 			</AppBar>
 			<div className={classes.icons}>
-				<ButtonIcon icon={<PhoneIcon />} color="inherit" />
+				<ButtonIcon
+					icon={<PhoneIcon />}
+					href={`tel:${favoritePhone}`}
+					color="inherit"
+				/>
 				<ButtonIcon icon={<MessageIcon />} color="inherit" />
-				<ButtonIcon icon={<MailIcon />} color="inherit" />
+				<ButtonIcon icon={<MailIcon />} color="inherit" href={`mailto:${privilegPerson.email}`}/>
 				<ButtonIcon icon={<EventIcon />} color="inherit" />
-				<ButtonIcon icon={<PlaceIcon />} color="inherit" />
+				<ButtonIcon
+					icon={<PlaceIcon />}
+					href={`https://www.google.com/maps/dir/?api=1&destination=${
+						!loading && surveyUnit.address.l4
+					}+${!loading && surveyUnit.address.l6}`}
+					color="inherit"
+				/>
 				<Divider />
 			</div>
 
-			<Phone />
-			<Place />
-			<Mail />
+			<Phone phoneNumbers={!loading ? privilegPerson.phoneNumbers : []} />
+			<Place address={!loading && surveyUnit.address} />
+			<Mail mail={!loading && privilegPerson.email} />
 			<Note />
-			<OtherContact />
+			<OtherContact
+				otherPersons={
+					!loading
+						? surveyUnit.persons.filter((p) => p.id !== privilegPerson.id)
+						: []
+				}
+			/>
 			<ListAction />
 		</div>
 	);

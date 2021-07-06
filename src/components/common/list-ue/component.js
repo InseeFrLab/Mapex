@@ -8,10 +8,12 @@ import {
 	getFavoriteNumber,
 	getPrivilegedPerson,
 } from '../../../utils/survey-unit/surveyUnit';
+import { Link } from 'react-router-dom';
 
 // https://codesandbox.io/s/5wqo7z2np4 for loading data
 // TODO :
 // Include control about data. Don't show default value exept in storybook
+// Better implent of Link's css 
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -23,17 +25,27 @@ const useStyles = makeStyles((theme) => ({
 	inline: {
 		display: 'inline',
 	},
+	link: {
+		color: 'inherit',
+		textDecoration: 'inherit',
+	},
 }));
 
 const ListUE = ({ contentUE }) => {
 	const classes = useStyles();
 	return (
 		<List className={classes.root}>
-			{contentUE.map(({ address, campaign, isFavorite, href, persons }) => {
+			{contentUE.map(({ id, address, campaign, isFavorite, persons }) => {
 				const privilegPerson = getPrivilegedPerson(persons);
-				console.log("icici")
 				const phone = getFavoriteNumber(
 					privilegPerson && privilegPerson.phoneNumbers
+				);
+				const MyLink = (props) => (
+					<Link
+						to={`/${id}`}
+						{...props}
+						style={{ color: 'inherit', textDecoration: 'inherit' }}
+					/>
 				);
 				return (
 					<>
@@ -45,7 +57,7 @@ const ListUE = ({ contentUE }) => {
 							zipCity={address && address.l6}
 							idCampaign={campaign}
 							isFavorite={isFavorite}
-							href={href}
+							MyLink={MyLink}
 						/>
 						<Divider variant="middle" />
 					</>
