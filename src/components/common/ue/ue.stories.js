@@ -8,5 +8,9 @@ export default {
 
 const Template = (args) => <UE {...args} />;
 
+const mock = {
+	firstName: 'toto',
+};
+
 export const Default = Template.bind({});
-Default.args = {};
+Default.args = { ...mock };

@@ -70,6 +70,7 @@ const UE = ({
 					button
 					component="a"
 					href={`tel:${phone}`}
+					target="_blank"
 					className={`${classes.rightAlignText} ${classes.phone}`}
 				>
 					<ListItemIcon className={classes.icon}>

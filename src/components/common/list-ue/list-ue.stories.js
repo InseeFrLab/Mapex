@@ -1,5 +1,6 @@
 import React from 'react';
 import ListUE from './component';
+import { listUE } from 'data-mock';
 
 export default {
 	title: 'Components/ListUE',
@@ -8,5 +9,5 @@ export default {
 
 const Template = (args) => <ListUE {...args} />;
 
-export const Default = Template.bind({});
+export const Default = Template.bind({ content: listUE });
 Default.args = {};

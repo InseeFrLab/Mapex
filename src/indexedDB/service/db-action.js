@@ -23,4 +23,3 @@ export const getById = (tableName, id) => {
 export const getAll = (tableName) => {
 	return db.table(tableName).toArray();
 };
-
