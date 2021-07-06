@@ -9,9 +9,8 @@ import {
 	getPrivilegedPerson,
 } from '../../../utils/survey-unit/surveyUnit';
 
-
 // https://codesandbox.io/s/5wqo7z2np4 for loading data
-// TODO : 
+// TODO :
 // Include control about data. Don't show default value exept in storybook
 
 const useStyles = makeStyles((theme) => ({
@@ -28,13 +27,14 @@ const useStyles = makeStyles((theme) => ({
 
 const ListUE = ({ contentUE }) => {
 	const classes = useStyles();
-
 	return (
 		<List className={classes.root}>
 			{contentUE.map(({ address, campaign, isFavorite, href, persons }) => {
-
 				const privilegPerson = getPrivilegedPerson(persons);
-				const phone = getFavoriteNumber(privilegPerson && privilegPerson.phoneNumbers);
+				console.log("icici")
+				const phone = getFavoriteNumber(
+					privilegPerson && privilegPerson.phoneNumbers
+				);
 				return (
 					<>
 						<UE
@@ -63,7 +63,7 @@ ListUE.propTypes = {
 };
 
 ListUE.defaultProps = {
-	contentUE: [{}, {}, {}, {}, {}],
+	contentUE: [],
 };
 
 export default ListUE;
