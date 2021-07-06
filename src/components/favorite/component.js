@@ -1,6 +1,6 @@
 import ButtonUI from 'components/common/button';
 import React, { useState } from 'react';
-import { getDataFromAPI } from 'api';
+import API from 'api';
 
 const Favorite = () => {
 	const [loading, setLoading] = useState(false);
@@ -8,7 +8,7 @@ const Favorite = () => {
 
 	const onClick = () => {
 		setLoading(true);
-		getDataFromAPI({ setError }).then(() => {
+		API.getDataFromAPI({ setError }).then(() => {
 			setLoading(false);
 		});
 	};

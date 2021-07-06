@@ -27,11 +27,11 @@ const useStyles = makeStyles((theme) => ({
 
 const ListUE = ({ contentUE }) => {
 	const classes = useStyles();
-
 	return (
 		<List className={classes.root}>
 			{contentUE.map(({ address, campaign, isFavorite, href, persons }) => {
 				const privilegPerson = getPrivilegedPerson(persons);
+				console.log("icici")
 				const phone = getFavoriteNumber(
 					privilegPerson && privilegPerson.phoneNumbers
 				);

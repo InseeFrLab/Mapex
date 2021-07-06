@@ -139,7 +139,6 @@ UE.defaultProps = {
 	street: "1 Rue de l'église",
 	zipCity: '59 000 Lille',
 	idCampaign: 'log-2020-x00',
-	isFavorite: false,
-	href: '/11',
+	isFavorite: false
 };
 export default UE;
