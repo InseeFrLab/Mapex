@@ -68,6 +68,7 @@ const UE = ({
 				<ListItemText>{`${firstName} ${lastName}`}</ListItemText>
 				<ListItem
 					button
+					component="a"
 					href={`tel:${phone}`}
 					className={`${classes.rightAlignText} ${classes.phone}`}
 				>
@@ -77,7 +78,12 @@ const UE = ({
 					<ListItemText className={classes.phone}>{phone}</ListItemText>
 				</ListItem>
 			</ListItem>
-			<ListItem button className={classes.row}>
+			<ListItem
+				button
+				component="a"
+				href={`https://www.google.com/maps/dir/?api=1&destination=${street}+${zipCity}`}
+				className={classes.row}
+			>
 				<ListItemIcon className={classes.icon}>
 					<PlaceIcon />
 				</ListItemIcon>
