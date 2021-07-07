@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import List from '@material-ui/core/List';
 import ListSubheader from '@material-ui/core/ListSubheader';
-import ListItem from '@material-ui/core/ListItem';
 import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -10,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
 	paper: {
 		borderRadius: 10,
 		margin: '0.5em auto',
-		backgroundColor: '#EAEAEA',
+		backgroundColor: 'rgba(234, 234, 234, 0.38)',
 	},
 	title: {
 		color: 'inherit',
@@ -18,18 +17,20 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
-const Section = ({ title, children, ...props }) => {
+const Section = ({ title, children }) => {
 	const classes = useStyles();
 	return (
 		<Paper className={classes.paper}>
 			<List
 				subheader={
-					<ListSubheader className={classes.title} >
-						{title}
-					</ListSubheader>
+					title && (
+						<ListSubheader className={classes.title} disableSticky={true}>
+							{title}
+						</ListSubheader>
+					)
 				}
 			>
-				<ListItem>{children}</ListItem>
+				{children}
 			</List>
 		</Paper>
 	);
@@ -47,8 +48,9 @@ Section.propTypes = {
 };
 
 Section.defaultProps = {
-	title: 'Titre',
+	title: '',
 	children: null,
+	dense: false,
 };
 
 export default Section;
