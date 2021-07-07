@@ -7,7 +7,7 @@ import OtherContact from './other-contact';
 import ListAction from './list-action';
 import Mail from './mail';
 import Note from './note';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 
 import PlaceIcon from '@material-ui/icons/Place';
 import PhoneIcon from '@material-ui/icons/Phone';
@@ -23,8 +23,10 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import FavoriteBorderOutlinedIcon from '@material-ui/icons/FavoriteBorderOutlined';
 import { Typography } from '@material-ui/core';
 import Divider from '@material-ui/core/Divider';
-import { getById } from '../../../indexedDB/service/db-action';
-import D from '../../../dictionary/db';
+import { getById } from 'indexedDB/service/db-action';
+import D from 'dictionary/db';
+import DCalendar from 'dictionary/app/calendar';
+
 import {
 	getPrivilegedPerson,
 	getFavoriteNumber,
@@ -49,24 +51,50 @@ const useStyles = makeStyles((theme) => ({
 
 const SurveyUnitCard = () => {
 	const classes = useStyles();
-	const isFavorite = false; // TODO Favorite stored into DB ? 
+	const isFavorite = false; // TODO Favorite stored into DB ?
 	const { id } = useParams();
+	const history = useHistory();
 	const [surveyUnit, setSurveyUnit] = useState([]);
 	const [loading, setLoading] = useState(true);
 	const [privilegPerson, setPrivilegPerson] = useState({});
 	const [favoritePhone, setFavoritePhone] = useState('');
+	const [error, setError] = useState('');
 
 	useEffect(() => {
 		getById(D.surveyUnitDB, id).then((unit) => {
-			setSurveyUnit(unit);
-			setPrivilegPerson(getPrivilegedPerson(unit.persons));
-			setLoading(false);
+			if (unit) {
+				setSurveyUnit(unit);
+				setPrivilegPerson(getPrivilegedPerson(unit.persons));
+				setLoading(false);
+			} else {
+				setError('No unit found');
+			}
 		});
 	}, [id]);
+
+	useEffect(() => {}, [surveyUnit]);
 
 	useEffect(() => {
 		setFavoritePhone(getFavoriteNumber(privilegPerson.phoneNumbers));
 	}, [privilegPerson]);
+
+	if (error) return <div>{error}</div>;
+
+	const goToPreviousPath = () => {
+		history.goBack();
+	};
+
+	const makeGoogleCalendarUrl = () => {
+		if (!loading) {
+			const baseUrl = 'http://www.google.com/calendar/event?action=TEMPLATE';
+
+			const eventName = `${DCalendar.eventName} ${privilegPerson.firstName} ${privilegPerson.lastName}`;
+			const location = `${surveyUnit.address.l4} ${surveyUnit.address.l6}`;
+			const details = 'Add the link of the UE on APP';
+
+			return `${baseUrl}&text=${eventName}&location=${location}&details=${details}`;
+		}
+	};
 
 	return (
 		<div className={classes.root}>
@@ -76,6 +104,7 @@ const SurveyUnitCard = () => {
 						color="inherit"
 						className={classes.buttonTopRight}
 						icon={<NavigateBeforeIcon />}
+						onClick={goToPreviousPath}
 					/>
 					<Typography className={classes.title}>{`${
 						privilegPerson && privilegPerson.firstName
@@ -94,9 +123,21 @@ const SurveyUnitCard = () => {
 					href={`tel:${favoritePhone}`}
 					color="inherit"
 				/>
-				<ButtonIcon icon={<MessageIcon />} color="inherit" />
-				<ButtonIcon icon={<MailIcon />} color="inherit" href={`mailto:${privilegPerson.email}`}/>
-				<ButtonIcon icon={<EventIcon />} color="inherit" />
+				<ButtonIcon
+					icon={<MessageIcon />}
+					href={`sms:${favoritePhone}&body=corpsMessageaajouter`}
+					color="inherit"
+				/>
+				<ButtonIcon
+					icon={<MailIcon />}
+					color="inherit"
+					href={`mailto:${privilegPerson.email}`}
+				/>
+				<ButtonIcon
+					icon={<EventIcon />}
+					color="inherit"
+					href={makeGoogleCalendarUrl()}
+				/>
 				<ButtonIcon
 					icon={<PlaceIcon />}
 					href={`https://www.google.com/maps/dir/?api=1&destination=${
@@ -118,7 +159,10 @@ const SurveyUnitCard = () => {
 						: []
 				}
 			/>
-			<ListAction />
+			<ListAction
+				hrefSms={`sms:${favoritePhone}&body=corpsMessageaajouter`}
+				hrefCalendar={makeGoogleCalendarUrl()}
+			/>
 		</div>
 	);
 };

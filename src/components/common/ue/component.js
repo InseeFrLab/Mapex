@@ -44,13 +44,12 @@ const UE = ({
 	zipCity,
 	idCampaign,
 	isFavorite,
-	href,
-	MyLink
+	MyLink,
 }) => {
 	const classes = useStyles();
 
 	return (
-		<List className={classes.root} href={href} component={MyLink}>
+		<List className={classes.root} component={MyLink}>
 			<ListItem>
 				<ListSubheader disableSticky={true}>{idCampaign}</ListSubheader>
 				<ListItemSecondaryAction>
@@ -72,6 +71,7 @@ const UE = ({
 					component="a"
 					href={`tel:${phone}`}
 					target="_blank"
+					onClick={(e) => e.preventDefault()}
 					className={`${classes.rightAlignText} ${classes.phone}`}
 				>
 					<ListItemIcon className={classes.icon}>
@@ -142,6 +142,6 @@ UE.defaultProps = {
 	zipCity: '',
 	idCampaign: '',
 	isFavorite: false,
-	MyLink : null,
+	MyLink: null,
 };
 export default UE;
