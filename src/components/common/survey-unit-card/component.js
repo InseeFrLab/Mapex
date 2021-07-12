@@ -106,9 +106,11 @@ const SurveyUnitCard = () => {
 						icon={<NavigateBeforeIcon />}
 						onClick={goToPreviousPath}
 					/>
-					<Typography className={classes.title}>{`${
-						privilegPerson && privilegPerson.firstName
-					} ${privilegPerson && privilegPerson.lastName}`}</Typography>
+					<div className={classes.title}>
+						<h1>{`${privilegPerson && privilegPerson.firstName} ${
+							privilegPerson && privilegPerson.lastName
+						}`}</h1>
+					</div>
 					<ButtonIcon
 						color="inherit"
 						icon={
