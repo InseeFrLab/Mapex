@@ -13,6 +13,8 @@ import CloseIcon from '@material-ui/icons/Close';
 import D from 'dictionary/app/order-filter';
 import Order from './order';
 import Survey from './survey';
+import Priority from './priority';
+import ListFavorite from './favorite';
 
 // TODO get the labels of keys into db with properties
 
@@ -41,13 +43,16 @@ const useStyles = makeStyles((theme) => ({
 	buttonClose: {
 		flexBasis: 'calc(100% / 3)',
 		justifyContent: 'left',
+		'&:hover': {
+			backgroundColor: 'transparent',
+		},
 	},
 	item: {
 		justifyContent: 'center',
 	},
 }));
 
-const OrderFilter = (campaigns) => {
+const OrderFilter = ({ campaigns, setOpen }) => {
 	const classes = useStyles();
 
 	// const [loading, setLoading] = useState(true);
@@ -64,7 +69,12 @@ const OrderFilter = (campaigns) => {
 		<Paper className={classes.paper}>
 			<List className={classes.list}>
 				<ListItem className={classes.top}>
-					<ButtonIcon className={classes.buttonClose} icon={<CloseIcon />} />
+					<ButtonIcon
+						className={classes.buttonClose}
+						icon={<CloseIcon />}
+						disableRipple={true}
+						onClick={() => setOpen(false)}
+					/>
 					<Typography className={classes.itemTitle}>{D.title}</Typography>
 				</ListItem>
 				<Divider variant="fullWidth" />
@@ -73,8 +83,15 @@ const OrderFilter = (campaigns) => {
 				</ListItem>
 				<Divider variant="middle" />
 				<ListItem>
-					<Survey campaigns={campaigns}/>
-					<Divider />
+					<Survey campaigns={campaigns} />
+				</ListItem>
+				<Divider />
+				<ListItem>
+					<Priority />
+				</ListItem>
+				<Divider />
+				<ListItem>
+					<ListFavorite />
 				</ListItem>
 			</List>
 		</Paper>
@@ -87,6 +104,5 @@ OrderFilter.propTypes = {
 	 */
 	campaigns: PropTypes.array,
 };
-
 
 export default OrderFilter;

@@ -8,31 +8,25 @@ import D from 'dictionary/app/order-filter';
 
 // TODO -> Include checkbox labels into dictionnary
 
-const Order = () => {
+const ListFavorite = () => {
 	return (
-		<Item title={D.orderLabel}>
-			<FormGroup row>
+		<Item title={D.favoriteLabel}>
+			<FormGroup column>
 				<FormControlLabel
 					control={<Checkbox  />}
-					label="Priorité"
+					label="Favoris 1"
 				/>
 				<FormControlLabel
 					control={<Checkbox  />}
-					label="Enquête"
+					label="Favoris 2"
 				/>
 				<FormControlLabel
 					control={<Checkbox  />}
-					label="Sous-échantillon"
-				/>
-				<FormControlLabel control={<Checkbox  />} label="Nom" />
-				<FormControlLabel control={<Checkbox  />} label="Ville" />
-				<FormControlLabel
-					control={<Checkbox  />}
-					label="État de l'UE"
+					label="Favoris 3"
 				/>
 			</FormGroup>
 		</Item>
 	);
 };
 
-export default Order;
+export default ListFavorite;

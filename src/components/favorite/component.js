@@ -18,7 +18,6 @@ const Favorite = () => {
 
 	const onClick2 = () => {
 		getValuesOfKey(D.surveyUnitDB, 'campaign').then((camp) => {
-			console.log(camp);
 			setCampaign(camp);
 		});
 	};

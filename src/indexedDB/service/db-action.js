@@ -7,7 +7,6 @@ export const setDataIntoDB = (tableName, data) => {
 
 const addOrUpdate = async (table, item) => {
 	if (item.id) {
-		console.log(item);
 		if ((await table.get(item.id)) === undefined) {
 			return table.add(item);
 		}

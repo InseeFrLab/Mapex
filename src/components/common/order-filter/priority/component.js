@@ -5,21 +5,16 @@ import Checkbox from '@material-ui/core/Checkbox';
 import Item from '../item';
 import D from 'dictionary/app/order-filter';
 
-const Survey = ({ campaigns }) => {
+// TODO -> Include checkbox labels into dictionnary
+
+const Priority = () => {
 	return (
-		<Item title={D.surveyLabel}>
+		<Item title={D.priorityLabel}>
 			<FormGroup row>
-				{campaigns.map((label) => {
-					return (
-						<FormControlLabel
-							control={<Checkbox defaultChecked />}
-							label={label}
-						/>
-					);
-				})}
+				<FormControlLabel control={<Checkbox defaultChecked />} label="Oui" />
 			</FormGroup>
 		</Item>
 	);
 };
 
-export default Survey;
+export default Priority;

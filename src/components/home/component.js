@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import ListUE from 'components/common/list-ue';
 import { getAll } from 'indexedDB/service/db-action';
 import D from '../../dictionary/db';
+import { getValuesOfKey } from 'indexedDB/service/db-action';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -15,21 +16,32 @@ const useStyles = makeStyles((theme) => ({
 const Home = () => {
 	const [surveyUnits, setSurveyUnits] = useState([]);
 	const [loading, setLoading] = useState(true);
+	const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 	// const [firstRender, setFirstRender] = useState(true);
 	const classes = useStyles();
 
+	const [campaigns, setCampaigns] = useState([]);
+
 	useEffect(() => {
-		getAll(D.surveyUnitDB).then((units) => {
-			setSurveyUnits(units);
-			setLoading(false);
-		});
+		Promise.all([
+			getAll(D.surveyUnitDB).then((units) => {
+				setSurveyUnits(units);
+			}),
+			getValuesOfKey(D.surveyUnitDB, 'campaign').then((camp) => {
+				setCampaigns(camp);
+			}),
+		]).then(setLoading(false));
 	}, []);
 
 	if (loading) return <div>{"I'm loading dude"}</div>;
 
 	return (
 		<div className={classes.root}>
-			<SearchBar />
+			<SearchBar
+				open={isDrawerOpen}
+				setOpen={setIsDrawerOpen}
+				campaigns={campaigns}
+			/>
 			<ListUE contentUE={surveyUnits} />
 		</div>
 	);

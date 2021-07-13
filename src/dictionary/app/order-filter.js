@@ -2,7 +2,7 @@ const orderFilter = {
 	title: 'Trier et filtrer',
 	orderLabel: 'Trier par',
 	surveyLabel: 'Enquête',
-	priorityLabel: 'Priorite',
+	priorityLabel: 'Priorité',
 	stateLabel: 'Action à faire',
 	favoriteLabel: 'Favoris',
   endedLabel: 'Terminées'
