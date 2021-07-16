@@ -21,7 +21,6 @@ import ButtonIcon from '../icon-button';
 import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import FavoriteBorderOutlinedIcon from '@material-ui/icons/FavoriteBorderOutlined';
-import { Typography } from '@material-ui/core';
 import Divider from '@material-ui/core/Divider';
 import { getById } from 'indexedDB/service/db-action';
 import D from 'dictionary/db';

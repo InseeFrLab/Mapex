@@ -1,8 +1,9 @@
 import ButtonUI from 'components/common/button';
 import React, { useState } from 'react';
 import API from 'api';
-import { getById, getValuesOfKey } from 'indexedDB/service/db-action';
+import { getValuesOfKey } from 'indexedDB/service/db-action';
 import D from '../../dictionary/db';
+import { getLatLng } from 'utils/geocode/geocode';
 
 const Favorite = () => {
 	const [loading, setLoading] = useState(false);
@@ -24,8 +25,9 @@ const Favorite = () => {
 	};
 
 	const onClick3 = () => {
-		getById(D.surveyUnitDB, 11).then((r) => {
-			API.getGeoloc(r, setError).then((r) => setLatLng(r));
+		getLatLng('1b rue de valmy 59000 Lille').then((res) => {
+			const { lat, lng } = res;
+			setLatLng([lat, lng]);
 		});
 	};
 

@@ -1,4 +1,4 @@
-import { GOOGLE_BASE_URL, SURVEY_UNITS, UNITS } from './paths';
+import { SURVEY_UNITS, UNITS } from './paths';
 
 const get = (url) =>
 	fetch(url)
@@ -16,5 +16,3 @@ export const getSurveyUnitsExtended = () =>
 	get(`${SURVEY_UNITS}?extended=true`);
 
 export const getUnit = (id) => get(`${UNITS}/${id}`);
-
-export const getLatLng = (adresse) => get(`${GOOGLE_BASE_URL}${adresse}`);

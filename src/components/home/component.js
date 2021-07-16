@@ -47,7 +47,7 @@ const Home = () => {
 				textSearch={textSearch}
 				setTextSearch={setTextSearch}
 			/>
-			<MapLeaflet setMap={setMap} />
+			<MapLeaflet map={map} setMap={setMap} surveyUnits={surveyUnits} />
 			<ListUE contentUE={surveyUnits} />
 		</div>
 	);
