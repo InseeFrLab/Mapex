@@ -69,9 +69,11 @@ const UE = ({
 				<ListItem
 					button
 					component="a"
-					href={`tel:${phone}`}
 					target="_blank"
-					onClick={(e) => e.preventDefault()}
+					onClick={(e) => {
+						e.preventDefault();
+						window.open(`tel:${phone}`);
+					}}
 					className={`${classes.rightAlignText} ${classes.phone}`}
 				>
 					<ListItemIcon className={classes.icon}>
@@ -84,7 +86,12 @@ const UE = ({
 				button
 				component="a"
 				target="_blank"
-				href={`https://www.google.com/maps/dir/?api=1&destination=${street}+${zipCity}`}
+				onClick={(e) => {
+					e.preventDefault();
+					window.open(
+						`https://www.google.com/maps/dir/?api=1&destination=${street}+${zipCity}`
+					);
+				}}
 				className={classes.row}
 			>
 				<ListItemIcon className={classes.icon}>
@@ -131,7 +138,7 @@ UE.propTypes = {
 	/**
 	 * Link to the unit-cart
 	 */
-	MyLink: PropTypes.element,
+	MyLink: PropTypes.func,
 };
 
 UE.defaultProps = {
@@ -142,6 +149,5 @@ UE.defaultProps = {
 	zipCity: '',
 	idCampaign: '',
 	isFavorite: false,
-	MyLink: null,
 };
 export default UE;

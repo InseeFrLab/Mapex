@@ -9,14 +9,14 @@ const ButtonUI = ({
 	disabled,
 	size,
 	variant,
-	handleChange,
+	onClick,
 	...props
 }) => {
 	return (
 		<Button
 			className={className}
 			color={color}
-			onClick={handleChange}
+			onClick={onClick}
 			disabled={disabled}
 			size={size}
 			variant={variant}
@@ -43,7 +43,7 @@ ButtonUI.propTypes = {
 	/**
 	 * Handler for BottomBar items
 	 */
-	handleChange: PropTypes.func,
+	onClick: PropTypes.func,
 	/**
 	 * ButtonIcon has to be disabled or not
 	 */
@@ -62,7 +62,7 @@ ButtonUI.defaultProps = {
 	label: '',
 	className: '',
 	color: 'default',
-	handleChange: () => {},
+	onClick: () => {},
 	disable: false,
 	size: 'medium',
 	variant: 'contained',

@@ -22,7 +22,13 @@ You can then install dependencies using either Yarn or NPM
 
 ```bash
 yarn
+
+or 
+
+npm install
 ```
+
+It's needed to add a Google API Key. We use Google Geolocation API to get the latitude and longitude with the adress.
 
 ## Scripts
 

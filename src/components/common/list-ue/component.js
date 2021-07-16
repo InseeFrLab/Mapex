@@ -8,7 +8,6 @@ import {
 	getFavoriteNumber,
 	getPrivilegedPerson,
 } from '../../../utils/survey-unit/surveyUnit';
-import { Link } from 'react-router-dom';
 
 // https://codesandbox.io/s/5wqo7z2np4 for loading data
 // TODO :
@@ -31,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
-const ListUE = ({ contentUE }) => {
+const ListUE = ({ contentUE , Component}) => {
 	const classes = useStyles();
 	return (
 		<List className={classes.root}>
@@ -41,7 +40,7 @@ const ListUE = ({ contentUE }) => {
 					privilegPerson && privilegPerson.phoneNumbers
 				);
 				const MyLink = (props) => (
-					<Link
+					<Component
 						to={`/${id}`}
 						{...props}
 						style={{ color: 'inherit', textDecoration: 'inherit' }}
