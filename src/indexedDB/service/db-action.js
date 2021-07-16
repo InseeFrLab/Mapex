@@ -1,3 +1,4 @@
+import { getGeoloc } from 'api/remote';
 import db from '../db';
 
 export const setDataIntoDB = (tableName, data) => {
@@ -23,6 +24,6 @@ export const getAll = (tableName) => {
 	return db.table(tableName).toArray();
 };
 
-export const getValuesOfKey = (tableName,key) => {
+export const getValuesOfKey = (tableName, key) => {
 	return db.table(tableName).orderBy(key).uniqueKeys();
-}
+};

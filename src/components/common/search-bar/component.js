@@ -26,7 +26,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const SearchBar = ({ textSearch, setTextSearch, campaigns, open, setOpen }) => {
-	const handleChange = (e) => setTextSearch(e.target.value);
+	const handleChange = (e) => {
+		setTextSearch(e.target.value);
+	}
 
 	const classes = useStyles();
 	return (
@@ -48,9 +50,7 @@ const SearchBar = ({ textSearch, setTextSearch, campaigns, open, setOpen }) => {
 				icon={<TuneIcon />}
 				onClick={() => setOpen(true)}
 			/>
-			<DrawerOrderFilter open={open}
-				setOpen={setOpen}
-				campaigns={campaigns}/>
+			<DrawerOrderFilter open={open} setOpen={setOpen} campaigns={campaigns} />
 		</Paper>
 	);
 };

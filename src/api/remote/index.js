@@ -1,1 +1,1 @@
-export * from './db/getDataFromAPI';
+export * from './db/data-function';

@@ -5,6 +5,7 @@ import ListUE from 'components/common/list-ue';
 import { getAll } from 'indexedDB/service/db-action';
 import D from '../../dictionary/db';
 import { getValuesOfKey } from 'indexedDB/service/db-action';
+import MapLeaflet from 'components/common/map';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -17,7 +18,9 @@ const Home = () => {
 	const [surveyUnits, setSurveyUnits] = useState([]);
 	const [loading, setLoading] = useState(true);
 	const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+	const [textSearch, setTextSearch] = useState('');
 	// const [firstRender, setFirstRender] = useState(true);
+	const [map, setMap] = useState();
 	const classes = useStyles();
 
 	const [campaigns, setCampaigns] = useState([]);
@@ -41,7 +44,10 @@ const Home = () => {
 				open={isDrawerOpen}
 				setOpen={setIsDrawerOpen}
 				campaigns={campaigns}
+				textSearch={textSearch}
+				setTextSearch={setTextSearch}
 			/>
+			<MapLeaflet setMap={setMap} />
 			<ListUE contentUE={surveyUnits} />
 		</div>
 	);
