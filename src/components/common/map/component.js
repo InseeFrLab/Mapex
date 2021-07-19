@@ -2,11 +2,16 @@ import React, { useState, useEffect } from 'react';
 import 'leaflet/dist/leaflet.css';
 
 import { MapContainer, Marker, TileLayer, Popup } from 'react-leaflet';
+import { Link } from 'react-router-dom';
 
 import L, { bounds } from 'leaflet';
-import { getPrivilegedPerson } from 'utils/survey-unit/surveyUnit';
+import {
+	getPrivilegedPerson,
+	getFavoriteNumber,
+} from 'utils/survey-unit/surveyUnit';
 import icon from 'leaflet/dist/images/marker-icon.png';
 import iconShadow from 'leaflet/dist/images/marker-shadow.png';
+import UE from '../ue';
 
 let DefaultIcon = L.icon({
 	iconUrl: icon,
@@ -19,9 +24,8 @@ L.Marker.prototype.options.icon = DefaultIcon;
 
 const position = [47.147145, 2.843729];
 
-const MapLeaflet = ({ map, setMap, surveyUnits }) => {
+const MapLeaflet = ({ map, setMap, surveyUnits, Component }) => {
 	const arrayPosition = [];
-	const [bounds, setBounds] = useState(L.latLngBounds(arrayPosition));
 
 	return (
 		<MapContainer
@@ -39,18 +43,33 @@ const MapLeaflet = ({ map, setMap, surveyUnits }) => {
 				attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 				url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
 			/>
-			{surveyUnits.map(({ address, persons }) => {
+			{surveyUnits.map(({ id, address, campaign, isFavorite, persons }) => {
 				const privilegPerson = getPrivilegedPerson(persons);
+				const phone = getFavoriteNumber(
+					privilegPerson && privilegPerson.phoneNumbers
+				);
+				const MyLink = (props) => (
+					<Link
+						to={`/${id}`}
+						{...props}
+						style={{ color: 'inherit', textDecoration: 'inherit' }}
+					/>
+				);
 				const latLng = [address && address.lat, address && address.lng];
 				arrayPosition.push(latLng);
 				return (
 					<Marker position={latLng}>
 						<Popup>
-							{`${privilegPerson && privilegPerson.firstName} ${
-								privilegPerson && privilegPerson.lastName
-							}`}{' '}
-							<br />
-							{`${address && address.l4} ${address && address.l6}`}
+						<UE
+							firstName={privilegPerson && privilegPerson.firstName}
+							lastName={privilegPerson && privilegPerson.lastName}
+							phone={phone}
+							street={address && address.l4}
+							zipCity={address && address.l6}
+							idCampaign={campaign}
+							isFavorite={isFavorite}
+							MyLink={MyLink}
+						/>
 						</Popup>
 					</Marker>
 				);

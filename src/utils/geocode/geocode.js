@@ -15,10 +15,9 @@ Geocode.setRegion('fr');
 // And according to the below google docs in description, ROOFTOP param returns the most accurate result.
 Geocode.setLocationType('ROOFTOP');
 
-export const getLatLng = (address) => {
-	return Geocode.fromAddress(address)
+export const getLatLng = (address) =>
+	Geocode.fromAddress(address)
 		.then((response) => response.results[0].geometry.location)
 		.catch(() => ({ lat: 0, lng: 0 }));
-};
 
-// TODO -> if exception do something better
+// TODO -> do something better in case of exeption
