@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import OrderFilter from '../order-filter/component';
 

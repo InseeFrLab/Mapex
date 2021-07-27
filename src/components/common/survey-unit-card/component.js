@@ -126,7 +126,7 @@ const SurveyUnitCard = () => {
 				/>
 				<ButtonIcon
 					icon={<MessageIcon />}
-					href={`sms:${favoritePhone}&body=corpsMessageaajouter`}
+					href={`sms:${favoritePhone};?&body=corpsMessageaajouter`}
 					color="inherit"
 				/>
 				<ButtonIcon
@@ -161,7 +161,7 @@ const SurveyUnitCard = () => {
 				}
 			/>
 			<ListAction
-				hrefSms={`sms:${favoritePhone}&body=corpsMessageaajouter`}
+				hrefSms={`sms:${favoritePhone};?&body=corpsMessageaajouter`}
 				hrefCalendar={makeGoogleCalendarUrl()}
 			/>
 		</div>

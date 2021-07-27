@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import 'leaflet/dist/leaflet.css';
 
 import { MapContainer, Marker, TileLayer, Popup } from 'react-leaflet';
 import { Link } from 'react-router-dom';
 
-import L, { bounds } from 'leaflet';
+import L from 'leaflet';
 import {
 	getPrivilegedPerson,
 	getFavoriteNumber,
@@ -12,6 +12,9 @@ import {
 import icon from 'leaflet/dist/images/marker-icon.png';
 import iconShadow from 'leaflet/dist/images/marker-shadow.png';
 import UE from '../ue';
+import FullscreenIcon from '@material-ui/icons/Fullscreen';
+import Fab from '@material-ui/core/Fab';
+import CustomControl from './custom-control';
 
 let DefaultIcon = L.icon({
 	iconUrl: icon,
@@ -24,7 +27,16 @@ L.Marker.prototype.options.icon = DefaultIcon;
 
 const position = [47.147145, 2.843729];
 
-const MapLeaflet = ({ map, setMap, surveyUnits, Component }) => {
+const FabButton = () => (
+	<Fab onClick={console.log('click fab')}>
+		<FullscreenIcon />
+	</Fab>
+);
+
+const MapLeaflet = ({
+	setMap,
+	surveyUnits,
+}) => {
 	const arrayPosition = [];
 
 	return (
@@ -60,20 +72,21 @@ const MapLeaflet = ({ map, setMap, surveyUnits, Component }) => {
 				return (
 					<Marker position={latLng}>
 						<Popup>
-						<UE
-							firstName={privilegPerson && privilegPerson.firstName}
-							lastName={privilegPerson && privilegPerson.lastName}
-							phone={phone}
-							street={address && address.l4}
-							zipCity={address && address.l6}
-							idCampaign={campaign}
-							isFavorite={isFavorite}
-							MyLink={MyLink}
-						/>
+							<UE
+								firstName={privilegPerson && privilegPerson.firstName}
+								lastName={privilegPerson && privilegPerson.lastName}
+								phone={phone}
+								street={address && address.l4}
+								zipCity={address && address.l6}
+								idCampaign={campaign}
+								isFavorite={isFavorite}
+								MyLink={MyLink}
+							/>
 						</Popup>
 					</Marker>
 				);
 			})}
+			<CustomControl Component={<FabButton />} position="bottomright" />
 		</MapContainer>
 	);
 };
