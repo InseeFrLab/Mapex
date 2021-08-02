@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import 'leaflet/dist/leaflet.css';
 
 import { MapContainer, Marker, TileLayer, Popup } from 'react-leaflet';
@@ -28,29 +28,31 @@ L.Marker.prototype.options.icon = DefaultIcon;
 const position = [47.147145, 2.843729];
 
 const FabButton = () => (
-	<Fab onClick={console.log('click fab')}>
+	<Fab onClick={() => console.log('click fab')}>
 		<FullscreenIcon />
 	</Fab>
 );
 
-const MapLeaflet = ({
-	setMap,
-	surveyUnits,
-}) => {
+const MapLeaflet = ({ setMap, surveyUnits, fullscreen }) => {
 	const arrayPosition = [];
-
+	const [height, setHeight] = useState('300px');
+	useEffect(() => {
+		fullscreen === 'MAP' && setHeight('500px');
+	}, [fullscreen]);
 	return (
 		<MapContainer
 			whenCreated={setMap}
 			center={position}
 			style={{
 				width: '100%',
-				height: '100%',
-				minHeight: '300px',
+				height: height,
+				minHeight: height,
 				minWidth: '300px',
 			}}
 			zoom={5}
 		>
+			{/* height: '100%',
+			 */}
 			<TileLayer
 				attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 				url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
