@@ -19,3 +19,5 @@ spec:
           env:
             - name: PEARL_API_URL
               value: 'url'
+            - name: GOOGLE_API_KEY
+              value: 'TOKEN A AJOUTER'

@@ -1,3 +1,4 @@
 {
-	"surveyUnit": "id,sampleIdentifiers,persons,lastName,firstName,address,phoneNumbers,state,comments,questionnaireState,campaign,campaignLabel,collectionStartDate,collectionEndDate,identificationPhaseStartDate,interviewerStartDate,managementStartDate,endDate,geographicalLocation,lastState,states,contactAttempts,contactOutcome"
+	"surveyUnit": "id,sampleIdentifiers,persons,lastName,firstName,address,phoneNumbers,state,comments,questionnaireState,campaign,campaignLabel,collectionStartDate,collectionEndDate,identificationPhaseStartDate,interviewerStartDate,managementStartDate,endDate,geographicalLocation,lastState,states,contactAttempts,contactOutcome,favorite",
+"favorite": "idSurvey,listLabel"
 }

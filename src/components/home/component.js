@@ -20,7 +20,6 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 const Child = ({ displayMode, surveyUnits }) => {
-	console.log(displayMode);
 	if (displayMode && displayMode === 'MAP') {
 		return null;
 	}
@@ -34,13 +33,13 @@ const Home = () => {
 	const [loading, setLoading] = useState(true);
 	const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 	const [textSearch, setTextSearch] = useState('');
-	// const [firstRender, setFirstRender] = useState(true);
 	const [map, setMap] = useState();
 	const classes = useStyles();
 
 	const [campaigns, setCampaigns] = useState([]);
 
 	useEffect(() => {
+		// Get Data into Local DB
 		Promise.all([
 			getAll(D.surveyUnitDB).then((units) => {
 				setSurveyUnits(units);
@@ -48,7 +47,9 @@ const Home = () => {
 			getValuesOfKey(D.surveyUnitDB, 'campaign').then((camp) => {
 				setCampaigns(camp);
 			}),
-		]).then(setLoading(false));
+		]).then(() => {
+			setLoading(false);
+		});
 	}, []);
 
 	if (loading) return <div>{"I'm loading dude"}</div>;
