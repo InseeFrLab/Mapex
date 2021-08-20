@@ -1,10 +1,8 @@
+
 # Mapex
-
-![Mapex](https://user-images.githubusercontent.com/81740200/130244216-c73585b1-2b49-4dd1-81c2-744b59379f78.png)
-
-
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
+![image](https://user-images.githubusercontent.com/81740200/130244487-7d6e22a0-d016-42a2-85ec-041cf4fa59bf.png)
 Mapex for "Mon Assistant Personnalisé cross plateforme" (My Personalized Assistant cross platform) is a Progressive Web Application (PWA) for interviewer work organisation.
 
 Mapex is built with [React](https://reactjs.org/). It was initialized with a custom template of Create React App : [PWA Template](https://www.npmjs.com/package/cra-template-pwa) and is designed thanks to [Material UI](https://material-ui.com/).
