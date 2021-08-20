@@ -1,5 +1,8 @@
 # Mapex
 
+![Mapex](https://user-images.githubusercontent.com/81740200/130244216-c73585b1-2b49-4dd1-81c2-744b59379f78.png)
+
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 Mapex for "Mon Assistant Personnalisé cross plateforme" (My Personalized Assistant cross platform) is a Progressive Web Application (PWA) for interviewer work organisation.
