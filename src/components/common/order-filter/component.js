@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 
 import Paper from '@material-ui/core/Paper';
@@ -55,15 +55,7 @@ const useStyles = makeStyles((theme) => ({
 const OrderFilter = ({ campaigns, setOpen }) => {
 	const classes = useStyles();
 
-	// const [loading, setLoading] = useState(true);
-	// const [campaign, setCampaign] = useState(['test','test']);
-
-	// useEffect(() => {
-	// 	getValuesOfKey(DicDB.surveyUnitDB, 'campaign').then((camp) => {
-	// 		setLoading(false);
-	// 		setCampaign(camp);
-	// 	});
-	// }, []);
+	const [sortCriteria, setSortCriteria] = useState('');
 
 	return (
 		<Paper className={classes.paper}>
@@ -79,7 +71,7 @@ const OrderFilter = ({ campaigns, setOpen }) => {
 				</ListItem>
 				<Divider variant="fullWidth" />
 				<ListItem>
-					<Order />
+					<Order value={sortCriteria} setValue={setSortCriteria}/>
 				</ListItem>
 				<Divider variant="middle" />
 				<ListItem>

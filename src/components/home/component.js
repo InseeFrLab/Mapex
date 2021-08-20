@@ -7,6 +7,7 @@ import D from '../../dictionary/db';
 import { getValuesOfKey } from 'indexedDB/service/db-action';
 import MapLeaflet from 'components/common/map';
 import { Link, useLocation } from 'react-router-dom';
+import InstallPWA from 'components/installPwa';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -56,6 +57,7 @@ const Home = () => {
 
 	return (
 		<div className={classes.root}>
+			<InstallPWA />
 			<SearchBar
 				open={isDrawerOpen}
 				setOpen={setIsDrawerOpen}

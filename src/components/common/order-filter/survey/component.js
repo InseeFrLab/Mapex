@@ -6,6 +6,11 @@ import Item from '../item';
 import D from 'dictionary/app/order-filter';
 
 const Survey = ({ campaigns }) => {
+
+	// const handleChange = (event) => {
+  //   setChecked(event.target.checked);
+  // };
+
 	return (
 		<Item title={D.surveyLabel}>
 			<FormGroup row>
