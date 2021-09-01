@@ -7,7 +7,7 @@ const ButtonIcon = ({
 	classes,
 	color,
 	disabled,
-	handleChange,
+	onClick,
 	target,
 	...props
 }) => {
@@ -15,7 +15,7 @@ const ButtonIcon = ({
 		<IconButton
 			className={classes}
 			color={color}
-			onClick={handleChange}
+			onClick={onClick}
 			disabled={disabled}
 			target={target}
 			{...props}
@@ -41,15 +41,15 @@ ButtonIcon.propTypes = {
 	/**
 	 * Handler for BottomBar items
 	 */
-	handleChange: PropTypes.func,
+	 onClick: PropTypes.func,
 	/**
 	 * ButtonIcon has to be disabled or not
 	 */
 	disabled: PropTypes.bool,
 	/**
-	 * ta
+	 * target
 	 */
-	target: PropTypes.string
+	target: PropTypes.string,
 };
 
 ButtonIcon.defaultProps = {
@@ -57,7 +57,7 @@ ButtonIcon.defaultProps = {
 	className: '',
 	color: 'default',
 	target: '_blank',
-	handleChange: () => {},
+	onClick: () => {},
 };
 
 export default ButtonIcon;

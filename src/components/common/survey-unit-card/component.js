@@ -21,7 +21,6 @@ import ButtonIcon from '../icon-button';
 import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import FavoriteBorderOutlinedIcon from '@material-ui/icons/FavoriteBorderOutlined';
-import { Typography } from '@material-ui/core';
 import Divider from '@material-ui/core/Divider';
 import { getById } from 'indexedDB/service/db-action';
 import D from 'dictionary/db';
@@ -106,9 +105,11 @@ const SurveyUnitCard = () => {
 						icon={<NavigateBeforeIcon />}
 						onClick={goToPreviousPath}
 					/>
-					<Typography className={classes.title}>{`${
-						privilegPerson && privilegPerson.firstName
-					} ${privilegPerson && privilegPerson.lastName}`}</Typography>
+					<div className={classes.title}>
+						<h1>{`${privilegPerson && privilegPerson.firstName} ${
+							privilegPerson && privilegPerson.lastName
+						}`}</h1>
+					</div>
 					<ButtonIcon
 						color="inherit"
 						icon={
@@ -125,7 +126,7 @@ const SurveyUnitCard = () => {
 				/>
 				<ButtonIcon
 					icon={<MessageIcon />}
-					href={`sms:${favoritePhone}&body=corpsMessageaajouter`}
+					href={`sms:${favoritePhone};?&body=corpsMessageaajouter`}
 					color="inherit"
 				/>
 				<ButtonIcon
@@ -160,7 +161,7 @@ const SurveyUnitCard = () => {
 				}
 			/>
 			<ListAction
-				hrefSms={`sms:${favoritePhone}&body=corpsMessageaajouter`}
+				hrefSms={`sms:${favoritePhone};?&body=corpsMessageaajouter`}
 				hrefCalendar={makeGoogleCalendarUrl()}
 			/>
 		</div>

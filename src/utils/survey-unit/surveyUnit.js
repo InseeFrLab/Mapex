@@ -7,7 +7,7 @@ export const getPrivilegedPerson = (persons) => {
 		if (found) {
 			return found;
 		} else {
-			console.log('Data Issue, no privileged person found');
+			console.log(`Data Issue, no privileged person found ${persons[0].firstName}`);
 			return persons[0];
 		}
 	}
