@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import Paper from '@material-ui/core/Paper';
@@ -14,7 +14,7 @@ import D from 'dictionary/app/order-filter';
 import Order from './order';
 import Survey from './survey';
 import Priority from './priority';
-import ListFavorite from './favorite';
+import FavoriteFilter from './favorite';
 
 // TODO get the labels of keys into db with properties
 
@@ -55,15 +55,13 @@ const useStyles = makeStyles((theme) => ({
 const OrderFilter = ({ campaigns, setOpen }) => {
 	const classes = useStyles();
 
-	// const [loading, setLoading] = useState(true);
-	// const [campaign, setCampaign] = useState(['test','test']);
-
-	// useEffect(() => {
-	// 	getValuesOfKey(DicDB.surveyUnitDB, 'campaign').then((camp) => {
-	// 		setLoading(false);
-	// 		setCampaign(camp);
-	// 	});
-	// }, []);
+	const [sortCriteria, setSortCriteria] = useState('');
+	const [stateCampaign, setStateCampaign] = useState(
+		campaigns.reduce((obj, itm) => {
+			obj[itm] = true;
+			return obj;
+		}, {})
+	);
 
 	return (
 		<Paper className={classes.paper}>
@@ -79,11 +77,15 @@ const OrderFilter = ({ campaigns, setOpen }) => {
 				</ListItem>
 				<Divider variant="fullWidth" />
 				<ListItem>
-					<Order />
+					<Order value={sortCriteria} setValue={setSortCriteria} />
 				</ListItem>
 				<Divider variant="middle" />
 				<ListItem>
-					<Survey campaigns={campaigns} />
+					<Survey
+						campaigns={campaigns}
+						state={stateCampaign}
+						setState={setStateCampaign}
+					/>
 				</ListItem>
 				<Divider />
 				<ListItem>
@@ -91,7 +93,7 @@ const OrderFilter = ({ campaigns, setOpen }) => {
 				</ListItem>
 				<Divider />
 				<ListItem>
-					<ListFavorite />
+					<FavoriteFilter />
 				</ListItem>
 			</List>
 		</Paper>

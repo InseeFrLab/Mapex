@@ -8,12 +8,14 @@ import { Typography } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
 	title: {
-    marginTop: theme.spacing(2),
+		marginTop: theme.spacing(2),
 		marginLeft: theme.spacing(2),
 		marginRight: theme.spacing(2),
 	},
-	listNotif: {
+	content: {
 		marginTop: theme.spacing(2),
+		marginLeft: theme.spacing(2),
+		marginRight: theme.spacing(2),
 	},
 }));
 
@@ -26,7 +28,7 @@ const Notifications = () => {
 				Notifications
 			</Typography>
 			<Divider variant="middle" gutterBottom />
-			<div className={classes.listNotif}>
+			<div className={classes.content}>
 				<ListNotification dataNotifications={dataNotif} />
 			</div>
 		</div>

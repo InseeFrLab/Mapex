@@ -1,46 +1,36 @@
-import ButtonUI from 'components/common/button';
-import React, { useState } from 'react';
-import API from 'api';
-import { getValuesOfKey } from 'indexedDB/service/db-action';
-import D from '../../dictionary/db';
-import { getLatLng } from 'utils/geocode/geocode';
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Divider from '@material-ui/core/Divider';
+import { Typography } from '@material-ui/core';
+import ListeFavorite from 'components/common/liste-fav/component';
+import { dataFavorite } from 'data-mock/favorite';
+
+const useStyles = makeStyles((theme) => ({
+	title: {
+		marginTop: theme.spacing(2),
+		marginLeft: theme.spacing(2),
+		marginRight: theme.spacing(2),
+	},
+	content: {
+		marginTop: theme.spacing(2),
+		marginLeft: theme.spacing(2),
+		marginRight: theme.spacing(2),
+	},
+}));
 
 const Favorite = () => {
-	const [loading, setLoading] = useState(false);
-	const [error, setError] = useState('');
-	const [campaign, setCampaign] = useState([]);
-	const [latLng, setLatLng] = useState([]);
-
-	const onClick = () => {
-		setLoading(true);
-		API.getDataFromApiOld({ setError }).then(() => {
-			setLoading(false);
-		});
-	};
-
-	const onClick2 = () => {
-		getValuesOfKey(D.surveyUnitDB, 'campaign').then((camp) => {
-			setCampaign(camp);
-		});
-	};
-
-	const onClick3 = () => {
-		getLatLng('1b rue de valmy 59000 Lille').then((res) => {
-			const { lat, lng } = res;
-			setLatLng([lat, lng]);
-		});
-	};
+	const classes = useStyles();
 
 	return (
-		<>
-			<ButtonUI onClick={onClick} label="Fetch data" />
-			<div>{error}</div>
-			<div>{loading && "I'm loading dude"}</div>
-			<ButtonUI onClick={onClick2} label="Get Campaign data" />
-			<div>{campaign}</div>
-			<ButtonUI onClick={onClick3} label="Get LatLng" />
-			<div>{latLng}</div>
-		</>
+		<div className={classes.root}>
+			<Typography className={classes.title} variant="h4">
+				Favoris
+			</Typography>
+			<Divider variant="middle" gutterBottom />
+			<div className={classes.content}>
+				<ListeFavorite dataFavorite={dataFavorite} />
+			</div>
+		</div>
 	);
 };
 

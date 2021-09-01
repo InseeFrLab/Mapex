@@ -8,7 +8,7 @@ import D from 'dictionary/app/order-filter';
 
 // TODO -> Include checkbox labels into dictionnary
 
-const ListFavorite = () => {
+const FavoriteFilter = () => {
 	return (
 		<Item title={D.favoriteLabel}>
 			<FormGroup column>
@@ -29,4 +29,4 @@ const ListFavorite = () => {
 	);
 };
 
-export default ListFavorite;
+export default FavoriteFilter;

@@ -11,7 +11,6 @@ Mapex for "Mon Assistant Personnalisé cross plateforme" (My Personalized Assist
 
 Mapex is built with [React](https://reactjs.org/). It was initialized with a custom template of Create React App : [PWA Template](https://www.npmjs.com/package/cra-template-pwa) and is designed thanks to [Material UI](https://material-ui.com/).
 
-
 [Storybook](https://ddecrulle.github.io/Mapex/) is available online.
 
 # Getting started
@@ -28,12 +27,18 @@ You can then install dependencies using either Yarn or NPM
 ```bash
 yarn
 
-or 
+or
 
 npm install
 ```
 
-It's needed to add a Google API Key. We use Google Geolocation API to get the latitude and longitude with the adress.
+## Environment values
+
+The projet contains 2 environment values. The first is the url of the back-end : [Pearl](https://github.com/InseeFr/Pearl-Jam-Back-Office)
+
+The second is a Google API Key. We use Google Geolocation API to get the latitude and longitude with the adress.
+
+In development mode, you can create a file `.env.development.local` and add values like in the `.env` file.
 
 ## Scripts
 
