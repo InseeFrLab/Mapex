@@ -5,9 +5,10 @@ import Favorite from 'components/favorite';
 import Notifications from 'components/notifications';
 import Bar from './bar';
 import SurveyUnitCard from 'components/common/survey-unit-card';
+import SyncDataFromAPI from 'utils/data-sync';
 
 const Root = () => (
-	<>
+	<SyncDataFromAPI>
 		<Switch>
 			<Route exact path="/">
 				<Home />
@@ -24,7 +25,7 @@ const Root = () => (
 			<Redirect to="/" />
 		</Switch>
 		<Bar />
-	</>
+	</SyncDataFromAPI>
 );
 
 export default Root;
