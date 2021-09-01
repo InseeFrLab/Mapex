@@ -65,8 +65,8 @@ const Home = () => {
 				textSearch={textSearch}
 				setTextSearch={setTextSearch}
 			/>
-			<Link to="/?display_mode=MAP">Map Link</Link>
-			<Link to="/?display_mode=LIST">Liste Link</Link>
+			{/* <Link to="/?display_mode=MAP">Map Link</Link>
+			<Link to="/?display_mode=LIST">Liste Link</Link> */}
 			<MapLeaflet
 				fullscreen={query.get('display_mode') === 'MAP'}
 				map={map}

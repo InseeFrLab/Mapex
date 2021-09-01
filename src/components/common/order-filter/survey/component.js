@@ -5,20 +5,26 @@ import Checkbox from '@material-ui/core/Checkbox';
 import Item from '../item';
 import D from 'dictionary/app/order-filter';
 
-const Survey = ({ campaigns }) => {
+const Survey = ({ campaigns,state,setState }) => {
+
+	const handleChange = (event) => {
+    setState({ ...state, [event.target.name]: event.target.checked });
+  };
 
 	// const handleChange = (event) => {
   //   setChecked(event.target.checked);
   // };
-
 	return (
 		<Item title={D.surveyLabel}>
 			<FormGroup row>
+				
 				{campaigns.map((label) => {
 					return (
 						<FormControlLabel
 							control={<Checkbox defaultChecked />}
 							label={label}
+							value={label}
+							onChange={handleChange}
 						/>
 					);
 				})}

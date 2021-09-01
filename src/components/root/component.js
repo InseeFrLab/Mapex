@@ -8,7 +8,7 @@ import SurveyUnitCard from 'components/common/survey-unit-card';
 import SyncDataFromAPI from 'utils/data-sync';
 
 const Root = () => (
-	<>
+	<SyncDataFromAPI>
 		<Switch>
 			<Route exact path="/">
 				<Home />
@@ -25,8 +25,7 @@ const Root = () => (
 			<Redirect to="/" />
 		</Switch>
 		<Bar />
-		<SyncDataFromAPI />
-	</>
+	</SyncDataFromAPI>
 );
 
 export default Root;
