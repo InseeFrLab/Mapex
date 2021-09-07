@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import InputBase from '@material-ui/core/InputBase';
@@ -7,6 +7,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import ButtonIcon from '../icon-button';
 import D from '../../../dictionary/app/home';
 import DrawerOrderFilter from '../drawer-order-filter';
+import { useLocation, useHistory } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
 	paper: {
@@ -24,11 +25,27 @@ const useStyles = makeStyles((theme) => ({
 		padding: 10,
 	},
 }));
+const useQuery = () => new URLSearchParams(useLocation().search);
 
-const SearchBar = ({ textSearch, setTextSearch, campaigns, open, setOpen }) => {
+const SearchBar = ({ campaigns, open, setOpen }) => {
+	const history = useHistory();
+	let query = useQuery();
+
+	const [textSearch, setTextSearch] = useState(query.get('textSearch') || '');
+
+	useEffect(() => {
+		const params = new URLSearchParams();
+		if (textSearch && textSearch !== '') {
+			params.append('textSearch', textSearch);
+		} else {
+			params.delete('textSearch');
+		}
+		history.push({ search: params.toString() });
+	}, [textSearch, history]);
+	
 	const handleChange = (e) => {
 		setTextSearch(e.target.value);
-	}
+	};
 
 	const classes = useStyles();
 	return (

@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import SearchBar from '../common/search-bar';
 import { makeStyles } from '@material-ui/core/styles';
-import ListUE from 'components/common/list-ue';
+import WrapperListUE from 'components/common/list-ue';
 import { getAll } from 'indexedDB/service/db-action';
 import D from '../../dictionary/db';
 import { getValuesOfKey } from 'indexedDB/service/db-action';
 import MapLeaflet from 'components/common/map';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import InstallPWA from 'components/installPwa';
+// import {sortOnColumnCompareFunction} from 'utils/data-filter-order/order'
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -20,40 +21,71 @@ const useStyles = makeStyles((theme) => ({
 		right: theme.spacing(2),
 	},
 }));
+
 const Child = ({ displayMode, surveyUnits }) => {
 	if (displayMode && displayMode === 'MAP') {
 		return null;
 	}
-	return <ListUE contentUE={surveyUnits} />;
+	return <WrapperListUE contentUE={surveyUnits} />;
 };
 const useQuery = () => new URLSearchParams(useLocation().search);
 
 const Home = () => {
 	let query = useQuery();
 	const [surveyUnits, setSurveyUnits] = useState([]);
+	const [campaigns, setCampaigns] = useState([]);
+	const [filteredSurveyUnits, setFilteredSurveyUnits] = useState([]);
+
 	const [loading, setLoading] = useState(true);
+	const [init, setInit] = useState(true);
 	const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-	const [textSearch, setTextSearch] = useState('');
+	// const [textSearch, setTextSearch] = useState('');
 	const [map, setMap] = useState();
 	const classes = useStyles();
 
-	const [campaigns, setCampaigns] = useState([]);
+	const [sortCriteria, setSortCriteria] = useState(
+		query.get('sort') || 'remainingDay'
+	);
 
+	const buildArrayFromQueryParams = (t) => {
+		if (t) return t.split(',');
+		return null;
+	};
+
+	const filters = {
+		textSearch: query.get('textSearch') || '',
+		campaigns: buildArrayFromQueryParams(query.get('campaigns')) || [],
+		priority: query.get('priority') || true,
+		favorites: buildArrayFromQueryParams(query.get('favorites')) || [],
+	};
+	// Loading Data From IndexedDB
 	useEffect(() => {
-		// Get Data into Local DB
-		Promise.all([
-			getAll(D.surveyUnitDB).then((units) => {
-				setSurveyUnits(units);
-			}),
-			getValuesOfKey(D.surveyUnitDB, 'campaign').then((camp) => {
-				setCampaigns(camp);
-			}),
-		]).then(() => {
-			setLoading(false);
-		});
-	}, []);
+		if (init) {
+			setInit(false);
+			Promise.all([
+				getAll(D.surveyUnitDB).then((units) => {
+					setSurveyUnits(units);
+				}),
+				getValuesOfKey(D.surveyUnitDB, 'campaign').then((camp) => {
+					setCampaigns(camp);
+				}),
+			]).then(() => {
+				setLoading(false);
+			});
+		}
+	}, [init]);
 
+	// To Do Loading page
 	if (loading) return <div>{"I'm loading dude"}</div>;
+
+	// useEffect(() => {
+	//   const sortSU = su => su.sort(sortOnColumnCompareFunction(sortCriteria));
+	//   const filteredSU = applyFilters(surveyUnits, filters);
+
+	//   const { searchFilteredSU, totalEchoes, matchingEchoes } = filteredSU;
+	//   setFilteredSurveyUnits(sortSU(searchFilteredSU));
+
+	// }, [filters, sortCriteria, surveyUnits]);
 
 	return (
 		<div className={classes.root}>
@@ -62,23 +94,17 @@ const Home = () => {
 				open={isDrawerOpen}
 				setOpen={setIsDrawerOpen}
 				campaigns={campaigns}
-				textSearch={textSearch}
-				setTextSearch={setTextSearch}
 			/>
 			{/* <Link to="/?display_mode=MAP">Map Link</Link>
 			<Link to="/?display_mode=LIST">Liste Link</Link> */}
+
 			<MapLeaflet
 				fullscreen={query.get('display_mode') === 'MAP'}
 				map={map}
 				setMap={setMap}
 				surveyUnits={surveyUnits}
-				open={isDrawerOpen}
-				setOpen={setIsDrawerOpen}
-				campaigns={campaigns}
-				textSearch={textSearch}
-				setTextSearch={setTextSearch}
 			/>
-			{/* <ListUE contentUE={surveyUnits} />*/}
+			{/* <WrapperListUE contentUE={surveyUnits} />*/}
 
 			<Child
 				displayMode={query.get('display_mode')}

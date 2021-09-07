@@ -2,7 +2,15 @@ import React from 'react';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import OrderFilter from '../order-filter/component';
 
-const DrawerOrderFilter = ({ campaigns, open, setOpen }) => {
+const DrawerOrderFilter = ({
+	campaigns,
+	open,
+	setOpen,
+	filters,
+	setFilters,
+	sortCriteria,
+	setSortCriteria,
+}) => {
 	const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
 	return (
 		<SwipeableDrawer
@@ -13,7 +21,12 @@ const DrawerOrderFilter = ({ campaigns, open, setOpen }) => {
 			disableBackdropTransition={!iOS}
 			disableDiscovery={iOS}
 		>
-			<OrderFilter campaigns={campaigns} setOpen={setOpen} />
+			<OrderFilter
+				campaigns={campaigns}
+				setOpen={setOpen}
+				filters={filters}
+				setFilters={setFilters}
+			/>
 		</SwipeableDrawer>
 	);
 };

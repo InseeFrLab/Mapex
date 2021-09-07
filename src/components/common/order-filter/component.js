@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
+import { useHistory, useLocation } from 'react-router-dom';
 
 import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core/styles';
@@ -52,16 +53,66 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
+const useQuery = () => new URLSearchParams(useLocation().search);
+
 const OrderFilter = ({ campaigns, setOpen }) => {
 	const classes = useStyles();
+	const history = useHistory();
 
-	const [sortCriteria, setSortCriteria] = useState('');
-	const [stateCampaign, setStateCampaign] = useState(
+	let query = useQuery();
+
+	const buildQueryParamsFromState = (state) =>
+		Object.keys(state)
+			.filter((key) => state[key] === true)
+			.join(',');
+
+	const [sortCriteria, setSortCriteria] = useState(
+		query.get('sort') || 'remainingDay'
+	);
+
+	useEffect(() => {
+		if (sortCriteria && sortCriteria !== 'remainingDay') {
+			query.set('sort', sortCriteria);
+		} else {
+			query.delete('sort');
+		}
+		history.push({ search: query.toString() });
+	}, [sortCriteria, history]);
+
+	const buildStateFromCampaign = (campaigns) =>
 		campaigns.reduce((obj, itm) => {
 			obj[itm] = true;
 			return obj;
-		}, {})
+		}, {});
+
+	const buildStateFromQuery = (array, campaigns) =>
+		campaigns.reduce((obj, itm) => {
+			if (array.includes(itm)) {
+				obj[itm] = true;
+			} else {
+				obj[itm] = false;
+			}
+			return obj;
+		}, {});
+
+	const [stateCampaign, setStateCampaign] = useState(
+		query.get('campaigns')
+			? buildStateFromQuery(query.get('campaigns').split(','), campaigns)
+			: buildStateFromCampaign(campaigns)
 	);
+
+	useEffect(() => {
+		if (stateCampaign && Object.values(stateCampaign).includes(false)) {
+			query.set('campaigns', buildQueryParamsFromState(stateCampaign));
+		} else {
+			query.delete('campaigns');
+		}
+		history.push({ search: query.toString() });
+	}, [stateCampaign, history]);
+
+	// useEffect(() => {
+	// 	setFilters((f) => ({ ...f, campaigns: stateCampaign }));
+	// }, [stateCampaign, setFilters]);
 
 	return (
 		<Paper className={classes.paper}>
@@ -87,10 +138,10 @@ const OrderFilter = ({ campaigns, setOpen }) => {
 						setState={setStateCampaign}
 					/>
 				</ListItem>
-				<Divider />
+				{/* <Divider />
 				<ListItem>
 					<Priority />
-				</ListItem>
+				</ListItem> */}
 				<Divider />
 				<ListItem>
 					<FavoriteFilter />

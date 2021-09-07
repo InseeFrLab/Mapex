@@ -12,7 +12,7 @@ import {
 // https://codesandbox.io/s/5wqo7z2np4 for loading data
 // TODO :
 // Include control about data. Don't show default value exept in storybook
-// Better implent of Link's css 
+// Better implent of Link's css
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
-const ListUE = ({ contentUE , Component}) => {
+const ListUE = ({ contentUE, Component }) => {
 	const classes = useStyles();
 	return (
 		<List className={classes.root}>
