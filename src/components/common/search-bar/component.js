@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 const useQuery = () => new URLSearchParams(useLocation().search);
 
-const SearchBar = ({ campaigns, open, setOpen }) => {
+const SearchBar = ({ campaigns, open, setOpen,favorites }) => {
 	const history = useHistory();
 	let query = useQuery();
 
@@ -67,7 +67,7 @@ const SearchBar = ({ campaigns, open, setOpen }) => {
 				icon={<TuneIcon />}
 				onClick={() => setOpen(true)}
 			/>
-			<DrawerOrderFilter open={open} setOpen={setOpen} campaigns={campaigns} />
+			<DrawerOrderFilter open={open} setOpen={setOpen} campaigns={campaigns} favorites={favorites}/>
 		</Paper>
 	);
 };

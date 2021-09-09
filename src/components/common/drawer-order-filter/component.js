@@ -6,10 +6,7 @@ const DrawerOrderFilter = ({
 	campaigns,
 	open,
 	setOpen,
-	filters,
-	setFilters,
-	sortCriteria,
-	setSortCriteria,
+	favorites
 }) => {
 	const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
 	return (
@@ -24,8 +21,7 @@ const DrawerOrderFilter = ({
 			<OrderFilter
 				campaigns={campaigns}
 				setOpen={setOpen}
-				filters={filters}
-				setFilters={setFilters}
+				favorites={favorites}
 			/>
 		</SwipeableDrawer>
 	);

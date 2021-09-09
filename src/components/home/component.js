@@ -8,6 +8,8 @@ import { getValuesOfKey } from 'indexedDB/service/db-action';
 import MapLeaflet from 'components/common/map';
 import { useLocation, Link } from 'react-router-dom';
 import InstallPWA from 'components/installPwa';
+import { dataFavorite } from 'data-mock/favorite';
+
 // import {sortOnColumnCompareFunction} from 'utils/data-filter-order/order'
 
 const useStyles = makeStyles((theme) => ({
@@ -35,7 +37,7 @@ const Home = () => {
 	const [surveyUnits, setSurveyUnits] = useState([]);
 	const [campaigns, setCampaigns] = useState([]);
 	const [filteredSurveyUnits, setFilteredSurveyUnits] = useState([]);
-
+	const [favorites, setFavorites] = useState(dataFavorite); //TODO Data into indexedDB
 	const [loading, setLoading] = useState(true);
 	const [init, setInit] = useState(true);
 	const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -52,11 +54,22 @@ const Home = () => {
 		return null;
 	};
 
+	const getUEFromFavoriteLabels = (arrayLabels) => {
+		favorites
+			.filter((obj) => arrayLabels.includes(obj.label))
+			.map((obj) => obj.UE)
+			.reduce((a, b) => a.concat(b), []);
+	};
+
 	const filters = {
 		textSearch: query.get('textSearch') || '',
 		campaigns: buildArrayFromQueryParams(query.get('campaigns')) || [],
 		priority: query.get('priority') || true,
-		favorites: buildArrayFromQueryParams(query.get('favorites')) || [],
+		favorites: query.get('favorites')
+			? getUEFromFavoriteLabels(
+					buildArrayFromQueryParams(query.get('favorites'))
+			  )
+			: [],
 	};
 	// Loading Data From IndexedDB
 	useEffect(() => {
@@ -94,6 +107,7 @@ const Home = () => {
 				open={isDrawerOpen}
 				setOpen={setIsDrawerOpen}
 				campaigns={campaigns}
+				favorites={favorites}
 			/>
 			{/* <Link to="/?display_mode=MAP">Map Link</Link>
 			<Link to="/?display_mode=LIST">Liste Link</Link> */}

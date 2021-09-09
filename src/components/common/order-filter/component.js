@@ -17,6 +17,8 @@ import Survey from './survey';
 import Priority from './priority';
 import FavoriteFilter from './favorite';
 
+// TODO Favorite data without use mock data
+// Case when there are no favorite list
 // TODO get the labels of keys into db with properties
 
 const useStyles = makeStyles((theme) => ({
@@ -55,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
 
 const useQuery = () => new URLSearchParams(useLocation().search);
 
-const OrderFilter = ({ campaigns, setOpen }) => {
+const OrderFilter = ({ campaigns, favorites, setOpen }) => {
 	const classes = useStyles();
 	const history = useHistory();
 
@@ -85,15 +87,16 @@ const OrderFilter = ({ campaigns, setOpen }) => {
 			return obj;
 		}, {});
 
-	const buildStateFromQuery = (array, campaigns) =>
-		campaigns.reduce((obj, itm) => {
-			if (array.includes(itm)) {
+	const buildStateFromQuery = (queryArray, array) => {
+		return array.reduce((obj, itm) => {
+			if (queryArray.includes(itm)) {
 				obj[itm] = true;
 			} else {
 				obj[itm] = false;
 			}
 			return obj;
 		}, {});
+	};
 
 	const [stateCampaign, setStateCampaign] = useState(
 		query.get('campaigns')
@@ -110,9 +113,33 @@ const OrderFilter = ({ campaigns, setOpen }) => {
 		history.push({ search: query.toString() });
 	}, [stateCampaign, history]);
 
-	// useEffect(() => {
-	// 	setFilters((f) => ({ ...f, campaigns: stateCampaign }));
-	// }, [stateCampaign, setFilters]);
+	const buildArrayfromFavorites = (favorites) => {
+		return favorites.map((item) => item.label);
+	};
+
+	const buildStatefromFavorites = (favorites) =>
+		favorites.reduce((obj, itm) => {
+			obj[itm.label] = false;
+			return obj;
+		}, {});
+
+	const [stateFavorites, setStateFavorites] = useState(
+		query.get('favorites')
+			? buildStateFromQuery(
+					query.get('favorites').split(','),
+					buildArrayfromFavorites(favorites)
+			  )
+			: buildStatefromFavorites(favorites)
+	);
+
+	useEffect(() => {
+		if (stateFavorites && Object.values(stateFavorites).includes(true)) {
+			query.set('favorites', buildQueryParamsFromState(stateFavorites));
+		} else {
+			query.delete('favorites');
+		}
+		history.push({ search: query.toString() });
+	}, [stateFavorites, history]);
 
 	return (
 		<Paper className={classes.paper}>
@@ -144,7 +171,11 @@ const OrderFilter = ({ campaigns, setOpen }) => {
 				</ListItem> */}
 				<Divider />
 				<ListItem>
-					<FavoriteFilter />
+					<FavoriteFilter
+						favorites={favorites}
+						state={stateFavorites}
+						setState={setStateFavorites}
+					/>
 				</ListItem>
 			</List>
 		</Paper>
