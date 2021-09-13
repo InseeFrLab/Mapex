@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import HomeIcon from '@material-ui/icons/Home';
 import ButtonIcon from 'components/common/icon-button';
-import  Alert from '@material-ui/lab/Alert';
+import Alert from '@material-ui/lab/Alert';
 
 const InstallPWA = () => {
 	const [supportsPWA, setSupportsPWA] = useState(false);

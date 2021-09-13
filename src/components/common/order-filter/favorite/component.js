@@ -11,7 +11,6 @@ const FavoriteFilter = ({ favorites, state, setState }) => {
 	const handleChange = (event) => {
 		setState({ ...state, [event.target.value]: event.target.checked });
 	};
-	console.log(`State favorite ${JSON.stringify(state)}`);
 	return (
 		<Item title={D.favoriteLabel}>
 			<FormGroup column>

@@ -1,21 +1,24 @@
 import { getPrivilegedPerson } from 'utils/survey-unit';
+import { normalize } from './normalize';
+
+export const getLastState = (ue) => {
+	if (Array.isArray(ue.states) && ue.states.length === 1) return ue.states[0];
+	if (Array.isArray(ue.states) && ue.states.length > 1) {
+		return ue.states.reduce((a, b) => (a.date > b.date ? a : b));
+	}
+	return false;
+};
 
 export const applyFilters = (surveyUnits, filters) => {
 	const {
 		textSearch: searchFilter,
 		campaigns: campaignFilter,
-		toDos: toDoFilter,
 		priority: priorityFilter,
+		favorites: favoriteFilter,
 	} = filters;
 
-	const normalize = (string) =>
-		string
-			.normalize('NFD')
-			.replace(/[\u0300-\u036f]/g, '')
-			.toLowerCase();
-
 	const filterBySearch = (su) => {
-		const { firstName, lastName } = getPrivilegedPerson(su);
+		const { firstName, lastName } = getPrivilegedPerson(su.persons);
 		if (searchFilter !== '') {
 			const normalizedSearchFilter = normalize(searchFilter);
 			return (
@@ -25,9 +28,6 @@ export const applyFilters = (surveyUnits, filters) => {
 				normalize(su.address.l6.split(' ').slice(1).toString()).includes(
 					normalizedSearchFilter
 				) ||
-				convertSUStateInToDo(getLastState(su).type)
-					.value.toLowerCase()
-					.includes(normalizedSearchFilter) ||
 				normalize(su.campaign).includes(normalizedSearchFilter)
 			);
 		}
@@ -43,14 +43,6 @@ export const applyFilters = (surveyUnits, filters) => {
 		return true;
 	};
 
-	const filterByToDo = (su) => {
-		if (toDoFilter.length > 0) {
-			return toDoFilter.includes(
-				convertSUStateInToDo(getLastState(su).type).order.toString()
-			);
-		}
-		return true;
-	};
 	const filterByPriority = (su) => {
 		if (priorityFilter === true) {
 			return su.priority;
@@ -58,14 +50,19 @@ export const applyFilters = (surveyUnits, filters) => {
 		return true;
 	};
 
+	const filterByFavorite = (su) => {
+		if (favoriteFilter.length > 0) {
+			return favoriteFilter.includes(parseInt(su.id));
+		}
+		return true;
+	};
+
 	const filteredSU = surveyUnits
+		.filter((unit) => filterByCampaign(unit))
 		.filter((unit) => filterByPriority(unit))
-		.filter((unit) => filterByToDo(unit))
-		.filter((unit) => filterByCampaign(unit));
+		.filter((unit) => filterByFavorite(unit));
 
-	const totalEchoes = surveyUnits.length;
 	const searchFilteredSU = filteredSU.filter((unit) => filterBySearch(unit));
-	const matchingEchoes = searchFilteredSU.length;
 
-	return { searchFilteredSU, totalEchoes, matchingEchoes };
+	return searchFilteredSU;
 };

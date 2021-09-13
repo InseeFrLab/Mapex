@@ -25,24 +25,24 @@ const useStyles = makeStyles((theme) => ({
 		padding: 10,
 	},
 }));
+
 const useQuery = () => new URLSearchParams(useLocation().search);
 
-const SearchBar = ({ campaigns, open, setOpen,favorites }) => {
+const SearchBar = ({ campaigns, open, setOpen, favorites }) => {
 	const history = useHistory();
 	let query = useQuery();
 
 	const [textSearch, setTextSearch] = useState(query.get('textSearch') || '');
 
 	useEffect(() => {
-		const params = new URLSearchParams();
 		if (textSearch && textSearch !== '') {
-			params.append('textSearch', textSearch);
+			query.set('textSearch', textSearch);
 		} else {
-			params.delete('textSearch');
+			query.delete('textSearch');
 		}
-		history.push({ search: params.toString() });
+		history.replace({search: query.toString() });
 	}, [textSearch, history]);
-	
+
 	const handleChange = (e) => {
 		setTextSearch(e.target.value);
 	};

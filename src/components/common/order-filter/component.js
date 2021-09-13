@@ -78,7 +78,7 @@ const OrderFilter = ({ campaigns, favorites, setOpen }) => {
 		} else {
 			query.delete('sort');
 		}
-		history.push({ search: query.toString() });
+		history.replace({ search: query.toString() });
 	}, [sortCriteria, history]);
 
 	const buildStateFromCampaign = (campaigns) =>
@@ -110,7 +110,7 @@ const OrderFilter = ({ campaigns, favorites, setOpen }) => {
 		} else {
 			query.delete('campaigns');
 		}
-		history.push({ search: query.toString() });
+		history.replace({ search: query.toString() });
 	}, [stateCampaign, history]);
 
 	const buildArrayfromFavorites = (favorites) => {
@@ -138,7 +138,7 @@ const OrderFilter = ({ campaigns, favorites, setOpen }) => {
 		} else {
 			query.delete('favorites');
 		}
-		history.push({ search: query.toString() });
+		history.replace({ search: query.toString() });
 	}, [stateFavorites, history]);
 
 	return (
