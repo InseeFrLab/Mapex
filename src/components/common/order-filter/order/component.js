@@ -8,9 +8,9 @@ import RadioGroup from '@material-ui/core/RadioGroup';
 
 // TODO -> Include checkbox labels into dictionnary
 
-const Order = ({value, setValue}) => {
-	const handleChange = (event) => {
-		setValue(event.target.value);
+const Order = ({ value, setValue }) => {
+	const handleChange = (e) => {
+		setValue(e.target.value);
 	};
 
 	return (
@@ -22,12 +22,33 @@ const Order = ({value, setValue}) => {
 					value={value}
 					onChange={handleChange}
 				>
-					<FormControlLabel value="priority" control={<Radio />} label="Priorité" />
-					<FormControlLabel value="survey" control={<Radio />} label="Enquête" />
-					<FormControlLabel value="sample" control={<Radio />} label="Sous-échantillon" />
+					<FormControlLabel
+						value="remainingDay"
+						control={<Radio />}
+						label="Jours restants"
+					/>
+					<FormControlLabel
+						value="priority"
+						control={<Radio />}
+						label="Priorité"
+					/>
+					<FormControlLabel
+						value="survey"
+						control={<Radio />}
+						label="Enquête"
+					/>
+					<FormControlLabel
+						value="sample"
+						control={<Radio />}
+						label="Sous-échantillon"
+					/>
 					<FormControlLabel value="name" control={<Radio />} label="Nom" />
 					<FormControlLabel value="city" control={<Radio />} label="Ville" />
-					<FormControlLabel value="state" control={<Radio />} label="État de l'UE" />
+					<FormControlLabel
+						value="state"
+						control={<Radio />}
+						label="État de l'UE"
+					/>
 				</RadioGroup>
 			</FormGroup>
 		</Item>

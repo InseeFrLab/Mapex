@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import InputBase from '@material-ui/core/InputBase';
@@ -7,6 +7,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import ButtonIcon from '../icon-button';
 import D from '../../../dictionary/app/home';
 import DrawerOrderFilter from '../drawer-order-filter';
+import { useLocation, useHistory } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
 	paper: {
@@ -25,10 +26,26 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
-const SearchBar = ({ textSearch, setTextSearch, campaigns, open, setOpen }) => {
+const useQuery = () => new URLSearchParams(useLocation().search);
+
+const SearchBar = ({ campaigns, open, setOpen, favorites }) => {
+	const history = useHistory();
+	let query = useQuery();
+
+	const [textSearch, setTextSearch] = useState(query.get('textSearch') || '');
+
+	useEffect(() => {
+		if (textSearch && textSearch !== '') {
+			query.set('textSearch', textSearch);
+		} else {
+			query.delete('textSearch');
+		}
+		history.replace({search: query.toString() });
+	}, [textSearch, history]);
+
 	const handleChange = (e) => {
 		setTextSearch(e.target.value);
-	}
+	};
 
 	const classes = useStyles();
 	return (
@@ -50,7 +67,7 @@ const SearchBar = ({ textSearch, setTextSearch, campaigns, open, setOpen }) => {
 				icon={<TuneIcon />}
 				onClick={() => setOpen(true)}
 			/>
-			<DrawerOrderFilter open={open} setOpen={setOpen} campaigns={campaigns} />
+			<DrawerOrderFilter open={open} setOpen={setOpen} campaigns={campaigns} favorites={favorites}/>
 		</Paper>
 	);
 };

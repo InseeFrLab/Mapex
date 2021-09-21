@@ -27,7 +27,7 @@ const BottomBar = ({
 				value={currentValue}
 				onChange={handleChange}
 				className={className}
-				showLabel={showLabel}
+				showLabels={showLabel}
 			>
 				{content.map(({ id, label, icon, value }) => (
 					<BarItem

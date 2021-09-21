@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import HomeIcon from '@material-ui/icons/Home';
 import ButtonIcon from 'components/common/icon-button';
-import  Alert from '@material-ui/lab/Alert';
+import Alert from '@material-ui/lab/Alert';
+import GetAppIcon from '@material-ui/icons/GetApp';
 
 const InstallPWA = () => {
 	const [supportsPWA, setSupportsPWA] = useState(false);
@@ -10,7 +10,6 @@ const InstallPWA = () => {
 	useEffect(() => {
 		const handler = (e) => {
 			e.preventDefault();
-			console.log('we are being triggered :D');
 			setSupportsPWA(true);
 			setPromptInstall(e);
 		};
@@ -26,15 +25,16 @@ const InstallPWA = () => {
 		}
 		promptInstall.prompt();
 	};
+	
 	if (!supportsPWA) {
 		return null;
 	}
 	return (
 		<Alert
 			severity="info"
-			action={<ButtonIcon onClick={onClick} icon={<HomeIcon />} />}
+			action={<ButtonIcon onClick={onClick} icon={<GetAppIcon />} />}
 		>
-			Ajouter l'application à l'écran d'acceuil — <strong>check it out!</strong>
+			Ajouter l'application à l'écran d'accueil
 		</Alert>
 	);
 };

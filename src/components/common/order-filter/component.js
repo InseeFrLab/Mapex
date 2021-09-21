@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { useHistory, useLocation } from 'react-router-dom';
 
 import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core/styles';
@@ -13,9 +14,10 @@ import CloseIcon from '@material-ui/icons/Close';
 import D from 'dictionary/app/order-filter';
 import Order from './order';
 import Survey from './survey';
-import Priority from './priority';
 import FavoriteFilter from './favorite';
 
+// TODO Favorite data without use mock data
+// Case when there are no favorite list
 // TODO get the labels of keys into db with properties
 
 const useStyles = makeStyles((theme) => ({
@@ -52,16 +54,91 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
-const OrderFilter = ({ campaigns, setOpen }) => {
-	const classes = useStyles();
+const useQuery = () => new URLSearchParams(useLocation().search);
 
-	const [sortCriteria, setSortCriteria] = useState('');
-	const [stateCampaign, setStateCampaign] = useState(
+const OrderFilter = ({ campaigns, favorites, setOpen }) => {
+	const classes = useStyles();
+	const history = useHistory();
+
+	let query = useQuery();
+
+	const buildQueryParamsFromState = (state) =>
+		Object.keys(state)
+			.filter((key) => state[key] === true)
+			.join(',');
+
+	const [sortCriteria, setSortCriteria] = useState(
+		query.get('sort') || 'remainingDay'
+	);
+
+	useEffect(() => {
+		if (sortCriteria && sortCriteria !== 'remainingDay') {
+			query.set('sort', sortCriteria);
+		} else {
+			query.delete('sort');
+		}
+		history.replace({ search: query.toString() });
+	}, [sortCriteria, history]);
+
+	const buildStateFromCampaign = (campaigns) =>
 		campaigns.reduce((obj, itm) => {
 			obj[itm] = true;
 			return obj;
-		}, {})
+		}, {});
+
+	const buildStateFromQuery = (queryArray, array) => {
+		return array.reduce((obj, itm) => {
+			if (queryArray.includes(itm)) {
+				obj[itm] = true;
+			} else {
+				obj[itm] = false;
+			}
+			return obj;
+		}, {});
+	};
+
+	const [stateCampaign, setStateCampaign] = useState(
+		query.get('campaigns')
+			? buildStateFromQuery(query.get('campaigns').split(','), campaigns)
+			: buildStateFromCampaign(campaigns)
 	);
+
+	useEffect(() => {
+		if (stateCampaign && Object.values(stateCampaign).includes(false)) {
+			query.set('campaigns', buildQueryParamsFromState(stateCampaign));
+		} else {
+			query.delete('campaigns');
+		}
+		history.replace({ search: query.toString() });
+	}, [stateCampaign, history]);
+
+	const buildArrayfromFavorites = (favorites) => {
+		return favorites.map((item) => item.label);
+	};
+
+	const buildStatefromFavorites = (favorites) =>
+		favorites.reduce((obj, itm) => {
+			obj[itm.label] = false;
+			return obj;
+		}, {});
+
+	const [stateFavorites, setStateFavorites] = useState(
+		query.get('favorites')
+			? buildStateFromQuery(
+					query.get('favorites').split(','),
+					buildArrayfromFavorites(favorites)
+			  )
+			: buildStatefromFavorites(favorites)
+	);
+
+	useEffect(() => {
+		if (stateFavorites && Object.values(stateFavorites).includes(true)) {
+			query.set('favorites', buildQueryParamsFromState(stateFavorites));
+		} else {
+			query.delete('favorites');
+		}
+		history.replace({ search: query.toString() });
+	}, [stateFavorites, history]);
 
 	return (
 		<Paper className={classes.paper}>
@@ -87,13 +164,17 @@ const OrderFilter = ({ campaigns, setOpen }) => {
 						setState={setStateCampaign}
 					/>
 				</ListItem>
-				<Divider />
+				{/* <Divider />
 				<ListItem>
 					<Priority />
-				</ListItem>
+				</ListItem> */}
 				<Divider />
 				<ListItem>
-					<FavoriteFilter />
+					<FavoriteFilter
+						favorites={favorites}
+						state={stateFavorites}
+						setState={setStateFavorites}
+					/>
 				</ListItem>
 			</List>
 		</Paper>
