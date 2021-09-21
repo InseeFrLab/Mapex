@@ -25,7 +25,7 @@ let DefaultIcon = L.icon({
 
 L.Marker.prototype.options.icon = DefaultIcon;
 
-const position = [47.147145, 2.843729];
+const position = [50.63276576246312, 3.0779911675174123];
 
 const FabButton = () => (
 	<Fab onClick={() => console.log('click fab')}>
@@ -49,10 +49,8 @@ const MapLeaflet = ({ setMap, surveyUnits, fullscreen }) => {
 				minHeight: height,
 				minWidth: '300px',
 			}}
-			zoom={5}
+			zoom={13}
 		>
-			{/* height: '100%',
-			 */}
 			<TileLayer
 				attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 				url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

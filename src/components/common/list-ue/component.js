@@ -47,7 +47,7 @@ const ListUE = ({ contentUE, Component }) => {
 					/>
 				);
 				return (
-					<>
+					<div key={id}>
 						<UE
 							firstName={privilegPerson && privilegPerson.firstName}
 							lastName={privilegPerson && privilegPerson.lastName}
@@ -59,7 +59,7 @@ const ListUE = ({ contentUE, Component }) => {
 							MyLink={MyLink}
 						/>
 						<Divider variant="middle" />
-					</>
+					</div>
 				);
 			})}
 		</List>

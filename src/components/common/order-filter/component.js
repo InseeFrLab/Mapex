@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useHistory, useLocation } from 'react-router-dom';
 
@@ -14,7 +14,6 @@ import CloseIcon from '@material-ui/icons/Close';
 import D from 'dictionary/app/order-filter';
 import Order from './order';
 import Survey from './survey';
-import Priority from './priority';
 import FavoriteFilter from './favorite';
 
 // TODO Favorite data without use mock data

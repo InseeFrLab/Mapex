@@ -6,11 +6,10 @@ import { getAll } from 'indexedDB/service/db-action';
 import D from '../../dictionary/db';
 import { getValuesOfKey } from 'indexedDB/service/db-action';
 import MapLeaflet from 'components/common/map';
-import { useLocation, useHistory } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { dataFavorite } from 'data-mock/favorite';
 import { sortOnColumnCompareFunction } from 'utils/survey-unit/order';
 import { applyFilters } from 'utils/survey-unit';
-import InstallPWA from 'components/installPwa';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
