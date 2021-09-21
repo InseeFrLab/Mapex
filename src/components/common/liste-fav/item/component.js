@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
-import { makeStyles } from '@material-ui/core/styles';
+import { Link } from 'react-router-dom';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
@@ -12,10 +11,10 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 
-const ItemFavorite = ({ title, nbUE }) => {
+const ItemFavorite = ({ title, UE }) => {
 	return (
 		<Card>
-			<CardActionArea>
+			<CardActionArea component={Link} to={`/?favorites=${title}`}>
 				<CardContent>
 					<Typography>
 						{title}
@@ -25,7 +24,7 @@ const ItemFavorite = ({ title, nbUE }) => {
 						<ListItemIcon>
 							<GroupIcon color="action" />
 						</ListItemIcon>
-						<ListItemText secondary={`${nbUE} Unités d'enquête`} />
+						<ListItemText secondary={`${UE.length} Unités d'enquête`} />
 					</ListItem>
 				</CardContent>
 			</CardActionArea>
@@ -39,9 +38,9 @@ ItemFavorite.propTypes = {
 	 */
 	title: PropTypes.string,
 	/**
-	 * Nb of survey unit in the favorite list
+	 * Survey unit in the favorite list
 	 */
-	nbUE: PropTypes.number,
+	UE: PropTypes.array,
 };
 
 export default ItemFavorite;

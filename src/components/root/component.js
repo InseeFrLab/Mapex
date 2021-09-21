@@ -22,7 +22,7 @@ const Root = () => (
 			<Route exact path="/:id">
 				<SurveyUnitCard />
 			</Route>
-			<Redirect to="/" />
+			<Redirect to="/test" />
 		</Switch>
 		<Bar />
 	</SyncDataFromAPI>

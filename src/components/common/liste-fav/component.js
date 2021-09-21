@@ -11,12 +11,11 @@ const useStyles = makeStyles((theme) => ({
 
 const ListeFavorite = ({ dataFavorite }) => {
 	const classes = useStyles();
-
 	return (
 		<>
 			{dataFavorite.map(({ label, UE }) => (
 				<div className={classes.item}>
-					<ItemFavorite title={label} nbUE={UE.length} />
+					<ItemFavorite title={label} UE={UE} />
 				</div>
 			))}
 		</>

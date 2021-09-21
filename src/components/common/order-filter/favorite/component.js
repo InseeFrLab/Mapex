@@ -5,25 +5,25 @@ import Checkbox from '@material-ui/core/Checkbox';
 import Item from '../item';
 import D from 'dictionary/app/order-filter';
 
-
 // TODO -> Include checkbox labels into dictionnary
 
-const FavoriteFilter = () => {
+const FavoriteFilter = ({ favorites, state, setState }) => {
+	const handleChange = (event) => {
+		setState({ ...state, [event.target.value]: event.target.checked });
+	};
 	return (
 		<Item title={D.favoriteLabel}>
 			<FormGroup column>
-				<FormControlLabel
-					control={<Checkbox  />}
-					label="Favoris 1"
-				/>
-				<FormControlLabel
-					control={<Checkbox  />}
-					label="Favoris 2"
-				/>
-				<FormControlLabel
-					control={<Checkbox  />}
-					label="Favoris 3"
-				/>
+				{favorites.map(({ label }) => {
+					return (
+						<FormControlLabel
+							control={<Checkbox checked={state[label]} />}
+							label={label}
+							value={label}
+							onChange={handleChange}
+						/>
+					);
+				})}
 			</FormGroup>
 		</Item>
 	);

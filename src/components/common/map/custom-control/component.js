@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import ReactDOM from 'react-dom';
-import L, { DomEvent } from 'leaflet';
+import L from 'leaflet';
 import { useLeafletContext } from '@react-leaflet/core';
 
 const CustomControl = ({ Component, position }) => {

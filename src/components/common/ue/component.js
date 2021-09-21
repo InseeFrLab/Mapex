@@ -50,7 +50,7 @@ const UE = ({
 
 	return (
 		<List className={classes.root} component={MyLink}>
-			<ListItem>
+			<ListItem component="div">
 				<ListSubheader disableSticky={true}>{idCampaign}</ListSubheader>
 				<ListItemSecondaryAction>
 					<ButtonIcon
