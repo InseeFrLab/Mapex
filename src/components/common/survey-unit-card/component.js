@@ -26,10 +26,7 @@ import { getById } from 'indexedDB/service/db-action';
 import D from 'dictionary/db';
 import DCalendar from 'dictionary/app/calendar';
 
-import {
-	getPrivilegedPerson,
-	getFavoriteNumber,
-} from 'utils/survey-unit/surveyUnit';
+import { getPrivilegedPerson, getFavoriteNumber } from 'utils/survey-unit';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -70,8 +67,6 @@ const SurveyUnitCard = () => {
 			}
 		});
 	}, [id]);
-
-	useEffect(() => {}, [surveyUnit]);
 
 	useEffect(() => {
 		setFavoritePhone(getFavoriteNumber(privilegPerson.phoneNumbers));

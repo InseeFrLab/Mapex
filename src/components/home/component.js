@@ -42,7 +42,6 @@ const Home = () => {
 	const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 	const [map, setMap] = useState();
 	const classes = useStyles();
-	const [saveQuery, setSaveQuery] = useState(query.toString());
 
 	const refreshSortCriteria = () => query.get('sort') || 'remainingDay';
 
