@@ -5,6 +5,8 @@ import Divider from '@material-ui/core/Divider';
 import Section from '../section';
 import D from '../../../../dictionary/app/unit-card';
 import { makeStyles } from '@material-ui/core/styles';
+import { Link } from "react-router-dom";
+
 
 const useStyles = makeStyles((theme) => ({
 	ListItem: {
@@ -13,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
-const ListAction = ({ hrefSms, hrefCalendar, actionReperage }) => {
+const ListAction = ({ hrefSms, hrefCalendar, pathReperage }) => {
 	const classes = useStyles();
 	return (
 		<Section>
@@ -27,7 +29,12 @@ const ListAction = ({ hrefSms, hrefCalendar, actionReperage }) => {
 				<ListItemText secondary={D.listAction.labelSms} />
 			</ListItem>
 			<Divider />
-			<ListItem className={classes.ListItem} button>
+			<ListItem
+				className={classes.ListItem}
+				button
+				component={Link}
+				to={pathReperage}
+			>
 				<ListItemText secondary={D.listAction.labelReperage} />
 			</ListItem>
 			<Divider />

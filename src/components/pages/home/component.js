@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import SearchBar from '../common/search-bar';
+import SearchBar from '../../common/search-bar';
 import { makeStyles } from '@material-ui/core/styles';
 import WrapperListUE from 'components/common/list-ue';
 import { getAll } from 'indexedDB/service/db-action';
-import D from '../../dictionary/db';
+import D from '../../../dictionary/db';
 import { getValuesOfKey } from 'indexedDB/service/db-action';
 import MapLeaflet from 'components/common/map';
 import { useLocation } from 'react-router-dom';
