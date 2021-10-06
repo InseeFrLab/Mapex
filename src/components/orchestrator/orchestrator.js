@@ -1,20 +1,27 @@
 import React from 'react';
 import * as lunatic from '@inseefr/lunatic';
-import { Card, Container, makeStyles } from '@material-ui/core';
+import { ListItem, makeStyles } from '@material-ui/core';
+import List from '@material-ui/core/List';
+import ButtonUI from 'components/common/button';
+import Divider from '@material-ui/core/Divider';
+import Navigation from './navigation';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
-		flex: '1 1 auto',
-		backgroundColor: 'whitesmoke',
-		padding: '0',
-		paddingTop: '1em',
-		paddingBottom: '3em',
+		width: '100%',
+		backgroundColor: theme.palette.background.paper,
+		maxHeight: '100%',
+		overflow: 'auto',
 	},
 	component: {
-		padding: '10px',
+		padding: '20px',
 		overflow: 'visible',
 		marginBottom: '10px',
 		'& *': { fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif' },
+	},
+	buttonValidate: {
+		justifyContent: 'center',
+		marginTop: '10px',
 	},
 }));
 
@@ -41,7 +48,6 @@ const Orchestrator = ({
 			goPrevious,
 			page,
 			setPage,
-			maxPage,
 			isFirstPage,
 			isLastPage,
 			flow,
@@ -58,7 +64,6 @@ const Orchestrator = ({
 	});
 
 	const classes = useStyles();
-	const Button = lunatic.Button;
 
 	const displayComponents = function () {
 		const structure = components.reduce((acc, curr) => {
@@ -92,7 +97,9 @@ const Orchestrator = ({
 			}
 			return acc;
 		}, {});
+		console.log(JSON.stringify(structure));
 		return components.map((comp) => {
+			console.log(`comp ${JSON.stringify(comp)}`);
 			if (shouldBeDisplayed(structure, comp)) {
 				return displayComponent(structure, comp);
 			}
@@ -129,30 +136,32 @@ const Orchestrator = ({
 		const Component = lunatic[componentType];
 		if (componentType !== 'FilterDescription') {
 			return (
-				<Card
-					className={`lunatic lunatic-component ${componentType} ${classes.component}`}
-					key={`component-${id}`}
-				>
-					<div
-						className={`lunatic-component outerContainer-${componentType}`}
+				<>
+					<ListItem
+						className={`lunatic lunatic-component ${componentType} ${classes.component}`}
 						key={`component-${id}`}
 					>
-						<Component
-							{...comp}
-							handleChange={handleChange}
-							labelPosition="TOP"
-							preferences={preferences}
-							features={features}
-							bindings={bindings}
-							writable
-							currentPage={page}
-							setPage={setPage}
-							flow={flow}
-							pagination={pagination}
-						/>
-						{displaySubComponents(componentsStructure, componentType, id)}
-					</div>
-				</Card>
+						<div
+							className={`lunatic-component outerContainer-${componentType}`}
+							key={`component-${id}`}
+						>
+							<Component
+								{...comp}
+								handleChange={handleChange}
+								preferences={preferences}
+								features={features}
+								bindings={bindings}
+								writable
+								currentPage={page}
+								setPage={setPage}
+								flow={flow}
+								pagination={pagination}
+							/>
+							{displaySubComponents(componentsStructure, componentType, id)}
+						</div>
+					</ListItem>
+					<Divider />
+				</>
 			);
 		} else {
 			return null;
@@ -176,31 +185,21 @@ const Orchestrator = ({
 	};
 
 	return (
-		<div className="container">
-			<div className="components">
-				{displayComponents()}
-			</div>
+		<List className={classes.root}>
+			{displayComponents()}
+			<ButtonUI
+				className={classes.buttonValidate}
+				label="Valider les réponses"
+			/>
 			{pagination && (
-				<>
-					<div className="pagination">
-						<Button
-							onClick={goPrevious}
-							disabled={isFirstPage}
-							value="Previous"
-						/>
-						<Button onClick={goNext} disabled={isLastPage} value="Next" />
-						<div className="btn-page-init">
-							<Button
-								onClick={() => setPage('1')}
-								disabled={isFirstPage}
-								value="Page 1"
-							/>
-						</div>
-					</div>
-					<div>{`Page : ${page}/${maxPage}`}</div>
-				</>
+				<Navigation
+					isFirstPage={isFirstPage}
+					goPrevious={goPrevious}
+					goNext={goNext}
+					isLastPage={isLastPage}
+				/>
 			)}
-		</div>
+		</List>
 	);
 };
 

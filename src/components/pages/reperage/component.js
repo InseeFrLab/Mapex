@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { useHistory } from 'react-router-dom';
 import AppBar from '@material-ui/core/AppBar';
@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
 	buttonTopRight: {
 		marginRight: theme.spacing(2),
 	},
-	icons: {
+	body: {
 		textAlign: 'center',
 		paddingTop: '0.3em',
 	},
@@ -34,8 +34,12 @@ const Reperage = () => {
 	const history = useHistory();
 	const classes = useStyles();
 
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
+
 	return (
-		<div>
+		<div className={classes.root}>
 			<AppBar position="static" color="transparent">
 				<Toolbar>
 					<ButtonIcon
@@ -49,8 +53,9 @@ const Reperage = () => {
 					</div>
 				</Toolbar>
 			</AppBar>
-
-			<CollectOrchestrator source={tic} pagination={true} />
+			<div className={classes.body}>
+				<CollectOrchestrator source={questionnaire} pagination={false} />
+			</div>
 		</div>
 	);
 };
