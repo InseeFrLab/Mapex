@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItem from '@material-ui/core/ListItem';
 import Section from '../section';
-import D from 'dictionary/components/unit-card';
+import { dicSurveyUnit } from 'dictionary';
 
 import PersonIcon from '@material-ui/icons/Person';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
 const OtherContact = ({ otherPersons }) => {
 	const classes = useStyles();
 	return (
-		<Section title={D.otherContactTitle}>
+		<Section title={dicSurveyUnit.otherContactTitle}>
 			{otherPersons.map(
 				({ firstName, lastName, email, phoneNumbers }, index) => (
 					<>
@@ -35,14 +35,14 @@ const OtherContact = ({ otherPersons }) => {
 							</ListItemIcon>
 							<ListItemText>{`${firstName} ${lastName}`}</ListItemText>
 							<Typography>{email}</Typography>
-							<ButtonIcon icon={<MailIcon />} href={`mailto:${email}`}/>
+							<ButtonIcon icon={<MailIcon />} href={`mailto:${email}`} />
 						</ListItem>
 						{phoneNumbers.map(({ source, number }) => (
 							<ListItem className={classes.ListItem}>
 								<ListItemText secondary={source} />
 								<>
 									<Typography color="textSecondary">{number}</Typography>
-									<ButtonIcon icon={<PhoneIcon />} href={`tel:${number}`}/>
+									<ButtonIcon icon={<PhoneIcon />} href={`tel:${number}`} />
 								</>
 							</ListItem>
 						))}

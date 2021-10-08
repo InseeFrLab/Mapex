@@ -1,5 +1,9 @@
-export * as dicSurveyUnit from './survey-unit-card';
+import surveyUnit from './survey-unit-card';
+import searchBar from './search-bar';
+import orderFilter from './order-filter';
 
-export { searchBar as dicSearchBar } from './search-bar';
-
-export { orderFilter as dicOrderFilter } from './order-filter';
+export {
+	surveyUnit as dicSurveyUnit,
+	searchBar as dicSearchBar,
+	orderFilter as dicOrderFilter,
+};

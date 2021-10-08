@@ -3,7 +3,6 @@ import ListItemText from '@material-ui/core/ListItemText';
 import ListItem from '@material-ui/core/ListItem';
 import Divider from '@material-ui/core/Divider';
 import Section from '../section';
-import DicUnitCard from 'components/dictionary';
 import { dicSurveyUnit } from 'dictionary';
 import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
@@ -26,7 +25,7 @@ const ListAction = ({ hrefSms, hrefCalendar, pathReperage }) => {
 				target="_blank"
 				href={hrefSms}
 			>
-				<ListItemText secondary={D.listAction.labelSms} />
+				<ListItemText secondary={dicSurveyUnit.listAction.labelSms} />
 			</ListItem>
 			<Divider />
 			<ListItem
@@ -35,7 +34,7 @@ const ListAction = ({ hrefSms, hrefCalendar, pathReperage }) => {
 				component={Link}
 				to={pathReperage}
 			>
-				<ListItemText secondary={D.listAction.labelReperage} />
+				<ListItemText secondary={dicSurveyUnit.listAction.labelReperage} />
 			</ListItem>
 			<Divider />
 			<ListItem
@@ -45,7 +44,7 @@ const ListAction = ({ hrefSms, hrefCalendar, pathReperage }) => {
 				target="_blank"
 				href={hrefCalendar}
 			>
-				<ListItemText secondary={D.listAction.labelCalendar} />
+				<ListItemText secondary={dicSurveyUnit.listAction.labelCalendar} />
 			</ListItem>
 		</Section>
 	);

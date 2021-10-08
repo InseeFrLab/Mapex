@@ -51,7 +51,7 @@ const Home = () => {
 			getAll(dicDb.surveyUnitDB).then((units) => {
 				setSurveyUnits(units);
 			}),
-			getValuesOfKey(D.surveyUnitDB, 'campaign').then((camp) => {
+			getValuesOfKey(dicDb.surveyUnitDB, 'campaign').then((camp) => {
 				setCampaigns(camp);
 			}),
 		]).then(() => {

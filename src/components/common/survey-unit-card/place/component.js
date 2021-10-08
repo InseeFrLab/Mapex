@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItem from '@material-ui/core/ListItem';
 import Section from '../section';
-import D from '../../../../dictionary/components/survey-unit-card';
+import { dicSurveyUnit } from 'dictionary';
 
 import ButtonIcon from '../../icon-button';
 import PlaceIcon from '@material-ui/icons/Place';
@@ -19,10 +19,13 @@ const useStyles = makeStyles((theme) => ({
 const Place = ({ address }) => {
 	const classes = useStyles();
 	return (
-		<Section title={D.placeTitle}>
+		<Section title={dicSurveyUnit.placeTitle}>
 			<ListItem className={classes.ListItem}>
 				<ListItemText secondary={`${address.l4} ${address.l6}`} />
-				<ButtonIcon icon={<PlaceIcon />} href={`https://www.google.com/maps/dir/?api=1&destination=${address.l4}+${address.l6}`}/>
+				<ButtonIcon
+					icon={<PlaceIcon />}
+					href={`https://www.google.com/maps/dir/?api=1&destination=${address.l4}+${address.l6}`}
+				/>
 			</ListItem>
 		</Section>
 	);

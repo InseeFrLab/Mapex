@@ -13,7 +13,7 @@ export const getDataFromApiOld = ({ setError, setData = () => {} }) =>
 			return result;
 		})
 		.then((units) => {
-			setDataIntoDB(D.surveyUnitDB, units);
+			setDataIntoDB(dicDb.surveyUnitDB, units);
 			setData && setData(units);
 		})
 		.catch((e) => {

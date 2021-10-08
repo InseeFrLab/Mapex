@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItem from '@material-ui/core/ListItem';
 import Section from '../section';
-import D from '../../../../dictionary/components/survey-unit-card';
+import { dicSurveyUnit } from 'dictionary';
 import StarIcon from '@material-ui/icons/Star';
 import StarBorderIcon from '@material-ui/icons/StarBorder';
 import ButtonIcon from '../../icon-button';
@@ -21,18 +21,14 @@ const useStyles = makeStyles((theme) => ({
 const Phone = ({ phoneNumbers }) => {
 	const classes = useStyles();
 	return (
-		<Section title={D.phoneTitle}>
+		<Section title={dicSurveyUnit.phoneTitle}>
 			{phoneNumbers.map(({ source, favorite, number }) => (
 				<ListItem className={classes.ListItem}>
 					<ListItemText secondary={source} />
 					<>
 						<Typography color="textSecondary">{number}</Typography>
-						<ButtonIcon icon={<PhoneIcon />} href={`tel:${number}`}/>
-						<ButtonIcon
-							icon={
-								favorite ? <StarIcon /> : <StarBorderIcon />
-							}
-						/>
+						<ButtonIcon icon={<PhoneIcon />} href={`tel:${number}`} />
+						<ButtonIcon icon={favorite ? <StarIcon /> : <StarBorderIcon />} />
 					</>
 				</ListItem>
 			))}
