@@ -11,7 +11,7 @@ import ListItem from '@material-ui/core/ListItem';
 import Divider from '@material-ui/core/Divider';
 import ButtonIcon from '../icon-button/component';
 import CloseIcon from '@material-ui/icons/Close';
-import D from 'dictionary/app/order-filter';
+import D from 'dictionary/components/common/order-filter/order-filter';
 import Order from './order';
 import Survey from './survey';
 import FavoriteFilter from './favorite';

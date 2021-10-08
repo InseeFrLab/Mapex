@@ -5,7 +5,7 @@ import InputBase from '@material-ui/core/InputBase';
 import TuneIcon from '@material-ui/icons/Tune';
 import SearchIcon from '@material-ui/icons/Search';
 import ButtonIcon from '../icon-button';
-import D from '../../../dictionary/app/home';
+import D from '../../../dictionary/components/pages/home/home';
 import DrawerOrderFilter from '../drawer-order-filter';
 import { useLocation, useHistory } from 'react-router-dom';
 

@@ -1,6 +1,6 @@
 import { setDataIntoDB } from 'indexedDB/service/db-action';
 import { getSurveyUnitsAPI, getUnit, getSurveyUnitsExtended } from '../call';
-import D from 'dictionary/db';
+import { dicDb } from 'dictionary';
 
 export const getDataFromApiOld = ({ setError, setData = () => {} }) =>
 	getSurveyUnitsAPI()
@@ -23,7 +23,7 @@ export const getDataFromApiOld = ({ setError, setData = () => {} }) =>
 export const getDataFromAPI = ({ setError }) =>
 	getSurveyUnitsExtended()
 		.then((surveyUnits) => {
-			setDataIntoDB(D.surveyUnitDB, surveyUnits);
+			setDataIntoDB(dicDb.surveyUnitDB, surveyUnits);
 		})
 		.catch((e) => {
 			setError(`Errror : ${e}`);

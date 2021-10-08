@@ -1,4 +1,4 @@
-import DCalendar from 'dictionary/app/calendar';
+import DCalendar from 'dictionary/components/common/survey-unit-card/calendar';
 
 export const makeGoogleCalendarUrl = (person,surveyUnit) => {
 	const eventName = `${DCalendar.eventName} ${person.firstName} ${person.lastName}`;

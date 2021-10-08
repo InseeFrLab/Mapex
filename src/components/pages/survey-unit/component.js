@@ -1,14 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import {
-	Switch,
-	Route,
-	Link,
-	Redirect,
-	useParams,
-	useHistory,
-	useRouteMatch,
-} from 'react-router-dom';
+import { useParams, useHistory, useRouteMatch } from 'react-router-dom';
 import SurveyUnitCard from 'components/common/survey-unit-card';
 import { getById } from 'indexedDB/service/db-action';
 import {
@@ -16,7 +8,7 @@ import {
 	getFavoriteNumber,
 	makeGoogleCalendarUrl,
 } from 'utils/survey-unit';
-import D from 'dictionary/db';
+import { dicDb } from 'dictionary';
 
 const SurveyUnit = () => {
 	let { path, url } = useRouteMatch();
@@ -29,7 +21,7 @@ const SurveyUnit = () => {
 	const [error, setError] = useState('');
 
 	useEffect(() => {
-		getById(D.surveyUnitDB, id).then((unit) => {
+		getById(dicDb.surveyUnitDB, id).then((unit) => {
 			if (unit) {
 				setSurveyUnit(unit);
 				setPrivilegPerson(getPrivilegedPerson(unit.persons));

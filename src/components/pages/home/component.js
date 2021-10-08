@@ -3,7 +3,7 @@ import SearchBar from '../../common/search-bar';
 import { makeStyles } from '@material-ui/core/styles';
 import WrapperListUE from 'components/common/list-ue';
 import { getAll } from 'indexedDB/service/db-action';
-import D from '../../../dictionary/db';
+import { dicDb } from 'dictionary';
 import { getValuesOfKey } from 'indexedDB/service/db-action';
 import MapLeaflet from 'components/common/map';
 import { useLocation } from 'react-router-dom';
@@ -48,7 +48,7 @@ const Home = () => {
 	// Loading Data From IndexedDB
 	useEffect(() => {
 		Promise.all([
-			getAll(D.surveyUnitDB).then((units) => {
+			getAll(dicDb.surveyUnitDB).then((units) => {
 				setSurveyUnits(units);
 			}),
 			getValuesOfKey(D.surveyUnitDB, 'campaign').then((camp) => {

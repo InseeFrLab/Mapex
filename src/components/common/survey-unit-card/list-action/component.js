@@ -3,10 +3,10 @@ import ListItemText from '@material-ui/core/ListItemText';
 import ListItem from '@material-ui/core/ListItem';
 import Divider from '@material-ui/core/Divider';
 import Section from '../section';
-import D from '../../../../dictionary/app/unit-card';
+import DicUnitCard from 'components/dictionary';
+import { dicSurveyUnit } from 'dictionary';
 import { makeStyles } from '@material-ui/core/styles';
-import { Link } from "react-router-dom";
-
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
 	ListItem: {

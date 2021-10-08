@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItem from '@material-ui/core/ListItem';
 import Section from '../section';
-import D from '../../../../dictionary/app/unit-card';
+import D from '../../../../dictionary/components/survey-unit-card';
 import StarIcon from '@material-ui/icons/Star';
 import StarBorderIcon from '@material-ui/icons/StarBorder';
 import ButtonIcon from '../../icon-button';
