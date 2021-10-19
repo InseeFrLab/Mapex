@@ -7,6 +7,7 @@ import Bar from './bar';
 import SurveyUnit from 'components/pages/survey-unit';
 import SyncDataFromAPI from 'utils/data-sync';
 import Reperage from 'components/pages/reperage';
+import Loading from 'components/common/loading';
 
 const Root = () => (
 	<SyncDataFromAPI>
@@ -19,6 +20,9 @@ const Root = () => (
 			</Route>
 			<Route exact path="/notifications">
 				<Notifications />
+			</Route>
+			<Route exact path="/loading">
+				<Loading />
 			</Route>
 			<Route exact path="/reperage/:id">
 				<Reperage />

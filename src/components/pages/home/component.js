@@ -10,6 +10,7 @@ import { useLocation } from 'react-router-dom';
 import { dataFavorite } from 'data-mock/favorite';
 import { sortOnColumnCompareFunction } from 'utils/survey-unit/order';
 import { applyFilters } from 'utils/survey-unit';
+import Loading from 'components/common/loading';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -99,34 +100,35 @@ const Home = () => {
 		setFilteredSurveyUnits(sortSU(filteredSU));
 	}, [filters, sortCriteria, surveyUnits]);
 
-	// To Do Loading page
-	if (loading) return <div>{"I'm loading dude"}</div>;
-
 	return (
 		<>
-			<div className={classes.root}>
-				<SearchBar
-					open={isDrawerOpen}
-					setOpen={setIsDrawerOpen}
-					campaigns={campaigns}
-					favorites={favorites}
-				/>
-				{/* <Link to="/?display_mode=MAP">Map Link</Link>
+			{loading ? (
+				<Loading />
+			) : (
+				<div className={classes.root}>
+					<SearchBar
+						open={isDrawerOpen}
+						setOpen={setIsDrawerOpen}
+						campaigns={campaigns}
+						favorites={favorites}
+					/>
+					{/* <Link to="/?display_mode=MAP">Map Link</Link>
 			<Link to="/?display_mode=LIST">Liste Link</Link> */}
 
-				<MapLeaflet
-					fullscreen={query.get('display_mode') === 'MAP'}
-					map={map}
-					setMap={setMap}
-					surveyUnits={filteredSurveyUnits}
-				/>
-				{/* <WrapperListUE contentUE={surveyUnits} />*/}
+					<MapLeaflet
+						fullscreen={query.get('display_mode') === 'MAP'}
+						map={map}
+						setMap={setMap}
+						surveyUnits={filteredSurveyUnits}
+					/>
+					{/* <WrapperListUE contentUE={surveyUnits} />*/}
 
-				<Child
-					displayMode={query.get('display_mode')}
-					surveyUnits={filteredSurveyUnits}
-				/>
-			</div>
+					<Child
+						displayMode={query.get('display_mode')}
+						surveyUnits={filteredSurveyUnits}
+					/>
+				</div>
+			)}
 		</>
 	);
 };

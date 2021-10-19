@@ -78,6 +78,7 @@ const OrderFilter = ({ campaigns, favorites, setOpen }) => {
 			query.delete('sort');
 		}
 		history.replace({ search: query.toString() });
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [sortCriteria, history]);
 
 	const buildStateFromCampaign = (campaigns) =>
@@ -110,6 +111,7 @@ const OrderFilter = ({ campaigns, favorites, setOpen }) => {
 			query.delete('campaigns');
 		}
 		history.replace({ search: query.toString() });
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [stateCampaign, history]);
 
 	const buildArrayfromFavorites = (favorites) => {
