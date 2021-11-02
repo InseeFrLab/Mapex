@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
-const Loading = () => {
+const Loader = () => {
 	const classes = useStyles();
 	return (
 		<div className={classes.root}>
@@ -41,4 +41,4 @@ const Loading = () => {
 	);
 };
 
-export default Loading;
+export default Loader;

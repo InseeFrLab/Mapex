@@ -1,17 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router } from 'react-router-dom';
-import Root from 'components/root';
+import { RecoilRoot } from 'recoil';
+import Initializer from 'components/initializer';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
 ReactDOM.render(
 	<React.StrictMode>
-		<CssBaseline />
-		<Router>
-			<Root />
-		</Router>
+		<RecoilRoot>
+			<CssBaseline />
+			<Initializer />
+		</RecoilRoot>
 	</React.StrictMode>,
 	document.getElementById('root')
 );

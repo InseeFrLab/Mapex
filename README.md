@@ -70,3 +70,8 @@ To run the storybook locally
 ```bash
 yarn storybook
 ```
+
+### Things to follow for future integration
+
+[Error Boundary](https://reactjs.org/docs/error-boundaries.html)
+[Suspense for Data Fetching](https://reactjs.org/docs/concurrent-mode-suspense.html)

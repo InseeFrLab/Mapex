@@ -2,7 +2,7 @@ import { setDataIntoDB } from 'indexedDB/service/db-action';
 import { getSurveyUnitsAPI, getUnit, getSurveyUnitsExtended } from '../call';
 import { dicDb } from 'dictionary';
 
-export const getDataFromApiOld = ({ setError, setData = () => {} }) =>
+export const getDataFromApi = ({ setError, setData = () => {}, setLoading }) =>
 	getSurveyUnitsAPI()
 		.then(async (surveyUnits) => {
 			const result = await Promise.all(
@@ -16,11 +16,13 @@ export const getDataFromApiOld = ({ setError, setData = () => {} }) =>
 			setDataIntoDB(dicDb.surveyUnitDB, units);
 			setData && setData(units);
 		})
+		.then(setLoading(false))
 		.catch((e) => {
+			setLoading(false);
 			setError(`Errror : ${e}`);
 		});
 
-export const getDataFromAPI = ({ setError }) =>
+export const getDataFromAPIExtended = ({ setError }) =>
 	getSurveyUnitsExtended()
 		.then((surveyUnits) => {
 			setDataIntoDB(dicDb.surveyUnitDB, surveyUnits);

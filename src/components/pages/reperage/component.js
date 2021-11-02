@@ -7,8 +7,9 @@ import Toolbar from '@material-ui/core/Toolbar';
 import ButtonIcon from 'components/common/icon-button';
 import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
 
-import questionnaire from 'questionnaire-lunatic/simpsons-question.json';
-import tic from 'questionnaire-lunatic/form.json';
+import questionnaire from 'questionnaire-lunatic/lunatic-questionnaire';
+import questionnaireGrp2 from 'questionnaire-lunatic/grp2.json';
+
 import { CollectOrchestrator } from 'components/orchestrator';
 
 const sendData = (surveyUnit) => {};
@@ -54,7 +55,7 @@ const Reperage = () => {
 				</Toolbar>
 			</AppBar>
 			<div className={classes.body}>
-				<CollectOrchestrator source={questionnaire} pagination={false} />
+				<CollectOrchestrator source={questionnaireGrp2} pagination={false} />
 			</div>
 		</div>
 	);

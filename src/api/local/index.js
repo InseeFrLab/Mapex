@@ -1,1 +1,2 @@
-export const getDataFromAPI = () => Promise.resolve([]);
+export const getDataFromAPI = ({ setError, setData = () => {}, setLoading }) =>
+	Promise.resolve([setLoading(false)]);

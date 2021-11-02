@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import SearchBar from '../../common/search-bar';
+import { loadingState } from 'components/state/loading';
+import { useRecoilState } from 'recoil';
 import { makeStyles } from '@material-ui/core/styles';
 import WrapperListUE from 'components/common/list-ue';
 import { getAll } from 'indexedDB/service/db-action';
@@ -10,7 +12,7 @@ import { useLocation } from 'react-router-dom';
 import { dataFavorite } from 'data-mock/favorite';
 import { sortOnColumnCompareFunction } from 'utils/survey-unit/order';
 import { applyFilters } from 'utils/survey-unit';
-import Loading from 'components/common/loading';
+import Loader from 'components/common/loader';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -35,11 +37,11 @@ const useQuery = () => new URLSearchParams(useLocation().search);
 
 const Home = () => {
 	let query = useQuery();
+	const [loading, setLoading] = useRecoilState(loadingState);
 	const [surveyUnits, setSurveyUnits] = useState([]);
 	const [campaigns, setCampaigns] = useState([]);
 	const [filteredSurveyUnits, setFilteredSurveyUnits] = useState([]);
-	const [favorites, setFavorites] = useState(dataFavorite); //TODO Data into indexedDB
-	const [loading, setLoading] = useState(true);
+	const [favorites] = useState(dataFavorite); //TODO Data into indexedDB
 	const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 	const [map, setMap] = useState();
 	const classes = useStyles();
@@ -48,6 +50,7 @@ const Home = () => {
 
 	// Loading Data From IndexedDB
 	useEffect(() => {
+		setLoading(true);
 		Promise.all([
 			getAll(dicDb.surveyUnitDB).then((units) => {
 				setSurveyUnits(units);
@@ -55,10 +58,8 @@ const Home = () => {
 			getValuesOfKey(dicDb.surveyUnitDB, 'campaign').then((camp) => {
 				setCampaigns(camp);
 			}),
-		]).then(() => {
-			setLoading(false);
-		});
-	}, []);
+		]).then(setLoading(false));
+	}, [setLoading]);
 
 	const [sortCriteria, setSortCriteria] = useState(refreshSortCriteria());
 
@@ -95,41 +96,38 @@ const Home = () => {
 	}, [query.toString()]);
 
 	useEffect(() => {
+		// add changement of filter, sortcreteria or SU we refresh filteredSU
 		const sortSU = (su) => su.sort(sortOnColumnCompareFunction(sortCriteria));
 		const filteredSU = applyFilters(surveyUnits, filters);
 		setFilteredSurveyUnits(sortSU(filteredSU));
 	}, [filters, sortCriteria, surveyUnits]);
 
+	if (loading) return <Loader />;
+
 	return (
-		<>
-			{loading ? (
-				<Loading />
-			) : (
-				<div className={classes.root}>
-					<SearchBar
-						open={isDrawerOpen}
-						setOpen={setIsDrawerOpen}
-						campaigns={campaigns}
-						favorites={favorites}
-					/>
-					{/* <Link to="/?display_mode=MAP">Map Link</Link>
+		<div className={classes.root}>
+			<SearchBar
+				open={isDrawerOpen}
+				setOpen={setIsDrawerOpen}
+				campaigns={campaigns}
+				favorites={favorites}
+			/>
+			{/* <Link to="/?display_mode=MAP">Map Link</Link>
 			<Link to="/?display_mode=LIST">Liste Link</Link> */}
 
-					<MapLeaflet
-						fullscreen={query.get('display_mode') === 'MAP'}
-						map={map}
-						setMap={setMap}
-						surveyUnits={filteredSurveyUnits}
-					/>
-					{/* <WrapperListUE contentUE={surveyUnits} />*/}
+			<MapLeaflet
+				fullscreen={query.get('display_mode') === 'MAP'}
+				map={map}
+				setMap={setMap}
+				surveyUnits={filteredSurveyUnits}
+			/>
+			{/* <WrapperListUE contentUE={surveyUnits} />*/}
 
-					<Child
-						displayMode={query.get('display_mode')}
-						surveyUnits={filteredSurveyUnits}
-					/>
-				</div>
-			)}
-		</>
+			<Child
+				displayMode={query.get('display_mode')}
+				surveyUnits={filteredSurveyUnits}
+			/>
+		</div>
 	);
 };
 

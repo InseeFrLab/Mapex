@@ -5,6 +5,7 @@ import List from '@material-ui/core/List';
 import ButtonUI from 'components/common/button';
 import Divider from '@material-ui/core/Divider';
 import Navigation from './navigation';
+import API from 'api';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -97,9 +98,7 @@ const Orchestrator = ({
 			}
 			return acc;
 		}, {});
-		console.log(JSON.stringify(structure));
 		return components.map((comp) => {
-			console.log(`comp ${JSON.stringify(comp)}`);
 			if (shouldBeDisplayed(structure, comp)) {
 				return displayComponent(structure, comp);
 			}
@@ -190,6 +189,7 @@ const Orchestrator = ({
 			<ButtonUI
 				className={classes.buttonValidate}
 				label="Valider les réponses"
+				onClick={() => API.postParadata(lunatic.getState(questionnaire))}
 			/>
 			{pagination && (
 				<Navigation

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import { useParams, useHistory, useRouteMatch } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import SurveyUnitCard from 'components/common/survey-unit-card';
 import { getById } from 'indexedDB/service/db-action';
 import {
@@ -9,9 +9,9 @@ import {
 	makeGoogleCalendarUrl,
 } from 'utils/survey-unit';
 import { dicDb } from 'dictionary';
+import Loader from 'components/common/loader';
 
 const SurveyUnit = () => {
-	let { path, url } = useRouteMatch();
 	const { id } = useParams();
 	const history = useHistory();
 	const [surveyUnit, setSurveyUnit] = useState([]);
@@ -34,18 +34,15 @@ const SurveyUnit = () => {
 
 	useEffect(() => {
 		setFavoritePhone(getFavoriteNumber(privilegPerson.phoneNumbers));
-		console.log(privilegPerson);
 	}, [privilegPerson]);
 
 	if (error) return <div>{error}</div>; // Add button to go back.
 
-	if (loading) return <div>I'm Loading</div>;
+	if (loading) return <Loader />;
 
 	const goToPreviousPath = () => {
 		history.goBack();
 	};
-	console.log(path);
-
 	return (
 		<SurveyUnitCard
 			goToPreviousPath={goToPreviousPath}

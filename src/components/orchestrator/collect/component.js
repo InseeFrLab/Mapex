@@ -13,7 +13,7 @@ const Collect = ({ source, data = {}, pagination }) => {
 		<Orchestrator
 			savingType={'COLLECTED'}
 			preferences={['COLLECTED']}
-			features={['VTL']}
+			features={['VTL', 'MD']}
 			source={source}
 			data={dataForCollect}
 			tooltip={false}
