@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import * as lunatic from '@inseefr/lunatic';
-import { ListItem, makeStyles } from '@material-ui/core';
+import { ListItem, makeStyles, TextField } from '@material-ui/core';
 import List from '@material-ui/core/List';
 import ButtonUI from 'components/common/button';
 import Divider from '@material-ui/core/Divider';
 import Navigation from './navigation';
 import API from 'api';
+import ModalReperage from 'components/common/modal';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -65,6 +66,9 @@ const Orchestrator = ({
 	});
 
 	const classes = useStyles();
+
+	const [openModal, setOpenModal] = useState(false);
+	const [textSendData, setTextSendData] = useState('');
 
 	const displayComponents = function () {
 		const structure = components.reduce((acc, curr) => {
@@ -183,14 +187,36 @@ const Orchestrator = ({
 		return null;
 	};
 
+	const handleSend = () => {
+		API.postParadata(lunatic.getState(questionnaire))
+			.then((r) => {
+				setOpenModal(false);
+				setTextSendData('Les données ont bien été envoyées');
+			})
+			.catch((e) => {
+				setOpenModal(false);
+				setTextSendData(
+					'Une erreur est survenue, veuillez réessayer plus tard.'
+				);
+				console.log(e);
+			});
+	};
+
+	// API.postParadata(lunatic.getState(questionnaire))
 	return (
 		<List className={classes.root}>
 			{displayComponents()}
 			<ButtonUI
 				className={classes.buttonValidate}
 				label="Valider les réponses"
-				onClick={() => API.postParadata(lunatic.getState(questionnaire))}
+				onClick={() => setOpenModal(true)}
 			/>
+			<ModalReperage
+				open={openModal}
+				setOpen={setOpenModal}
+				handleSend={handleSend}
+			/>
+			{textSendData}
 			{pagination && (
 				<Navigation
 					isFirstPage={isFirstPage}

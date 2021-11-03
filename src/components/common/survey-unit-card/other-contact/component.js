@@ -23,6 +23,9 @@ const useStyles = makeStyles((theme) => ({
 
 const OtherContact = ({ otherPersons }) => {
 	const classes = useStyles();
+
+	if (otherPersons.length === 0) return null;
+	
 	return (
 		<Section title={dicSurveyUnit.otherContactTitle}>
 			{otherPersons.map(

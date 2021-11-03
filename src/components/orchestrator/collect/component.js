@@ -3,12 +3,14 @@ import Orchestrator from '../orchestrator';
 
 const Collect = ({ source, data = {}, pagination }) => {
 	const { COLLECTED, ...dataForCollect } = data;
-	async function suggesterFetcher(url) {
-		const response = await fetch(url, {
-			headers: { Accept: 'application/json' },
-		});
-		return response;
-	}
+
+	// async function suggesterFetcher(url) {
+	// 	const response = await fetch(url, {
+	// 		headers: { Accept: 'application/json' },
+	// 	});
+	// 	return response;
+	// }
+
 	return (
 		<Orchestrator
 			savingType={'COLLECTED'}
@@ -19,13 +21,13 @@ const Collect = ({ source, data = {}, pagination }) => {
 			tooltip={false}
 			pagination={pagination}
 			writable
-			suggesters={{
-				'naf-rev2': {
-					url: 'https://inseefr.github.io/Lunatic/storybook/naf-rev2.json',
-				},
-			}}
-			suggesterFetcher={suggesterFetcher}
-			autoSuggesterLoading
+			// suggesters={{
+			// 	'naf-rev2': {
+			// 		url: 'https://inseefr.github.io/Lunatic/storybook/naf-rev2.json',
+			// 	},
+			// }}
+			// suggesterFetcher={suggesterFetcher}
+			// autoSuggesterLoading
 		/>
 	);
 };
