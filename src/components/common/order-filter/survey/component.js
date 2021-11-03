@@ -3,7 +3,7 @@ import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import Item from '../item';
-import D from 'dictionary/app/order-filter';
+import D from 'dictionary/components/common/order-filter/order-filter';
 
 const Survey = ({ campaigns, state, setState }) => {
 	const handleChange = (event) => {

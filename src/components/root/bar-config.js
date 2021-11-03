@@ -8,7 +8,7 @@ export const navConfig = [
 	{ id: 'home', value: '/', label: D.home, icon: <HomeIcon /> },
 	{
 		id: 'favorite',
-		value: '/favorite',
+		value: '/favoris',
 		label: D.favorite,
 		icon: <FavoriteIcon />,
 	},

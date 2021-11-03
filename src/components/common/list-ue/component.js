@@ -7,7 +7,7 @@ import Divider from '@material-ui/core/Divider';
 import {
 	getFavoriteNumber,
 	getPrivilegedPerson,
-} from '../../../utils/survey-unit/surveyUnit';
+} from 'utils/survey-unit/';
 
 // https://codesandbox.io/s/5wqo7z2np4 for loading data
 // TODO :

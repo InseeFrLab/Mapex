@@ -1,1 +1,1 @@
-export { default } from './db';
+export { default as dicDb } from './db';

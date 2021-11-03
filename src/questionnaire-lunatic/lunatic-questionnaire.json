@@ -1,0 +1,1567 @@
+{
+    "variables": [
+        {
+            "variableType": "COLLECTED",
+            "values": {
+                "COLLECTED": null,
+                "EDITED": null,
+                "INPUTED": null,
+                "FORCED": null,
+                "PREVIOUS": null
+            },
+            "name": "Q1",
+            "componentRef": "kv6b204s"
+        },
+        {
+            "variableType": "COLLECTED",
+            "values": {
+                "COLLECTED": null,
+                "EDITED": null,
+                "INPUTED": null,
+                "FORCED": null,
+                "PREVIOUS": null
+            },
+            "name": "Q1Bis",
+            "componentRef": "kv9irps1"
+        },
+        {
+            "variableType": "COLLECTED",
+            "values": {
+                "COLLECTED": null,
+                "EDITED": null,
+                "INPUTED": null,
+                "FORCED": null,
+                "PREVIOUS": null
+            },
+            "name": "Q2",
+            "componentRef": "kv2c0sl1"
+        },
+        {
+            "variableType": "COLLECTED",
+            "values": {
+                "COLLECTED": null,
+                "EDITED": null,
+                "INPUTED": null,
+                "FORCED": null,
+                "PREVIOUS": null
+            },
+            "name": "Q3",
+            "componentRef": "kv6b9vzf"
+        },
+        {
+            "variableType": "COLLECTED",
+            "values": {
+                "COLLECTED": null,
+                "EDITED": null,
+                "INPUTED": null,
+                "FORCED": null,
+                "PREVIOUS": null
+            },
+            "name": "Q4",
+            "componentRef": "kv6as9ak"
+        },
+        {
+            "variableType": "COLLECTED",
+            "values": {
+                "COLLECTED": null,
+                "EDITED": null,
+                "INPUTED": null,
+                "FORCED": null,
+                "PREVIOUS": null
+            },
+            "name": "Q5",
+            "componentRef": "kv6avlvf"
+        },
+        {
+            "variableType": "COLLECTED",
+            "values": {
+                "COLLECTED": null,
+                "EDITED": null,
+                "INPUTED": null,
+                "FORCED": null,
+                "PREVIOUS": null
+            },
+            "name": "QUELESTLEN",
+            "componentRef": "kv6b4q01"
+        },
+        {
+            "variableType": "COLLECTED",
+            "values": {
+                "COLLECTED": null,
+                "EDITED": null,
+                "INPUTED": null,
+                "FORCED": null,
+                "PREVIOUS": null
+            },
+            "name": "Q7",
+            "componentRef": "kv6bgkjw"
+        },
+        {
+            "variableType": "COLLECTED",
+            "values": {
+                "COLLECTED": null,
+                "EDITED": null,
+                "INPUTED": null,
+                "FORCED": null,
+                "PREVIOUS": null
+            },
+            "name": "Q81",
+            "componentRef": "kupwbo05"
+        },
+        {
+            "variableType": "COLLECTED",
+            "values": {
+                "COLLECTED": null,
+                "EDITED": null,
+                "INPUTED": null,
+                "FORCED": null,
+                "PREVIOUS": null
+            },
+            "name": "Q82",
+            "componentRef": "kupwbo05"
+        },
+        {
+            "variableType": "COLLECTED",
+            "values": {
+                "COLLECTED": null,
+                "EDITED": null,
+                "INPUTED": null,
+                "FORCED": null,
+                "PREVIOUS": null
+            },
+            "name": "Q83",
+            "componentRef": "kupwbo05"
+        },
+        {
+            "variableType": "COLLECTED",
+            "values": {
+                "COLLECTED": null,
+                "EDITED": null,
+                "INPUTED": null,
+                "FORCED": null,
+                "PREVIOUS": null
+            },
+            "name": "Q84",
+            "componentRef": "kupwbo05"
+        },
+        {
+            "variableType": "COLLECTED",
+            "values": {
+                "COLLECTED": null,
+                "EDITED": null,
+                "INPUTED": null,
+                "FORCED": null,
+                "PREVIOUS": null
+            },
+            "name": "Q85",
+            "componentRef": "kupwbo05"
+        },
+        {
+            "variableType": "COLLECTED",
+            "values": {
+                "COLLECTED": null,
+                "EDITED": null,
+                "INPUTED": null,
+                "FORCED": null,
+                "PREVIOUS": null
+            },
+            "name": "NBSOEURS",
+            "componentRef": "kupwwqgx"
+        },
+        {
+            "variableType": "COLLECTED",
+            "values": {
+                "COLLECTED": null,
+                "EDITED": null,
+                "INPUTED": null,
+                "FORCED": null,
+                "PREVIOUS": null
+            },
+            "name": "NOMBONBON",
+            "componentRef": "kv2b9nuw"
+        },
+        {
+            "variableType": "COLLECTED",
+            "values": {
+                "COLLECTED": null,
+                "EDITED": null,
+                "INPUTED": null,
+                "FORCED": null,
+                "PREVIOUS": null
+            },
+            "name": "Q11",
+            "componentRef": "kv6bduao"
+        },
+        {
+            "variableType": "COLLECTED",
+            "values": {
+                "COLLECTED": null,
+                "EDITED": null,
+                "INPUTED": null,
+                "FORCED": null,
+                "PREVIOUS": null
+            },
+            "name": "Q12",
+            "componentRef": "kv6bqxtl"
+        },
+        {
+            "variableType": "COLLECTED",
+            "values": {
+                "COLLECTED": null,
+                "EDITED": null,
+                "INPUTED": null,
+                "FORCED": null,
+                "PREVIOUS": null
+            },
+            "name": "Q131",
+            "componentRef": "kv6bkguq"
+        },
+        {
+            "variableType": "COLLECTED",
+            "values": {
+                "COLLECTED": null,
+                "EDITED": null,
+                "INPUTED": null,
+                "FORCED": null,
+                "PREVIOUS": null
+            },
+            "name": "Q132",
+            "componentRef": "kv6bkguq"
+        },
+        {
+            "variableType": "COLLECTED",
+            "values": {
+                "COLLECTED": null,
+                "EDITED": null,
+                "INPUTED": null,
+                "FORCED": null,
+                "PREVIOUS": null
+            },
+            "name": "Q133",
+            "componentRef": "kv6bkguq"
+        },
+        {
+            "variableType": "COLLECTED",
+            "values": {
+                "COLLECTED": null,
+                "EDITED": null,
+                "INPUTED": null,
+                "FORCED": null,
+                "PREVIOUS": null
+            },
+            "name": "Q134",
+            "componentRef": "kv6bkguq"
+        },
+        {
+            "variableType": "COLLECTED",
+            "values": {
+                "COLLECTED": null,
+                "EDITED": null,
+                "INPUTED": null,
+                "FORCED": null,
+                "PREVIOUS": null
+            },
+            "name": "Q135",
+            "componentRef": "kv6bkguq"
+        },
+        {
+            "variableType": "COLLECTED",
+            "values": {
+                "COLLECTED": null,
+                "EDITED": null,
+                "INPUTED": null,
+                "FORCED": null,
+                "PREVIOUS": null
+            },
+            "name": "Q136",
+            "componentRef": "kv6bkguq"
+        },
+        {
+            "variableType": "COLLECTED",
+            "values": {
+                "COLLECTED": null,
+                "EDITED": null,
+                "INPUTED": null,
+                "FORCED": null,
+                "PREVIOUS": null
+            },
+            "name": "Q14",
+            "componentRef": "kv6bx7l8"
+        },
+        {
+            "variableType": "COLLECTED",
+            "values": {
+                "COLLECTED": null,
+                "EDITED": null,
+                "INPUTED": null,
+                "FORCED": null,
+                "PREVIOUS": null
+            },
+            "name": "Q15",
+            "componentRef": "kv6bijy7"
+        },
+        {
+            "variableType": "CALCULATED",
+            "expression": "true",
+            "name": "FILTER_RESULT_Q1"
+        },
+        {
+            "variableType": "CALCULATED",
+            "bindingDependencies": ["Q1"],
+            "expression": "(not(cast(Q1,string)  <>  \"2\"))",
+            "name": "FILTER_RESULT_Q1Bis"
+        },
+        {
+            "variableType": "CALCULATED",
+            "bindingDependencies": [
+                "Q1Bis",
+                "Q1"
+            ],
+            "expression": "(not((cast(Q1Bis,string) = \"2\") and not ((cast(Q1,string)  <>  \"2\"))))",
+            "name": "FILTER_RESULT_Q2"
+        },
+        {
+            "variableType": "CALCULATED",
+            "bindingDependencies": [
+                "Q1Bis",
+                "Q1",
+                "Q2"
+            ],
+            "expression": "(not((cast(Q1Bis,string) = \"2\") and not ((cast(Q1,string)  <>  \"2\")))) and (not(cast(Q2,string) = \"1\" )) and (not(cast(Q2,string) = \"3\"))",
+            "name": "FILTER_RESULT_Q3"
+        },
+        {
+            "variableType": "CALCULATED",
+            "bindingDependencies": [
+                "Q1Bis",
+                "Q1",
+                "Q2"
+            ],
+            "expression": "(not((cast(Q1Bis,string) = \"2\") and not ((cast(Q1,string)  <>  \"2\")))) and (not(cast(Q2,string) = \"1\" )) and (not(cast(Q2,string) = \"3\"))",
+            "name": "FILTER_RESULT_Q4"
+        },
+        {
+            "variableType": "CALCULATED",
+            "bindingDependencies": [
+                "Q1Bis",
+                "Q1",
+                "Q2"
+            ],
+            "expression": "(not((cast(Q1Bis,string) = \"2\") and not ((cast(Q1,string)  <>  \"2\")))) and (not(cast(Q2,string) = \"1\" )) and (not(cast(Q2,string) = \"3\"))",
+            "name": "FILTER_RESULT_Q5"
+        },
+        {
+            "variableType": "CALCULATED",
+            "bindingDependencies": [
+                "Q1Bis",
+                "Q1",
+                "Q2"
+            ],
+            "expression": "(not((cast(Q1Bis,string) = \"2\") and not ((cast(Q1,string)  <>  \"2\")))) and (not(cast(Q2,string) = \"1\" )) and (not(cast(Q2,string) = \"3\"))",
+            "name": "FILTER_RESULT_Q6"
+        },
+        {
+            "variableType": "CALCULATED",
+            "bindingDependencies": [
+                "Q1Bis",
+                "Q1",
+                "Q2",
+                "QUELESTLEN"
+            ],
+            "expression": "(not((cast(Q1Bis,string) = \"2\") and not ((cast(Q1,string)  <>  \"2\")))) and (not(cast(Q2,string) = \"1\" )) and (not((cast(QUELESTLEN,string) = \"1\" or cast(QUELESTLEN,string) = \"2\" or cast(QUELESTLEN,string) = \"3\") and not ((cast(Q2,string) = \"3\"))))",
+            "name": "FILTER_RESULT_Q7"
+        },
+        {
+            "variableType": "CALCULATED",
+            "bindingDependencies": [
+                "Q1Bis",
+                "Q1",
+                "Q2",
+                "QUELESTLEN",
+                "Q7"
+            ],
+            "expression": "(not((cast(Q1Bis,string) = \"2\") and not ((cast(Q1,string)  <>  \"2\")))) and (not(cast(Q2,string) = \"1\" )) and (not((cast(QUELESTLEN,string) = \"1\" or cast(QUELESTLEN,string) = \"2\" or cast(QUELESTLEN,string) = \"3\") and not ((cast(Q2,string) = \"3\")))) and (not(cast(Q7,string) = \"3\")) and (not(cast(Q7,string) = \"2\"))",
+            "name": "FILTER_RESULT_Q8"
+        },
+        {
+            "variableType": "CALCULATED",
+            "bindingDependencies": [
+                "Q1Bis",
+                "Q1",
+                "Q2",
+                "QUELESTLEN",
+                "Q7"
+            ],
+            "expression": "(not((cast(Q1Bis,string) = \"2\") and not ((cast(Q1,string)  <>  \"2\")))) and (not(cast(Q2,string) = \"1\" )) and (not((cast(QUELESTLEN,string) = \"1\" or cast(QUELESTLEN,string) = \"2\" or cast(QUELESTLEN,string) = \"3\") and not ((cast(Q2,string) = \"3\")))) and (not(cast(Q7,string) = \"3\")) and (not(cast(Q7,string) = \"2\"))",
+            "name": "FILTER_RESULT_Q9"
+        },
+        {
+            "variableType": "CALCULATED",
+            "bindingDependencies": [
+                "Q1Bis",
+                "Q1",
+                "Q2",
+                "QUELESTLEN",
+                "Q7"
+            ],
+            "expression": "(not((cast(Q1Bis,string) = \"2\") and not ((cast(Q1,string)  <>  \"2\")))) and (not(cast(Q2,string) = \"1\" )) and (not((cast(QUELESTLEN,string) = \"1\" or cast(QUELESTLEN,string) = \"2\" or cast(QUELESTLEN,string) = \"3\") and not ((cast(Q2,string) = \"3\")))) and (not(cast(Q7,string) = \"3\")) and (not(cast(Q7,string) = \"2\"))",
+            "name": "FILTER_RESULT_Q10"
+        },
+        {
+            "variableType": "CALCULATED",
+            "bindingDependencies": [
+                "Q1Bis",
+                "Q1",
+                "Q2",
+                "QUELESTLEN",
+                "Q7",
+                "NOMBONBON"
+            ],
+            "expression": "(not((cast(Q1Bis,string) = \"2\") and not ((cast(Q1,string)  <>  \"2\")))) and (not(cast(Q2,string) = \"1\" )) and (not((cast(QUELESTLEN,string) = \"1\" or cast(QUELESTLEN,string) = \"2\" or cast(QUELESTLEN,string) = \"3\") and not ((cast(Q2,string) = \"3\")))) and (not(cast(Q7,string) = \"3\")) and (not((cast(NOMBONBON,string) = \"1\" or cast(NOMBONBON,string)=\"2\") and not ((cast(Q7,string) = \"2\"))))",
+            "name": "FILTER_RESULT_Q11"
+        },
+        {
+            "variableType": "CALCULATED",
+            "bindingDependencies": [
+                "Q1Bis",
+                "Q1",
+                "Q2",
+                "QUELESTLEN",
+                "Q7",
+                "NOMBONBON"
+            ],
+            "expression": "(not((cast(Q1Bis,string) = \"2\") and not ((cast(Q1,string)  <>  \"2\")))) and (not(cast(Q2,string) = \"1\" )) and (not((cast(QUELESTLEN,string) = \"1\" or cast(QUELESTLEN,string) = \"2\" or cast(QUELESTLEN,string) = \"3\") and not ((cast(Q2,string) = \"3\")))) and (not(cast(Q7,string) = \"3\")) and (not((cast(NOMBONBON,string) = \"1\" or cast(NOMBONBON,string)=\"2\") and not ((cast(Q7,string) = \"2\"))))",
+            "name": "FILTER_RESULT_Q12"
+        },
+        {
+            "variableType": "CALCULATED",
+            "bindingDependencies": [
+                "Q1Bis",
+                "Q1",
+                "Q2",
+                "QUELESTLEN",
+                "Q7",
+                "NOMBONBON"
+            ],
+            "expression": "(not((cast(Q1Bis,string) = \"2\") and not ((cast(Q1,string)  <>  \"2\")))) and (not(cast(Q2,string) = \"1\" )) and (not((cast(QUELESTLEN,string) = \"1\" or cast(QUELESTLEN,string) = \"2\" or cast(QUELESTLEN,string) = \"3\") and not ((cast(Q2,string) = \"3\")))) and (not(cast(Q7,string) = \"3\")) and (not((cast(NOMBONBON,string) = \"1\" or cast(NOMBONBON,string)=\"2\") and not ((cast(Q7,string) = \"2\"))))",
+            "name": "FILTER_RESULT_Q13"
+        },
+        {
+            "variableType": "CALCULATED",
+            "bindingDependencies": [
+                "Q1Bis",
+                "Q1",
+                "Q2",
+                "QUELESTLEN",
+                "NOMBONBON",
+                "Q7",
+                "Q131",
+                "Q132",
+                "Q133",
+                "Q134",
+                "Q135",
+                "Q136"
+            ],
+            "expression": "(not((cast(Q1Bis,string) = \"2\") and not ((cast(Q1,string)  <>  \"2\")))) and (not(cast(Q2,string) = \"1\" )) and (not((cast(QUELESTLEN,string) = \"1\" or cast(QUELESTLEN,string) = \"2\" or cast(QUELESTLEN,string) = \"3\") and not ((cast(Q2,string) = \"3\")))) and (not(((cast(NOMBONBON,string) = \"1\" or cast(NOMBONBON,string)=\"2\") and not ((cast(Q7,string) = \"2\") or (cast(Q7,string) = \"3\"))) or ((cast(Q131,string)  <>  \"1\" or cast(Q132,string)  <>  \"1\" or cast(Q133,string)  <>  \"1\" or cast(Q134,string)  <>  \"1\" or cast(Q135,string)  <>  \"1\" or cast(Q136,string)  <>  \"1\" ) and not ((cast(Q7,string) = \"3\")))))",
+            "name": "FILTER_RESULT_Q14"
+        },
+        {
+            "variableType": "CALCULATED",
+            "bindingDependencies": [
+                "Q1Bis",
+                "Q1",
+                "Q2",
+                "QUELESTLEN",
+                "NOMBONBON",
+                "Q7",
+                "Q131",
+                "Q132",
+                "Q133",
+                "Q134",
+                "Q135",
+                "Q136"
+            ],
+            "expression": "(not((cast(Q1Bis,string) = \"2\") and not ((cast(Q1,string)  <>  \"2\")))) and (not(cast(Q2,string) = \"1\" )) and (not((cast(QUELESTLEN,string) = \"1\" or cast(QUELESTLEN,string) = \"2\" or cast(QUELESTLEN,string) = \"3\") and not ((cast(Q2,string) = \"3\")))) and (not(((cast(NOMBONBON,string) = \"1\" or cast(NOMBONBON,string)=\"2\") and not ((cast(Q7,string) = \"2\") or (cast(Q7,string) = \"3\"))) or ((cast(Q131,string)  <>  \"1\" or cast(Q132,string)  <>  \"1\" or cast(Q133,string)  <>  \"1\" or cast(Q134,string)  <>  \"1\" or cast(Q135,string)  <>  \"1\" or cast(Q136,string)  <>  \"1\" ) and not ((cast(Q7,string) = \"3\")))))",
+            "name": "FILTER_RESULT_Q15"
+        }
+    ],
+    "components": [
+        {
+            "componentType": "Sequence",
+            "hierarchy": {"sequence": {
+                "id": "kupw3ga8",
+                "page": "1",
+                "label": "\"I - Questionnaire \"Le Grôs Tour 2021\"\""
+            }},
+            "conditionFilter": {"value": "true"},
+            "id": "kupw3ga8",
+            "page": "1",
+            "label": "\"I - Questionnaire \"Le Grôs Tour 2021\"\"",
+            "declarations": [
+                {
+                    "declarationType": "HELP",
+                    "id": "kupw3ga8-kupw4n6q",
+                    "label": "\"Comment qu\u2019c\u2019est les grôs ? Ça geht\u2019s mohl ? Vous êtes prêts pour le repérage ?&#xd;Avant toute chose, quelques explications et consignes.&#xd;\u200b\"",
+                    "position": "AFTER_QUESTION_TEXT"
+                },
+                {
+                    "declarationType": "HELP",
+                    "id": "kupw3ga8-kv6c99fb",
+                    "label": "\"**Explications :**&#xd;Cette enquête est un hommage au patois lorrain (vocabulaire systématiquement placé entre guillemets) mais avant tout aux « grôs » : comprenez les « amis ». Métallica oblige, les Grôs c\u2019est aussi une association de 12 artistes lorrains issus de 7 groupes bien déterminés à envoyer du Grôs sur scène. Leur tournée « Le Grôs Tour » vient tout juste de s\u2019achever ; la vôtre en tant qu\u2019artistes enquêteurs commence maintenant.\"",
+                    "position": "AFTER_QUESTION_TEXT"
+                },
+                {
+                    "declarationType": "HELP",
+                    "id": "kupw3ga8-kv6c9iyg",
+                    "label": "\"**Consignes :**&#xd;- rangez vos \"schlapps\" car vous allez en « grôs » devoir parcourir la ville\"",
+                    "position": "AFTER_QUESTION_TEXT"
+                },
+                {
+                    "declarationType": "HELP",
+                    "id": "kupw3ga8-kv83nytc",
+                    "label": "\"- dirigez-vous vers l\u2019arrêt de tram le plus proche\"",
+                    "position": "AFTER_QUESTION_TEXT"
+                },
+                {
+                    "declarationType": "HELP",
+                    "id": "kupw3ga8-kv837fqo",
+                    "label": "\"- prendre le tram en direction d\u2019Essey Mouzimpré\"",
+                    "position": "AFTER_QUESTION_TEXT"
+                },
+                {
+                    "declarationType": "HELP",
+                    "id": "kupw3ga8-kv8399ru",
+                    "label": "\"- descendre à l\u2019arrêt « Gare »\"",
+                    "position": "AFTER_QUESTION_TEXT"
+                },
+                {
+                    "declarationType": "HELP",
+                    "id": "kupw3ga8-kv839y9y",
+                    "label": "\"- commencez le repérage dans l\u2019ordre suivant : UE 1, UE 2, UE 3 et UE 4\"",
+                    "position": "AFTER_QUESTION_TEXT"
+                },
+                {
+                    "declarationType": "HELP",
+                    "id": "kupw3ga8-kv83bifk",
+                    "label": "\"Pour repérer l\u2019UE 3, passez obligatoirement par la place de la Carrière\"",
+                    "position": "AFTER_QUESTION_TEXT"
+                }
+            ]
+        },
+        {
+            "componentType": "CheckboxOne",
+            "bindingDependencies": ["Q1"],
+            "response": {"name": "Q1"},
+            "hierarchy": {"sequence": {
+                "id": "kupw3ga8",
+                "page": "1",
+                "label": "\"I - Questionnaire \"Le Grôs Tour 2021\"\""
+            }},
+            "options": [
+                {
+                    "label": "\"Oui\"",
+                    "value": "1"
+                },
+                {
+                    "label": "\"Non\"",
+                    "value": "2"
+                }
+            ],
+            "conditionFilter": {"value": "true"},
+            "id": "kv6b204s",
+            "page": "1",
+            "label": "\"➡ 1. Avez-vous réussi à identifier l\u2019UE (Ultime Endroit) ?\"",
+            "mandatory": false
+        },
+        {
+            "componentType": "FilterDescription",
+            "hierarchy": {"sequence": {
+                "id": "kupw3ga8",
+                "page": "1",
+                "label": "\"I - Questionnaire \"Le Grôs Tour 2021\"\""
+            }},
+            "conditionFilter": {"value": "true"},
+            "id": "kv6b1lfa",
+            "page": "1",
+            "label": "\"C\u2019est la « chouff » c\u2019était pourtant simple ! Si t\u2019es perdu dans Nancy appelle tes « Grôs » au : 06 62 06 95 67\"",
+            "filterDescription": false
+        },
+        {
+            "componentType": "CheckboxOne",
+            "bindingDependencies": ["Q1Bis"],
+            "response": {"name": "Q1Bis"},
+            "hierarchy": {"sequence": {
+                "id": "kupw3ga8",
+                "page": "1",
+                "label": "\"I - Questionnaire \"Le Grôs Tour 2021\"\""
+            }},
+            "options": [
+                {
+                    "label": "\"Oui\"",
+                    "value": "1"
+                },
+                {
+                    "label": "\"Non\"",
+                    "value": "2"
+                }
+            ],
+            "conditionFilter": {
+                "bindingDependencies": ["Q1"],
+                "value": "(not(cast(Q1,string)  <>  \"2\"))"
+            },
+            "id": "kv9irps1",
+            "page": "1",
+            "label": "\"➡ 2. C\u2019est la « chouff » c\u2019était pourtant simple ! Si t\u2019es perdu dans Nancy appelle tes « Grôs » au : 06 62 06 95 67. Poursuivre ?\"",
+            "mandatory": false
+        },
+        {
+            "componentType": "FilterDescription",
+            "hierarchy": {"sequence": {
+                "id": "kupw3ga8",
+                "page": "1",
+                "label": "\"I - Questionnaire \"Le Grôs Tour 2021\"\""
+            }},
+            "conditionFilter": {
+                "bindingDependencies": ["Q1"],
+                "value": "(not(cast(Q1,string)  <>  \"2\"))"
+            },
+            "id": "kv9infhk",
+            "page": "1",
+            "label": "\"Poursuivre\"",
+            "filterDescription": false
+        },
+        {
+            "componentType": "Radio",
+            "bindingDependencies": ["Q2"],
+            "response": {"name": "Q2"},
+            "hierarchy": {"sequence": {
+                "id": "kupw3ga8",
+                "page": "1",
+                "label": "\"I - Questionnaire \"Le Grôs Tour 2021\"\""
+            }},
+            "options": [
+                {
+                    "label": "\"Salle de concert\"",
+                    "value": "1"
+                },
+                {
+                    "label": "\"Administration\"",
+                    "value": "2"
+                },
+                {
+                    "label": "\"Commerce\"",
+                    "value": "3"
+                }
+            ],
+            "conditionFilter": {
+                "bindingDependencies": [
+                    "Q1Bis",
+                    "Q1"
+                ],
+                "value": "(not((cast(Q1Bis,string) = \"2\") and not ((cast(Q1,string)  <>  \"2\"))))"
+            },
+            "id": "kv2c0sl1",
+            "page": "1",
+            "label": "\"➡ 3. Quel est l\u2019usage, en « grôs » de cet UE ?\"",
+            "mandatory": false
+        },
+        {
+            "componentType": "FilterDescription",
+            "hierarchy": {"sequence": {
+                "id": "kupw3ga8",
+                "page": "1",
+                "label": "\"I - Questionnaire \"Le Grôs Tour 2021\"\""
+            }},
+            "conditionFilter": {
+                "bindingDependencies": [
+                    "Q1Bis",
+                    "Q1"
+                ],
+                "value": "(not((cast(Q1Bis,string) = \"2\") and not ((cast(Q1,string)  <>  \"2\"))))"
+            },
+            "id": "kv6cbtud",
+            "page": "1",
+            "label": "\"Si c\u2019est une salle de concert, allez question à la fin\"",
+            "filterDescription": false
+        },
+        {
+            "componentType": "FilterDescription",
+            "hierarchy": {"sequence": {
+                "id": "kupw3ga8",
+                "page": "1",
+                "label": "\"I - Questionnaire \"Le Grôs Tour 2021\"\""
+            }},
+            "conditionFilter": {
+                "bindingDependencies": [
+                    "Q1Bis",
+                    "Q1"
+                ],
+                "value": "(not((cast(Q1Bis,string) = \"2\") and not ((cast(Q1,string)  <>  \"2\"))))"
+            },
+            "id": "kv6c79em",
+            "page": "1",
+            "label": "\"Si c\u2019est un commerce, allez question 7\"",
+            "filterDescription": false
+        },
+        {
+            "componentType": "CheckboxOne",
+            "bindingDependencies": ["Q3"],
+            "response": {"name": "Q3"},
+            "hierarchy": {"sequence": {
+                "id": "kupw3ga8",
+                "page": "1",
+                "label": "\"I - Questionnaire \"Le Grôs Tour 2021\"\""
+            }},
+            "options": [
+                {
+                    "label": "\"Mairie\"",
+                    "value": "1"
+                },
+                {
+                    "label": "\"Préfecture\"",
+                    "value": "2"
+                },
+                {
+                    "label": "\"Rectorat\"",
+                    "value": "3"
+                }
+            ],
+            "conditionFilter": {
+                "bindingDependencies": [
+                    "Q1Bis",
+                    "Q1",
+                    "Q2"
+                ],
+                "value": "(not((cast(Q1Bis,string) = \"2\") and not ((cast(Q1,string)  <>  \"2\")))) and (not(cast(Q2,string) = \"1\" )) and (not(cast(Q2,string) = \"3\"))"
+            },
+            "id": "kv6b9vzf",
+            "page": "1",
+            "label": "\"➡ 4. De quelle administration s\u2019agit-il ?\"",
+            "mandatory": false,
+            "declarations": [{
+                "declarationType": "HELP",
+                "id": "kv6b9vzf-kv6bylqv",
+                "label": "\"Un hôtel n\u2019est pas seulement un endroit où on peut se reposer quand on est « schlass »\"",
+                "position": "AFTER_QUESTION_TEXT"
+            }]
+        },
+        {
+            "componentType": "CheckboxOne",
+            "bindingDependencies": ["Q4"],
+            "response": {"name": "Q4"},
+            "hierarchy": {"sequence": {
+                "id": "kupw3ga8",
+                "page": "1",
+                "label": "\"I - Questionnaire \"Le Grôs Tour 2021\"\""
+            }},
+            "options": [
+                {
+                    "label": "\"100 x 120 mètres\"",
+                    "value": "1"
+                },
+                {
+                    "label": "\"200 x 250 mètres\"",
+                    "value": "2"
+                }
+            ],
+            "conditionFilter": {
+                "bindingDependencies": [
+                    "Q1Bis",
+                    "Q1",
+                    "Q2"
+                ],
+                "value": "(not((cast(Q1Bis,string) = \"2\") and not ((cast(Q1,string)  <>  \"2\")))) and (not(cast(Q2,string) = \"1\" )) and (not(cast(Q2,string) = \"3\"))"
+            },
+            "id": "kv6as9ak",
+            "page": "1",
+            "label": "\"➡ 5. Quelle est, en « grôs », la dimension du monument préféré des Français 2021 situé en face de cette administration ?\"",
+            "mandatory": false
+        },
+        {
+            "componentType": "CheckboxOne",
+            "bindingDependencies": ["Q5"],
+            "response": {"name": "Q5"},
+            "hierarchy": {"sequence": {
+                "id": "kupw3ga8",
+                "page": "1",
+                "label": "\"I - Questionnaire \"Le Grôs Tour 2021\"\""
+            }},
+            "options": [
+                {
+                    "label": "\"Entre les Deux Villes\"",
+                    "value": "1"
+                },
+                {
+                    "label": "\"Devant l\u2019hôpital Saint-Julien\"",
+                    "value": "2"
+                },
+                {
+                    "label": "\"Royale\"",
+                    "value": "3"
+                },
+                {
+                    "label": "\"du Peuple\"",
+                    "value": "4"
+                },
+                {
+                    "label": "\"Napoléon\"",
+                    "value": "5"
+                }
+            ],
+            "conditionFilter": {
+                "bindingDependencies": [
+                    "Q1Bis",
+                    "Q1",
+                    "Q2"
+                ],
+                "value": "(not((cast(Q1Bis,string) = \"2\") and not ((cast(Q1,string)  <>  \"2\")))) and (not(cast(Q2,string) = \"1\" )) and (not(cast(Q2,string) = \"3\"))"
+            },
+            "id": "kv6avlvf",
+            "page": "1",
+            "label": "\"➡ 6. Quel(s) mot(s), ancien nom de ce monument, a(ont) été martelé(s) à l\u2019angle du Grand Hôtel à la révolution ?\"",
+            "mandatory": false,
+            "declarations": [{
+                "declarationType": "HELP",
+                "id": "kv6avlvf-kv6c31ag",
+                "label": "\"Placez-vous à la droite du Grand Hôtel de la Reine, puis « guettez voir » l\u2019angle du bâtiment à quelques mètres du sol\"",
+                "position": "AFTER_QUESTION_TEXT"
+            }]
+        },
+        {
+            "componentType": "CheckboxOne",
+            "bindingDependencies": ["QUELESTLEN"],
+            "response": {"name": "QUELESTLEN"},
+            "hierarchy": {"sequence": {
+                "id": "kupw3ga8",
+                "page": "1",
+                "label": "\"I - Questionnaire \"Le Grôs Tour 2021\"\""
+            }},
+            "options": [
+                {
+                    "label": "\"Louis XV\"",
+                    "value": "1"
+                },
+                {
+                    "label": "\"Stanislas Leszczynski\"",
+                    "value": "2"
+                },
+                {
+                    "label": "\"Emmanuel Héré\"",
+                    "value": "3"
+                }
+            ],
+            "conditionFilter": {
+                "bindingDependencies": [
+                    "Q1Bis",
+                    "Q1",
+                    "Q2"
+                ],
+                "value": "(not((cast(Q1Bis,string) = \"2\") and not ((cast(Q1,string)  <>  \"2\")))) and (not(cast(Q2,string) = \"1\" )) and (not(cast(Q2,string) = \"3\"))"
+            },
+            "id": "kv6b4q01",
+            "page": "1",
+            "label": "\"➡ 7. Quel est le nom du « grôs » planté au milieu du monument ?\"",
+            "mandatory": false
+        },
+        {
+            "componentType": "FilterDescription",
+            "hierarchy": {"sequence": {
+                "id": "kupw3ga8",
+                "page": "1",
+                "label": "\"I - Questionnaire \"Le Grôs Tour 2021\"\""
+            }},
+            "conditionFilter": {
+                "bindingDependencies": [
+                    "Q1Bis",
+                    "Q1",
+                    "Q2"
+                ],
+                "value": "(not((cast(Q1Bis,string) = \"2\") and not ((cast(Q1,string)  <>  \"2\")))) and (not(cast(Q2,string) = \"1\" )) and (not(cast(Q2,string) = \"3\"))"
+            },
+            "id": "kv6ba9v7",
+            "page": "1",
+            "label": "\"Bravo, vous avez terminé le repérage de cet UE.\"",
+            "filterDescription": false
+        },
+        {
+            "componentType": "CheckboxOne",
+            "bindingDependencies": ["Q7"],
+            "response": {"name": "Q7"},
+            "hierarchy": {"sequence": {
+                "id": "kupw3ga8",
+                "page": "1",
+                "label": "\"I - Questionnaire \"Le Grôs Tour 2021\"\""
+            }},
+            "options": [
+                {
+                    "label": "\"Vente de douceurs lorraines (« beum\u2019s » etc.)\"",
+                    "value": "1"
+                },
+                {
+                    "label": "\"Vente de boissons pour « cheûler »\"",
+                    "value": "2"
+                },
+                {
+                    "label": "\"Restaurant pour « grailler » et « tosser »\"",
+                    "value": "3"
+                }
+            ],
+            "conditionFilter": {
+                "bindingDependencies": [
+                    "Q1Bis",
+                    "Q1",
+                    "Q2",
+                    "QUELESTLEN"
+                ],
+                "value": "(not((cast(Q1Bis,string) = \"2\") and not ((cast(Q1,string)  <>  \"2\")))) and (not(cast(Q2,string) = \"1\" )) and (not((cast(QUELESTLEN,string) = \"1\" or cast(QUELESTLEN,string) = \"2\" or cast(QUELESTLEN,string) = \"3\") and not ((cast(Q2,string) = \"3\"))))"
+            },
+            "id": "kv6bgkjw",
+            "page": "1",
+            "label": "\"➡ 8. Quelle est l\u2019activité principale de ce commerce ?\"",
+            "mandatory": false,
+            "declarations": [{
+                "declarationType": "HELP",
+                "id": "kv6bgkjw-kv6bnyi5",
+                "label": "\"Si besoin, « cailler » par la vitrine\"",
+                "position": "AFTER_QUESTION_TEXT"
+            }]
+        },
+        {
+            "componentType": "FilterDescription",
+            "hierarchy": {"sequence": {
+                "id": "kupw3ga8",
+                "page": "1",
+                "label": "\"I - Questionnaire \"Le Grôs Tour 2021\"\""
+            }},
+            "conditionFilter": {
+                "bindingDependencies": [
+                    "Q1Bis",
+                    "Q1",
+                    "Q2",
+                    "QUELESTLEN"
+                ],
+                "value": "(not((cast(Q1Bis,string) = \"2\") and not ((cast(Q1,string)  <>  \"2\")))) and (not(cast(Q2,string) = \"1\" )) and (not((cast(QUELESTLEN,string) = \"1\" or cast(QUELESTLEN,string) = \"2\" or cast(QUELESTLEN,string) = \"3\") and not ((cast(Q2,string) = \"3\"))))"
+            },
+            "id": "kv6bt5q6",
+            "page": "1",
+            "label": "\"Si vous avez répondu \"Vente de boissons pour « cheûler »\" allez question 11\"",
+            "filterDescription": false
+        },
+        {
+            "componentType": "FilterDescription",
+            "hierarchy": {"sequence": {
+                "id": "kupw3ga8",
+                "page": "1",
+                "label": "\"I - Questionnaire \"Le Grôs Tour 2021\"\""
+            }},
+            "conditionFilter": {
+                "bindingDependencies": [
+                    "Q1Bis",
+                    "Q1",
+                    "Q2",
+                    "QUELESTLEN"
+                ],
+                "value": "(not((cast(Q1Bis,string) = \"2\") and not ((cast(Q1,string)  <>  \"2\")))) and (not(cast(Q2,string) = \"1\" )) and (not((cast(QUELESTLEN,string) = \"1\" or cast(QUELESTLEN,string) = \"2\" or cast(QUELESTLEN,string) = \"3\") and not ((cast(Q2,string) = \"3\"))))"
+            },
+            "id": "kv6bsm7x",
+            "page": "1",
+            "label": "\"Si vous avez répondu \"Restaurant pour « grailler » et « tosser »\", allez question 14\"",
+            "filterDescription": false
+        },
+        {
+            "componentType": "CheckboxGroup",
+            "bindingDependencies": [
+                "Q81",
+                "Q82",
+                "Q83",
+                "Q84",
+                "Q85"
+            ],
+            "hierarchy": {"sequence": {
+                "id": "kupw3ga8",
+                "page": "1",
+                "label": "\"I - Questionnaire \"Le Grôs Tour 2021\"\""
+            }},
+            "responses": [
+                {
+                    "response": {"name": "Q81"},
+                    "id": "kupwbo05-QOP-kv6bk6az",
+                    "label": "\"Des « schnecks »\""
+                },
+                {
+                    "response": {"name": "Q82"},
+                    "id": "kupwbo05-QOP-kv6bkljq",
+                    "label": "\"Des « beum\u2019s »\""
+                },
+                {
+                    "response": {"name": "Q83"},
+                    "id": "kupwbo05-QOP-kv6bp4xj",
+                    "label": "\"Des pâtes de fruits\""
+                },
+                {
+                    "response": {"name": "Q84"},
+                    "id": "kupwbo05-QOP-kv6bu0qp",
+                    "label": "\"Du chocolat\""
+                },
+                {
+                    "response": {"name": "Q85"},
+                    "id": "kupwbo05-QOP-kv6brsar",
+                    "label": "\"Des macarons\""
+                }
+            ],
+            "conditionFilter": {
+                "bindingDependencies": [
+                    "Q1Bis",
+                    "Q1",
+                    "Q2",
+                    "QUELESTLEN",
+                    "Q7"
+                ],
+                "value": "(not((cast(Q1Bis,string) = \"2\") and not ((cast(Q1,string)  <>  \"2\")))) and (not(cast(Q2,string) = \"1\" )) and (not((cast(QUELESTLEN,string) = \"1\" or cast(QUELESTLEN,string) = \"2\" or cast(QUELESTLEN,string) = \"3\") and not ((cast(Q2,string) = \"3\")))) and (not(cast(Q7,string) = \"3\")) and (not(cast(Q7,string) = \"2\"))"
+            },
+            "id": "kupwbo05",
+            "page": "1",
+            "label": "\"➡ 9. Que vous propose-t-on de déguster dans cet endroit mythique ?\"",
+            "declarations": [
+                {
+                    "declarationType": "HELP",
+                    "id": "kupwbo05-kv6bqsin",
+                    "label": "\"Nécessite d\u2019avoir « clanché » la porte pour rentrer\"",
+                    "position": "AFTER_QUESTION_TEXT"
+                },
+                {
+                    "declarationType": "HELP",
+                    "id": "kupwbo05-kv6buhug",
+                    "label": "\"Plusieurs réponses possibles\"",
+                    "position": "AFTER_QUESTION_TEXT"
+                }
+            ]
+        },
+        {
+            "componentType": "Input",
+            "bindingDependencies": ["NBSOEURS"],
+            "response": {"name": "NBSOEURS"},
+            "hierarchy": {"sequence": {
+                "id": "kupw3ga8",
+                "page": "1",
+                "label": "\"I - Questionnaire \"Le Grôs Tour 2021\"\""
+            }},
+            "conditionFilter": {
+                "bindingDependencies": [
+                    "Q1Bis",
+                    "Q1",
+                    "Q2",
+                    "QUELESTLEN",
+                    "Q7"
+                ],
+                "value": "(not((cast(Q1Bis,string) = \"2\") and not ((cast(Q1,string)  <>  \"2\")))) and (not(cast(Q2,string) = \"1\" )) and (not((cast(QUELESTLEN,string) = \"1\" or cast(QUELESTLEN,string) = \"2\" or cast(QUELESTLEN,string) = \"3\") and not ((cast(Q2,string) = \"3\")))) and (not(cast(Q7,string) = \"3\")) and (not(cast(Q7,string) = \"2\"))"
+            },
+            "id": "kupwwqgx",
+            "page": "1",
+            "label": "\"➡ 10. Le Macaron des Soeurs est entré dans le patrimoine gastronomique des Nancéiens. Combien étaient-elles ?\"",
+            "mandatory": false,
+            "maxLength": 249,
+            "declarations": [{
+                "declarationType": "HELP",
+                "id": "kupwwqgx-kupwzf9r",
+                "label": "\"La réponse sera à fournir en hexadécimal\"",
+                "position": "AFTER_QUESTION_TEXT"
+            }]
+        },
+        {
+            "componentType": "CheckboxOne",
+            "bindingDependencies": ["NOMBONBON"],
+            "response": {"name": "NOMBONBON"},
+            "hierarchy": {"sequence": {
+                "id": "kupw3ga8",
+                "page": "1",
+                "label": "\"I - Questionnaire \"Le Grôs Tour 2021\"\""
+            }},
+            "options": [
+                {
+                    "label": "\"Oui\"",
+                    "value": "1"
+                },
+                {
+                    "label": "\"Non\"",
+                    "value": "2"
+                }
+            ],
+            "conditionFilter": {
+                "bindingDependencies": [
+                    "Q1Bis",
+                    "Q1",
+                    "Q2",
+                    "QUELESTLEN",
+                    "Q7"
+                ],
+                "value": "(not((cast(Q1Bis,string) = \"2\") and not ((cast(Q1,string)  <>  \"2\")))) and (not(cast(Q2,string) = \"1\" )) and (not((cast(QUELESTLEN,string) = \"1\" or cast(QUELESTLEN,string) = \"2\" or cast(QUELESTLEN,string) = \"3\") and not ((cast(Q2,string) = \"3\")))) and (not(cast(Q7,string) = \"3\")) and (not(cast(Q7,string) = \"2\"))"
+            },
+            "id": "kv2b9nuw",
+            "page": "1",
+            "label": "\"➡ 11. Connaissez-vous ce petit « beum\u2019s » légèrement acidulé, carré, plat, translucide et de couleur dorée fortement parfumé, symbole de Nancy ?\"",
+            "mandatory": false,
+            "declarations": [
+                {
+                    "declarationType": "INSTRUCTION",
+                    "id": "kv2b9nuw-kv9i6cqo",
+                    "label": "\"Si oui : achetez un p\u2019tit « cornet » pour les concepteurs de l\u2019enquête.\"",
+                    "position": "AFTER_QUESTION_TEXT"
+                },
+                {
+                    "declarationType": "INSTRUCTION",
+                    "id": "kv2b9nuw-kv9i95rj",
+                    "label": "\"Si non : ça vaut le coup de goûter. Pensez aussi à acheter un p\u2019tit « cornet » aux concepteurs de l\u2019enquête.\"",
+                    "position": "AFTER_QUESTION_TEXT"
+                }
+            ]
+        },
+        {
+            "componentType": "FilterDescription",
+            "hierarchy": {"sequence": {
+                "id": "kupw3ga8",
+                "page": "1",
+                "label": "\"I - Questionnaire \"Le Grôs Tour 2021\"\""
+            }},
+            "conditionFilter": {
+                "bindingDependencies": [
+                    "Q1Bis",
+                    "Q1",
+                    "Q2",
+                    "QUELESTLEN",
+                    "Q7"
+                ],
+                "value": "(not((cast(Q1Bis,string) = \"2\") and not ((cast(Q1,string)  <>  \"2\")))) and (not(cast(Q2,string) = \"1\" )) and (not((cast(QUELESTLEN,string) = \"1\" or cast(QUELESTLEN,string) = \"2\" or cast(QUELESTLEN,string) = \"3\") and not ((cast(Q2,string) = \"3\")))) and (not(cast(Q7,string) = \"3\")) and (not(cast(Q7,string) = \"2\"))"
+            },
+            "id": "kv2bpjmo",
+            "page": "1",
+            "label": "\"Bravo, vous avez terminé le repérage de cet UE.\"",
+            "filterDescription": false
+        },
+        {
+            "componentType": "Dropdown",
+            "bindingDependencies": ["Q11"],
+            "response": {"name": "Q11"},
+            "hierarchy": {"sequence": {
+                "id": "kupw3ga8",
+                "page": "1",
+                "label": "\"I - Questionnaire \"Le Grôs Tour 2021\"\""
+            }},
+            "options": [
+                {
+                    "label": "\"Du « schnaps »\"",
+                    "value": "1"
+                },
+                {
+                    "label": "\"De la bière\"",
+                    "value": "2"
+                }
+            ],
+            "conditionFilter": {
+                "bindingDependencies": [
+                    "Q1Bis",
+                    "Q1",
+                    "Q2",
+                    "QUELESTLEN",
+                    "Q7",
+                    "NOMBONBON"
+                ],
+                "value": "(not((cast(Q1Bis,string) = \"2\") and not ((cast(Q1,string)  <>  \"2\")))) and (not(cast(Q2,string) = \"1\" )) and (not((cast(QUELESTLEN,string) = \"1\" or cast(QUELESTLEN,string) = \"2\" or cast(QUELESTLEN,string) = \"3\") and not ((cast(Q2,string) = \"3\")))) and (not(cast(Q7,string) = \"3\")) and (not((cast(NOMBONBON,string) = \"1\" or cast(NOMBONBON,string)=\"2\") and not ((cast(Q7,string) = \"2\"))))"
+            },
+            "id": "kv6bduao",
+            "page": "1",
+            "label": "\"➡ 12. Que vous propose-t-on de principalement « cheûler » dans cet endroit mythique du vieux Nancy ?\"",
+            "mandatory": false,
+            "declarations": [{
+                "declarationType": "INSTRUCTION",
+                "id": "kv6bduao-kv6bwq37",
+                "label": "\"Nécessite pas forcément d\u2019avoir « clanché » la porte pour répondre\"",
+                "position": "AFTER_QUESTION_TEXT"
+            }]
+        },
+        {
+            "componentType": "CheckboxOne",
+            "bindingDependencies": ["Q12"],
+            "response": {"name": "Q12"},
+            "hierarchy": {"sequence": {
+                "id": "kupw3ga8",
+                "page": "1",
+                "label": "\"I - Questionnaire \"Le Grôs Tour 2021\"\""
+            }},
+            "options": [
+                {
+                    "label": "\"Oui\"",
+                    "value": "1"
+                },
+                {
+                    "label": "\"Non\"",
+                    "value": "2"
+                }
+            ],
+            "conditionFilter": {
+                "bindingDependencies": [
+                    "Q1Bis",
+                    "Q1",
+                    "Q2",
+                    "QUELESTLEN",
+                    "Q7",
+                    "NOMBONBON"
+                ],
+                "value": "(not((cast(Q1Bis,string) = \"2\") and not ((cast(Q1,string)  <>  \"2\")))) and (not(cast(Q2,string) = \"1\" )) and (not((cast(QUELESTLEN,string) = \"1\" or cast(QUELESTLEN,string) = \"2\" or cast(QUELESTLEN,string) = \"3\") and not ((cast(Q2,string) = \"3\")))) and (not(cast(Q7,string) = \"3\")) and (not((cast(NOMBONBON,string) = \"1\" or cast(NOMBONBON,string)=\"2\") and not ((cast(Q7,string) = \"2\"))))"
+            },
+            "id": "kv6bqxtl",
+            "page": "1",
+            "label": "\"➡ 13. La fabrique des GrÔ est-elle bien représentée dans cet établissement ?\"",
+            "mandatory": false,
+            "declarations": [{
+                "declarationType": "HELP",
+                "id": "kv6bqxtl-kv6bnket",
+                "label": "\"Nécessite forcément d\u2019avoir « clanché » la porte pour aller poser la question\"",
+                "position": "AFTER_QUESTION_TEXT"
+            }]
+        },
+        {
+            "componentType": "Table",
+            "bindingDependencies": [
+                "Q131",
+                "Q132",
+                "Q133",
+                "Q134",
+                "Q135",
+                "Q136"
+            ],
+            "cells": [
+                [
+                    {
+                        "label": "\"La GrÔ\"",
+                        "value": "1"
+                    },
+                    {
+                        "componentType": "Radio",
+                        "bindingDependencies": ["Q131"],
+                        "response": {"name": "Q131"},
+                        "options": [
+                            {
+                                "label": "\"Oui\"",
+                                "value": "1"
+                            },
+                            {
+                                "label": "\"Non\"",
+                                "value": "2"
+                            }
+                        ],
+                        "id": "kv6bkguq-QOP-kv9k05m7"
+                    }
+                ],
+                [
+                    {
+                        "label": "\"La GrÔ Niasse\"",
+                        "value": "2"
+                    },
+                    {
+                        "componentType": "Radio",
+                        "bindingDependencies": ["Q132"],
+                        "response": {"name": "Q132"},
+                        "options": [
+                            {
+                                "label": "\"Oui\"",
+                                "value": "1"
+                            },
+                            {
+                                "label": "\"Non\"",
+                                "value": "2"
+                            }
+                        ],
+                        "id": "kv6bkguq-QOP-kv9k1ylo"
+                    }
+                ],
+                [
+                    {
+                        "label": "\"La GrÔ Alimentaire\"",
+                        "value": "3"
+                    },
+                    {
+                        "componentType": "Radio",
+                        "bindingDependencies": ["Q133"],
+                        "response": {"name": "Q133"},
+                        "options": [
+                            {
+                                "label": "\"Oui\"",
+                                "value": "1"
+                            },
+                            {
+                                "label": "\"Non\"",
+                                "value": "2"
+                            }
+                        ],
+                        "id": "kv6bkguq-QOP-kv9jqvg8"
+                    }
+                ],
+                [
+                    {
+                        "label": "\"La GrÔ Gnon\"",
+                        "value": "4"
+                    },
+                    {
+                        "componentType": "Radio",
+                        "bindingDependencies": ["Q134"],
+                        "response": {"name": "Q134"},
+                        "options": [
+                            {
+                                "label": "\"Oui\"",
+                                "value": "1"
+                            },
+                            {
+                                "label": "\"Non\"",
+                                "value": "2"
+                            }
+                        ],
+                        "id": "kv6bkguq-QOP-kv9k1yxj"
+                    }
+                ],
+                [
+                    {
+                        "label": "\"La GrÔ Landaise\"",
+                        "value": "5"
+                    },
+                    {
+                        "componentType": "Radio",
+                        "bindingDependencies": ["Q135"],
+                        "response": {"name": "Q135"},
+                        "options": [
+                            {
+                                "label": "\"Oui\"",
+                                "value": "1"
+                            },
+                            {
+                                "label": "\"Non\"",
+                                "value": "2"
+                            }
+                        ],
+                        "id": "kv6bkguq-QOP-kv9k1lvl"
+                    }
+                ],
+                [
+                    {
+                        "label": "\"La GrÔles de Dames\"",
+                        "value": "6"
+                    },
+                    {
+                        "componentType": "Radio",
+                        "bindingDependencies": ["Q136"],
+                        "response": {"name": "Q136"},
+                        "options": [
+                            {
+                                "label": "\"Oui\"",
+                                "value": "1"
+                            },
+                            {
+                                "label": "\"Non\"",
+                                "value": "2"
+                            }
+                        ],
+                        "id": "kv6bkguq-QOP-kv9jts6w"
+                    }
+                ]
+            ],
+            "positioning": "HORIZONTAL",
+            "hierarchy": {"sequence": {
+                "id": "kupw3ga8",
+                "page": "1",
+                "label": "\"I - Questionnaire \"Le Grôs Tour 2021\"\""
+            }},
+            "conditionFilter": {
+                "bindingDependencies": [
+                    "Q1Bis",
+                    "Q1",
+                    "Q2",
+                    "QUELESTLEN",
+                    "Q7",
+                    "NOMBONBON"
+                ],
+                "value": "(not((cast(Q1Bis,string) = \"2\") and not ((cast(Q1,string)  <>  \"2\")))) and (not(cast(Q2,string) = \"1\" )) and (not((cast(QUELESTLEN,string) = \"1\" or cast(QUELESTLEN,string) = \"2\" or cast(QUELESTLEN,string) = \"3\") and not ((cast(Q2,string) = \"3\")))) and (not(cast(Q7,string) = \"3\")) and (not((cast(NOMBONBON,string) = \"1\" or cast(NOMBONBON,string)=\"2\") and not ((cast(Q7,string) = \"2\"))))"
+            },
+            "id": "kv6bkguq",
+            "page": "1",
+            "label": "\"➡ 14. Quels genres de Grô peut-on y trouver ?\"",
+            "mandatory": false,
+            "declarations": [
+                {
+                    "declarationType": "HELP",
+                    "id": "kv6bkguq-kv6butzv",
+                    "label": "\"Plusieurs réponses possibles\"",
+                    "position": "AFTER_QUESTION_TEXT"
+                },
+                {
+                    "declarationType": "INSTRUCTION",
+                    "id": "kv6bkguq-kv9iev29",
+                    "label": "\"Achetez la GrÔ de votre choix pour les concepteurs de l\u2019enquête (pas obligé de tout goûter pour se décider).\"",
+                    "position": "AFTER_QUESTION_TEXT"
+                }
+            ]
+        },
+        {
+            "componentType": "FilterDescription",
+            "hierarchy": {"sequence": {
+                "id": "kupw3ga8",
+                "page": "1",
+                "label": "\"I - Questionnaire \"Le Grôs Tour 2021\"\""
+            }},
+            "conditionFilter": {
+                "bindingDependencies": [
+                    "Q1Bis",
+                    "Q1",
+                    "Q2",
+                    "QUELESTLEN",
+                    "Q7",
+                    "NOMBONBON"
+                ],
+                "value": "(not((cast(Q1Bis,string) = \"2\") and not ((cast(Q1,string)  <>  \"2\")))) and (not(cast(Q2,string) = \"1\" )) and (not((cast(QUELESTLEN,string) = \"1\" or cast(QUELESTLEN,string) = \"2\" or cast(QUELESTLEN,string) = \"3\") and not ((cast(Q2,string) = \"3\")))) and (not(cast(Q7,string) = \"3\")) and (not((cast(NOMBONBON,string) = \"1\" or cast(NOMBONBON,string)=\"2\") and not ((cast(Q7,string) = \"2\"))))"
+            },
+            "id": "kv6bggv0",
+            "page": "1",
+            "label": "\" Bravo, vous avez terminé le repérage de cet UE \"",
+            "filterDescription": false
+        },
+        {
+            "componentType": "CheckboxOne",
+            "bindingDependencies": ["Q14"],
+            "response": {"name": "Q14"},
+            "hierarchy": {"sequence": {
+                "id": "kupw3ga8",
+                "page": "1",
+                "label": "\"I - Questionnaire \"Le Grôs Tour 2021\"\""
+            }},
+            "options": [
+                {
+                    "label": "\"Oui\"",
+                    "value": "1"
+                },
+                {
+                    "label": "\"Non\"",
+                    "value": "2"
+                }
+            ],
+            "conditionFilter": {
+                "bindingDependencies": [
+                    "Q1Bis",
+                    "Q1",
+                    "Q2",
+                    "QUELESTLEN",
+                    "NOMBONBON",
+                    "Q7",
+                    "Q131",
+                    "Q132",
+                    "Q133",
+                    "Q134",
+                    "Q135",
+                    "Q136"
+                ],
+                "value": "(not((cast(Q1Bis,string) = \"2\") and not ((cast(Q1,string)  <>  \"2\")))) and (not(cast(Q2,string) = \"1\" )) and (not((cast(QUELESTLEN,string) = \"1\" or cast(QUELESTLEN,string) = \"2\" or cast(QUELESTLEN,string) = \"3\") and not ((cast(Q2,string) = \"3\")))) and (not(((cast(NOMBONBON,string) = \"1\" or cast(NOMBONBON,string)=\"2\") and not ((cast(Q7,string) = \"2\") or (cast(Q7,string) = \"3\"))) or ((cast(Q131,string)  <>  \"1\" or cast(Q132,string)  <>  \"1\" or cast(Q133,string)  <>  \"1\" or cast(Q134,string)  <>  \"1\" or cast(Q135,string)  <>  \"1\" or cast(Q136,string)  <>  \"1\" ) and not ((cast(Q7,string) = \"3\")))))"
+            },
+            "id": "kv6bx7l8",
+            "page": "1",
+            "label": "\"➡ 15. Cet établissement est-il ouvert tous les jours « entre midi » ?\"",
+            "mandatory": false,
+            "declarations": [{
+                "declarationType": "HELP",
+                "id": "kv6bx7l8-kv6bzpsv",
+                "label": "\"Pas de « schlague » : bien se renseigner avant de répondre !\"",
+                "position": "AFTER_QUESTION_TEXT"
+            }]
+        },
+        {
+            "componentType": "CheckboxOne",
+            "bindingDependencies": ["Q15"],
+            "response": {"name": "Q15"},
+            "hierarchy": {"sequence": {
+                "id": "kupw3ga8",
+                "page": "1",
+                "label": "\"I - Questionnaire \"Le Grôs Tour 2021\"\""
+            }},
+            "options": [
+                {
+                    "label": "\"Oui\"",
+                    "value": "1"
+                },
+                {
+                    "label": "\"Non\"",
+                    "value": "2"
+                }
+            ],
+            "conditionFilter": {
+                "bindingDependencies": [
+                    "Q1Bis",
+                    "Q1",
+                    "Q2",
+                    "QUELESTLEN",
+                    "NOMBONBON",
+                    "Q7",
+                    "Q131",
+                    "Q132",
+                    "Q133",
+                    "Q134",
+                    "Q135",
+                    "Q136"
+                ],
+                "value": "(not((cast(Q1Bis,string) = \"2\") and not ((cast(Q1,string)  <>  \"2\")))) and (not(cast(Q2,string) = \"1\" )) and (not((cast(QUELESTLEN,string) = \"1\" or cast(QUELESTLEN,string) = \"2\" or cast(QUELESTLEN,string) = \"3\") and not ((cast(Q2,string) = \"3\")))) and (not(((cast(NOMBONBON,string) = \"1\" or cast(NOMBONBON,string)=\"2\") and not ((cast(Q7,string) = \"2\") or (cast(Q7,string) = \"3\"))) or ((cast(Q131,string)  <>  \"1\" or cast(Q132,string)  <>  \"1\" or cast(Q133,string)  <>  \"1\" or cast(Q134,string)  <>  \"1\" or cast(Q135,string)  <>  \"1\" or cast(Q136,string)  <>  \"1\" ) and not ((cast(Q7,string) = \"3\")))))"
+            },
+            "id": "kv6bijy7",
+            "page": "1",
+            "label": "\"➡ 16. Votre ventre est-il prêt à encaisser un bon p\u2019tit menu Lorrain ?\"",
+            "mandatory": false,
+            "declarations": [
+                {
+                    "declarationType": "INSTRUCTION",
+                    "id": "kv6bijy7-kv9il6h2",
+                    "label": "\"Si oui : installez-vous à l\u2019étage avec les autres « Grôs ».\"",
+                    "position": "AFTER_QUESTION_TEXT"
+                },
+                {
+                    "declarationType": "INSTRUCTION",
+                    "id": "kv6bijy7-kv9io39x",
+                    "label": "\"Si non : ben désolé y\u2019a que ça à « grailler ». Installez-vous à l\u2019étage avec les autres « Grôs ». \"",
+                    "position": "AFTER_QUESTION_TEXT"
+                }
+            ]
+        },
+        {
+            "componentType": "FilterDescription",
+            "hierarchy": {"sequence": {
+                "id": "kupw3ga8",
+                "page": "1",
+                "label": "\"I - Questionnaire \"Le Grôs Tour 2021\"\""
+            }},
+            "conditionFilter": {
+                "bindingDependencies": [
+                    "Q1Bis",
+                    "Q1",
+                    "Q2",
+                    "QUELESTLEN",
+                    "NOMBONBON",
+                    "Q7",
+                    "Q131",
+                    "Q132",
+                    "Q133",
+                    "Q134",
+                    "Q135",
+                    "Q136"
+                ],
+                "value": "(not((cast(Q1Bis,string) = \"2\") and not ((cast(Q1,string)  <>  \"2\")))) and (not(cast(Q2,string) = \"1\" )) and (not((cast(QUELESTLEN,string) = \"1\" or cast(QUELESTLEN,string) = \"2\" or cast(QUELESTLEN,string) = \"3\") and not ((cast(Q2,string) = \"3\")))) and (not(((cast(NOMBONBON,string) = \"1\" or cast(NOMBONBON,string)=\"2\") and not ((cast(Q7,string) = \"2\") or (cast(Q7,string) = \"3\"))) or ((cast(Q131,string)  <>  \"1\" or cast(Q132,string)  <>  \"1\" or cast(Q133,string)  <>  \"1\" or cast(Q134,string)  <>  \"1\" or cast(Q135,string)  <>  \"1\" or cast(Q136,string)  <>  \"1\" ) and not ((cast(Q7,string) = \"3\")))))"
+            },
+            "id": "kv6bktye",
+            "page": "1",
+            "label": "\"Bravo, vous avez terminé le repérage de cet UE.\"",
+            "filterDescription": false
+        }
+    ],
+    "pagination": "sequence",
+    "lunaticModelVersion": "2.2.6",
+    "modele": "GROSTOUR2021",
+    "enoCoreVersion": "2.2.11-dev-logement2",
+    "generatingDate": "27-10-2021 15:19:24",
+    "missing": false,
+    "id": "kupwb7d40",
+    "label": "Le Grôs Tour 2021",
+    "maxPage": "1"
+}
