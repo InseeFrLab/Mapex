@@ -1,3 +1,4 @@
-export const getDataFromAPI = () => Promise.resolve([]);
+export const getDataFromAPI = ({ setError, setData = () => {}, setLoading }) =>
+	Promise.resolve([setLoading(false)]);
 
-export const getLatLng = (address, setError) => Promise.resolve([]);
+export const postData = () => Promise.resolve(true);

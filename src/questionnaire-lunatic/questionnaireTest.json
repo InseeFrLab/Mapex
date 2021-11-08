@@ -1,0 +1,343 @@
+{
+  "variables": [
+    {
+      "variableType": "COLLECTED",
+      "values": {
+        "COLLECTED": null,
+        "EDITED": null,
+        "INPUTED": null,
+        "FORCED": null,
+        "PREVIOUS": null
+      },
+      "name": "COMMENT_QE",
+      "componentRef": "COMMENT-QUESTION"
+    },
+    {
+      "variableType": "COLLECTED",
+      "values": {
+        "COLLECTED": null,
+        "EDITED": null,
+        "INPUTED": null,
+        "FORCED": null,
+        "PREVIOUS": null
+      },
+      "name": "TESTQ",
+      "componentRef": "km4o9c4y"
+    },
+    {
+      "variableType": "COLLECTED",
+      "values": {
+        "COLLECTED": null,
+        "EDITED": null,
+        "INPUTED": null,
+        "FORCED": null,
+        "PREVIOUS": null
+      },
+      "name": "TESTQ_MISSING",
+      "componentRef": "km4o9c4y"
+    },
+    {
+      "variableType": "COLLECTED",
+      "values": {
+        "COLLECTED": null,
+        "EDITED": null,
+        "INPUTED": null,
+        "FORCED": null,
+        "PREVIOUS": null
+      },
+      "name": "TESTQ2",
+      "componentRef": "km4ofpsy"
+    },
+    {
+      "variableType": "COLLECTED",
+      "values": {
+        "COLLECTED": null,
+        "EDITED": null,
+        "INPUTED": null,
+        "FORCED": null,
+        "PREVIOUS": null
+      },
+      "name": "TESTQ2_MISSING",
+      "componentRef": "km4ofpsy"
+    },
+    {
+      "variableType": "COLLECTED",
+      "values": {
+        "COLLECTED": null,
+        "EDITED": null,
+        "INPUTED": null,
+        "FORCED": null,
+        "PREVIOUS": null
+      },
+      "name": "TESTQ3",
+      "componentRef": "km4oroff"
+    },
+    {
+      "variableType": "COLLECTED",
+      "values": {
+        "COLLECTED": null,
+        "EDITED": null,
+        "INPUTED": null,
+        "FORCED": null,
+        "PREVIOUS": null
+      },
+      "name": "TESTQ3_MISSING",
+      "componentRef": "km4oroff"
+    },
+    {
+      "variableType": "COLLECTED",
+      "values": {
+        "COLLECTED": null,
+        "EDITED": null,
+        "INPUTED": null,
+        "FORCED": null,
+        "PREVIOUS": null
+      },
+      "name": "TESTQ4",
+      "componentRef": "km4owm51"
+    },
+    {
+      "variableType": "COLLECTED",
+      "values": {
+        "COLLECTED": null,
+        "EDITED": null,
+        "INPUTED": null,
+        "FORCED": null,
+        "PREVIOUS": null
+      },
+      "name": "TESTQ4_MISSING",
+      "componentRef": "km4owm51"
+    },
+    {
+      "variableType": "COLLECTED",
+      "values": {
+        "COLLECTED": null,
+        "EDITED": null,
+        "INPUTED": null,
+        "FORCED": null,
+        "PREVIOUS": null
+      },
+      "name": "TESTQ5",
+      "componentRef": "km4ozeq1"
+    },
+    {
+      "variableType": "COLLECTED",
+      "values": {
+        "COLLECTED": null,
+        "EDITED": null,
+        "INPUTED": null,
+        "FORCED": null,
+        "PREVIOUS": null
+      },
+      "name": "TESTQ5_MISSING",
+      "componentRef": "km4ozeq1"
+    }
+  ],
+  "components": [
+    {
+      "componentType": "Sequence",
+      "hierarchy": {
+        "sequence": {
+          "id": "km4oej2r",
+          "page": "1",
+          "label": "\"I - \" || \"Test\""
+        }
+      },
+      "conditionFilter": {
+        "value": "true"
+      },
+      "id": "km4oej2r",
+      "page": "1",
+      "label": "\"I - \" || \"Test\""
+    },
+    {
+      "componentType": "Textarea",
+      "bindingDependencies": [
+        "TESTQ_MISSING",
+        "TESTQ"
+      ],
+      "missingResponse": {
+        "name": "TESTQ_MISSING"
+      },
+      "response": {
+        "name": "TESTQ"
+      },
+      "hierarchy": {
+        "sequence": {
+          "id": "km4oej2r",
+          "page": "1",
+          "label": "\"I - \" || \"Test\""
+        }
+      },
+      "conditionFilter": {
+        "value": "true"
+      },
+      "id": "km4o9c4y",
+      "page": "2",
+      "label": "\"➡ \" || \"TestQ\"",
+      "mandatory": false,
+      "maxLength": 255
+    },
+    {
+      "componentType": "Textarea",
+      "bindingDependencies": [
+        "TESTQ2_MISSING",
+        "TESTQ2"
+      ],
+      "missingResponse": {
+        "name": "TESTQ2_MISSING"
+      },
+      "response": {
+        "name": "TESTQ2"
+      },
+      "hierarchy": {
+        "sequence": {
+          "id": "km4oej2r",
+          "page": "1",
+          "label": "\"I - \" || \"Test\""
+        }
+      },
+      "conditionFilter": {
+        "value": "true"
+      },
+      "id": "km4ofpsy",
+      "page": "3",
+      "label": "\"➡ \" || \"TestQ2 !\"",
+      "mandatory": false,
+      "maxLength": 255
+    },
+    {
+      "componentType": "Textarea",
+      "bindingDependencies": [
+        "TESTQ3_MISSING",
+        "TESTQ3"
+      ],
+      "missingResponse": {
+        "name": "TESTQ3_MISSING"
+      },
+      "response": {
+        "name": "TESTQ3"
+      },
+      "hierarchy": {
+        "sequence": {
+          "id": "km4oej2r",
+          "page": "1",
+          "label": "\"I - \" || \"Test\""
+        }
+      },
+      "conditionFilter": {
+        "value": "true"
+      },
+      "id": "km4oroff",
+      "page": "4",
+      "label": "\"➡ \" || \"TestQ3\"",
+      "mandatory": false,
+      "maxLength": 255
+    },
+    {
+      "componentType": "Textarea",
+      "bindingDependencies": [
+        "TESTQ4_MISSING",
+        "TESTQ4"
+      ],
+      "missingResponse": {
+        "name": "TESTQ4_MISSING"
+      },
+      "response": {
+        "name": "TESTQ4"
+      },
+      "hierarchy": {
+        "sequence": {
+          "id": "km4oej2r",
+          "page": "1",
+          "label": "\"I - \" || \"Test\""
+        }
+      },
+      "conditionFilter": {
+        "value": "true"
+      },
+      "id": "km4owm51",
+      "page": "5",
+      "label": "\"➡ \" || \"TESTQ4 \"",
+      "mandatory": false,
+      "maxLength": 255
+    },
+    {
+      "componentType": "Textarea",
+      "bindingDependencies": [
+        "TESTQ5_MISSING",
+        "TESTQ5"
+      ],
+      "missingResponse": {
+        "name": "TESTQ5_MISSING"
+      },
+      "response": {
+        "name": "TESTQ5"
+      },
+      "hierarchy": {
+        "sequence": {
+          "id": "km4oej2r",
+          "page": "1",
+          "label": "\"I - \" || \"Test\""
+        }
+      },
+      "conditionFilter": {
+        "value": "true"
+      },
+      "id": "km4ozeq1",
+      "page": "6",
+      "label": "\"➡ \" || \"TestQ5\"",
+      "mandatory": false,
+      "maxLength": 255
+    },
+    {
+      "componentType": "Sequence",
+      "hierarchy": {
+        "sequence": {
+          "id": "COMMENT-SEQ",
+          "page": "7",
+          "label": "\"Commentaire\""
+        }
+      },
+      "conditionFilter": {
+        "value": "true"
+      },
+      "id": "COMMENT-SEQ",
+      "page": "7",
+      "label": "\"Commentaire\""
+    },
+    {
+      "componentType": "Textarea",
+      "bindingDependencies": [
+        "COMMENT_QE"
+      ],
+      "response": {
+        "name": "COMMENT_QE"
+      },
+      "hierarchy": {
+        "sequence": {
+          "id": "COMMENT-SEQ",
+          "page": "7",
+          "label": "\"Commentaire\""
+        }
+      },
+      "conditionFilter": {
+        "value": "true"
+      },
+      "id": "COMMENT-QUESTION",
+      "page": "8",
+      "label": "\"Avez-vous des remarques concernant l'enquête ou des commentaires ?\"",
+      "mandatory": false,
+      "maxLength": 2000
+    }
+  ],
+  "pagination": "question",
+  "lunaticModelVersion": "2.2.4",
+  "modele": "TEST",
+  "enoCoreVersion": "2.2.10-dev-mode-parameters",
+  "generatingDate": "29-09-2021 14:54:31",
+  "missing": true,
+  "id": "km4ocme4_lh",
+  "label": "Test",
+  "maxPage": "8"
+}

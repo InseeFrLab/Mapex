@@ -3,8 +3,9 @@ import ListItemText from '@material-ui/core/ListItemText';
 import ListItem from '@material-ui/core/ListItem';
 import Divider from '@material-ui/core/Divider';
 import Section from '../section';
-import D from '../../../../dictionary/app/unit-card';
+import { dicSurveyUnit } from 'dictionary';
 import { makeStyles } from '@material-ui/core/styles';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
 	ListItem: {
@@ -13,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
-const ListAction = ({ hrefSms, hrefCalendar, actionReperage }) => {
+const ListAction = ({ hrefSms, hrefCalendar, pathReperage }) => {
 	const classes = useStyles();
 	return (
 		<Section>
@@ -24,11 +25,16 @@ const ListAction = ({ hrefSms, hrefCalendar, actionReperage }) => {
 				target="_blank"
 				href={hrefSms}
 			>
-				<ListItemText secondary={D.listAction.labelSms} />
+				<ListItemText secondary={dicSurveyUnit.listAction.labelSms} />
 			</ListItem>
 			<Divider />
-			<ListItem className={classes.ListItem} button>
-				<ListItemText secondary={D.listAction.labelReperage} />
+			<ListItem
+				className={classes.ListItem}
+				button
+				component={Link}
+				to={pathReperage}
+			>
+				<ListItemText secondary={dicSurveyUnit.listAction.labelReperage} />
 			</ListItem>
 			<Divider />
 			<ListItem
@@ -38,7 +44,7 @@ const ListAction = ({ hrefSms, hrefCalendar, actionReperage }) => {
 				target="_blank"
 				href={hrefCalendar}
 			>
-				<ListItemText secondary={D.listAction.labelCalendar} />
+				<ListItemText secondary={dicSurveyUnit.listAction.labelCalendar} />
 			</ListItem>
 		</Section>
 	);

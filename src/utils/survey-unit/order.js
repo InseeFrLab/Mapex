@@ -1,5 +1,5 @@
 import { formatDistanceStrict } from 'date-fns';
-import { getPrivilegedPerson } from './surveyUnit';
+import { getPrivilegedPerson } from './privilegedPerson';
 
 export const sortOnColumnCompareFunction = (criteria) => {
 	let compareFunction;
@@ -16,7 +16,7 @@ export const sortOnColumnCompareFunction = (criteria) => {
 
 	const ssechSortFunction = (a, b) =>
 		a.sampleIdentifiers.ssech - b.sampleIdentifiers.ssech;
-		
+
 	const prioritySortFunction = (a, b) => b.priority - a.priority;
 
 	const campaignSortFunction = (a, b) => a.campaign.localeCompare(b.campaign);

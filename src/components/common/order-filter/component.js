@@ -11,7 +11,7 @@ import ListItem from '@material-ui/core/ListItem';
 import Divider from '@material-ui/core/Divider';
 import ButtonIcon from '../icon-button/component';
 import CloseIcon from '@material-ui/icons/Close';
-import D from 'dictionary/app/order-filter';
+import D from 'dictionary/components/common/order-filter/order-filter';
 import Order from './order';
 import Survey from './survey';
 import FavoriteFilter from './favorite';
@@ -78,6 +78,7 @@ const OrderFilter = ({ campaigns, favorites, setOpen }) => {
 			query.delete('sort');
 		}
 		history.replace({ search: query.toString() });
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [sortCriteria, history]);
 
 	const buildStateFromCampaign = (campaigns) =>
@@ -110,6 +111,7 @@ const OrderFilter = ({ campaigns, favorites, setOpen }) => {
 			query.delete('campaigns');
 		}
 		history.replace({ search: query.toString() });
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [stateCampaign, history]);
 
 	const buildArrayfromFavorites = (favorites) => {

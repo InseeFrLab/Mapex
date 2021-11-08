@@ -15,7 +15,6 @@ spec:
       containers:
         - name: mapex
           image: ddecrulle/mapex:latest
-
           env:
             - name: PEARL_API_URL
               value: 'url'

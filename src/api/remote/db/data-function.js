@@ -1,8 +1,15 @@
 import { setDataIntoDB } from 'indexedDB/service/db-action';
-import { getSurveyUnitsAPI, getUnit, getSurveyUnitsExtended } from '../call';
-import D from 'dictionary/db';
+import {
+	getSurveyUnitsAPI,
+	getUnit,
+	getSurveyUnitsExtended,
+	postParadata,
+} from '../call';
+import { dicDb } from 'dictionary';
 
-export const getDataFromApiOld = ({ setError, setData = () => {} }) =>
+export const postData = (data) => postParadata(data);
+
+export const getDataFromApi = ({ setError, setData = () => {}, setLoading }) =>
 	getSurveyUnitsAPI()
 		.then(async (surveyUnits) => {
 			const result = await Promise.all(
@@ -13,17 +20,19 @@ export const getDataFromApiOld = ({ setError, setData = () => {} }) =>
 			return result;
 		})
 		.then((units) => {
-			setDataIntoDB(D.surveyUnitDB, units);
+			setDataIntoDB(dicDb.surveyUnitDB, units);
 			setData && setData(units);
 		})
+		.then(setLoading(false))
 		.catch((e) => {
+			setLoading(false);
 			setError(`Errror : ${e}`);
 		});
 
-export const getDataFromAPI = ({ setError }) =>
+export const getDataFromAPIExtended = ({ setError }) =>
 	getSurveyUnitsExtended()
 		.then((surveyUnits) => {
-			setDataIntoDB(D.surveyUnitDB, surveyUnits);
+			setDataIntoDB(dicDb.surveyUnitDB, surveyUnits);
 		})
 		.catch((e) => {
 			setError(`Errror : ${e}`);
