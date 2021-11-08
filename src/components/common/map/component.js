@@ -5,10 +5,7 @@ import { MapContainer, Marker, TileLayer, Popup } from 'react-leaflet';
 import { Link } from 'react-router-dom';
 
 import L from 'leaflet';
-import {
-	getPrivilegedPerson,
-	getFavoriteNumber,
-} from 'utils/survey-unit/surveyUnit';
+import { getPrivilegedPerson, getFavoriteNumber } from 'utils/survey-unit';
 import icon from 'leaflet/dist/images/marker-icon.png';
 import iconShadow from 'leaflet/dist/images/marker-shadow.png';
 import UE from '../ue';

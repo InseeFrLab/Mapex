@@ -5,7 +5,7 @@ import InputBase from '@material-ui/core/InputBase';
 import TuneIcon from '@material-ui/icons/Tune';
 import SearchIcon from '@material-ui/icons/Search';
 import ButtonIcon from '../icon-button';
-import D from '../../../dictionary/app/home';
+import { dicSearchBar } from 'dictionary';
 import DrawerOrderFilter from '../drawer-order-filter';
 import { useLocation, useHistory } from 'react-router-dom';
 
@@ -40,7 +40,7 @@ const SearchBar = ({ campaigns, open, setOpen, favorites }) => {
 		} else {
 			query.delete('textSearch');
 		}
-		history.replace({search: query.toString() });
+		history.replace({ search: query.toString() });
 	}, [textSearch, history]);
 
 	const handleChange = (e) => {
@@ -57,9 +57,9 @@ const SearchBar = ({ campaigns, open, setOpen, favorites }) => {
 			/>
 			<InputBase
 				className={classes.input}
-				placeholder={D.searchBar}
+				placeholder={dicSearchBar.searchBar}
 				onChange={handleChange}
-				inputProps={{ 'aria-label': D.searchBarAreaLabel }}
+				inputProps={{ 'aria-label': dicSearchBar.searchBarAreaLabel }}
 				value={textSearch}
 			/>
 			<ButtonIcon
@@ -67,7 +67,12 @@ const SearchBar = ({ campaigns, open, setOpen, favorites }) => {
 				icon={<TuneIcon />}
 				onClick={() => setOpen(true)}
 			/>
-			<DrawerOrderFilter open={open} setOpen={setOpen} campaigns={campaigns} favorites={favorites}/>
+			<DrawerOrderFilter
+				open={open}
+				setOpen={setOpen}
+				campaigns={campaigns}
+				favorites={favorites}
+			/>
 		</Paper>
 	);
 };

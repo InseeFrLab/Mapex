@@ -2,7 +2,7 @@ import React from 'react';
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Item from '../item';
-import D from 'dictionary/app/order-filter';
+import D from 'dictionary/components/common/order-filter/order-filter';
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 
