@@ -1,4 +1,4 @@
 export const getDataFromAPI = ({ setError, setData = () => {}, setLoading }) =>
 	Promise.resolve([setLoading(false)]);
 
-export const postParadata = () => Promise.resolve([]);
+export const postData = () => Promise.resolve(true);

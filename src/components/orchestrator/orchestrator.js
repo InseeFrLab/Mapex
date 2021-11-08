@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import * as lunatic from '@inseefr/lunatic';
-import { ListItem, makeStyles, TextField } from '@material-ui/core';
+import { ListItem, makeStyles } from '@material-ui/core';
 import List from '@material-ui/core/List';
 import ButtonUI from 'components/common/button';
 import Divider from '@material-ui/core/Divider';
@@ -66,7 +66,7 @@ const Orchestrator = ({
 	});
 
 	const classes = useStyles();
-
+	const [loading, setLoading] = useState(false);
 	const [openModal, setOpenModal] = useState(false);
 	const [textSendData, setTextSendData] = useState('');
 
@@ -188,21 +188,15 @@ const Orchestrator = ({
 	};
 
 	const handleSend = () => {
-		API.postParadata(lunatic.getState(questionnaire))
-			.then((r) => {
-				setOpenModal(false);
-				setTextSendData('Les données ont bien été envoyées');
-			})
+		API.postData(lunatic.getState(questionnaire))
+			.then(() => setTextSendData('Les données ont bien été envoyées'))
 			.catch((e) => {
-				setOpenModal(false);
-				setTextSendData(
-					'Une erreur est survenue, veuillez réessayer plus tard.'
-				);
 				console.log(e);
+				setTextSendData('Une erreur est survenue');
 			});
+		setOpenModal(false);
 	};
 
-	// API.postParadata(lunatic.getState(questionnaire))
 	return (
 		<List className={classes.root}>
 			{displayComponents()}

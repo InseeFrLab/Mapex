@@ -1,6 +1,13 @@
 import { setDataIntoDB } from 'indexedDB/service/db-action';
-import { getSurveyUnitsAPI, getUnit, getSurveyUnitsExtended } from '../call';
+import {
+	getSurveyUnitsAPI,
+	getUnit,
+	getSurveyUnitsExtended,
+	postParadata,
+} from '../call';
 import { dicDb } from 'dictionary';
+
+export const postData = (data) => postParadata(data);
 
 export const getDataFromApi = ({ setError, setData = () => {}, setLoading }) =>
 	getSurveyUnitsAPI()

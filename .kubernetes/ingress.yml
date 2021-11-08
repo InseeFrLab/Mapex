@@ -13,6 +13,9 @@ spec:
       http:
         paths:
           - path: /
+            pathType: Prefix
             backend:
-              serviceName: mapex
-              servicePort: http
+              service:
+                name: mapex
+                port:
+                  number: 80
